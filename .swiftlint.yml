@@ -1,0 +1,4 @@
+included: 
+  - Habits
+excluded:
+  - Pods
