@@ -1,0 +1,16 @@
+os: osx
+
+language: objective-c
+osx_image: xcode10.1
+xcode_workspace: Habits.xcworkspace
+cache:
+    - bundler
+    - cocoapods
+install:
+    - bundle install
+    - bundle exec pod install --repo-update
+script:
+    - bundle exec fastlane test
+branches:
+  only:
+  - master
