@@ -26,6 +26,11 @@ Runs all the tests
 fastlane ios lint
 ```
 lint the swift
+### ios adhoc
+```
+fastlane ios adhoc
+```
+Ad-hoc build
 
 ----
 

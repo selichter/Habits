@@ -1,6 +1,11 @@
 PODS:
   - Nimble (7.3.1)
   - Quick (1.3.2)
+  - Realm (3.13.0):
+    - Realm/Headers (= 3.13.0)
+  - Realm/Headers (3.13.0)
+  - RealmSwift (3.13.0):
+    - Realm (= 3.13.0)
   - SwiftLint (0.29.1)
   - XCTest-Gherkin (0.18.0):
     - XCTest-Gherkin/Core (= 0.18.0)
@@ -9,6 +14,7 @@ PODS:
 DEPENDENCIES:
   - Nimble (~> 7.3.1)
   - Quick
+  - RealmSwift
   - SwiftLint
   - XCTest-Gherkin
 
@@ -16,15 +22,19 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Nimble
     - Quick
+    - Realm
+    - RealmSwift
     - SwiftLint
     - XCTest-Gherkin
 
 SPEC CHECKSUMS:
   Nimble: 04f732da099ea4d153122aec8c2a88fd0c7219ae
   Quick: 2623cb30d7a7f41ca62f684f679586558f483d46
+  Realm: 5edd2ee65406aef591a4f9895de5a3440e51b3d8
+  RealmSwift: be5ebc7930e37cd3376b41cec7f21984528aaa16
   SwiftLint: 6772320e40b52049053a518c17db9b0634a0b45a
   XCTest-Gherkin: dcd08cf80c456c46edc7a1cfb18d3a8f4fa3293c
 
-PODFILE CHECKSUM: 9adbc8780bad1405863fecb6a072887ed7a68557
+PODFILE CHECKSUM: 78052bbdf33851b3bbbc4c7c45c4d170989927f9
 
 COCOAPODS: 1.5.3
