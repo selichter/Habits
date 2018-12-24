@@ -22,6 +22,7 @@
 		DF826C4821D065BA00A525B2 /* HabitDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF826C4721D065BA00A525B2 /* HabitDataSource.swift */; };
 		DF826C4A21D068A100A525B2 /* HabitDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF826C4921D068A100A525B2 /* HabitDataSourceTest.swift */; };
 		DFDC4F7C21D093B200C95C13 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC4F7B21D093B200C95C13 /* DataSource.swift */; };
+		DFDC4F7E21D1318700C95C13 /* HabitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC4F7D21D1318700C95C13 /* HabitTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		DF826C4721D065BA00A525B2 /* HabitDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDataSource.swift; sourceTree = "<group>"; };
 		DF826C4921D068A100A525B2 /* HabitDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDataSourceTest.swift; sourceTree = "<group>"; };
 		DFDC4F7B21D093B200C95C13 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
+		DFDC4F7D21D1318700C95C13 /* HabitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTests.swift; sourceTree = "<group>"; };
 		ED1FE072B05A2C53A1344E5E /* Pods-Habits.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Habits.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Habits/Pods-Habits.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -166,6 +168,7 @@
 			children = (
 				DF81317921CB30A1003434E2 /* Info.plist */,
 				DF826C4921D068A100A525B2 /* HabitDataSourceTest.swift */,
+				DFDC4F7D21D1318700C95C13 /* HabitTests.swift */,
 			);
 			path = HabitsTests;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DFDC4F7E21D1318700C95C13 /* HabitTests.swift in Sources */,
 				DF826C4A21D068A100A525B2 /* HabitDataSourceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
