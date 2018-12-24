@@ -21,14 +21,12 @@ class HabitsStepDefinitions: StepDefiner {
             self.launchApp()
         }
         
-        step("I see a habit") {
-            let water = "Daily Water"
-            let values = "60/80"
-            let timeLeft = "12 hours left"
+        step("I see habits displayed") {
+            let cells = self.app.collectionViews.cells
+            XCTAssert(cells.staticTexts["drink water"].waitForExistence(timeout: 2))
+            XCTAssert(cells.staticTexts["workout"].waitForExistence(timeout: 2))
             
-            XCTAssertEqual(self.app.staticTexts["habitTitle"].label, water)
-            XCTAssertEqual(self.app.staticTexts["habitValues"].label, values)
-            XCTAssertEqual(self.app.staticTexts["time"].label, timeLeft)
+            XCTAssertEqual(cells.count, 2)
         }
       
     }

@@ -11,13 +11,17 @@
 		B1A0F544502D5C56B8D80D2B /* Pods_HabitsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB5F9BDBAD1038C44A664A1 /* Pods_HabitsUITests.framework */; };
 		B831821BC1C92C34AEAEA480 /* Pods_Habits.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85AD2E7FC1DB61CE5C55A44F /* Pods_Habits.framework */; };
 		DF51E0E221CC9C7500F770C0 /* HabitSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF51E0E121CC9C7500F770C0 /* HabitSteps.swift */; };
+		DF51E0E821CFDD4800F770C0 /* HabitEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF51E0E721CFDD4800F770C0 /* HabitEntity.swift */; };
+		DF51E0EA21CFEAE200F770C0 /* HabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF51E0E921CFEAE200F770C0 /* HabitCell.swift */; };
 		DF81316321CB309F003434E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF81316221CB309F003434E2 /* AppDelegate.swift */; };
-		DF81316521CB30A0003434E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF81316421CB30A0003434E2 /* ViewController.swift */; };
+		DF81316521CB30A0003434E2 /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF81316421CB30A0003434E2 /* HabitsViewController.swift */; };
 		DF81316821CB30A0003434E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF81316621CB30A0003434E2 /* Main.storyboard */; };
 		DF81316A21CB30A1003434E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF81316921CB30A1003434E2 /* Assets.xcassets */; };
 		DF81316D21CB30A1003434E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF81316B21CB30A1003434E2 /* LaunchScreen.storyboard */; };
-		DF81317821CB30A1003434E2 /* HabitsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF81317721CB30A1003434E2 /* HabitsTests.swift */; };
 		DF81318321CB30A1003434E2 /* HabitsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF81318221CB30A1003434E2 /* HabitsUITests.swift */; };
+		DF826C4821D065BA00A525B2 /* HabitDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF826C4721D065BA00A525B2 /* HabitDataSource.swift */; };
+		DF826C4A21D068A100A525B2 /* HabitDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF826C4921D068A100A525B2 /* HabitDataSourceTest.swift */; };
+		DFDC4F7C21D093B200C95C13 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC4F7B21D093B200C95C13 /* DataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,19 +51,23 @@
 		AFF818BF946BFD597FFC97EC /* Pods-HabitsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HabitsUITests/Pods-HabitsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C7CCD31BAEF6C95215514D97 /* Pods-HabitsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HabitsTests/Pods-HabitsTests.release.xcconfig"; sourceTree = "<group>"; };
 		DF51E0E121CC9C7500F770C0 /* HabitSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitSteps.swift; sourceTree = "<group>"; };
+		DF51E0E721CFDD4800F770C0 /* HabitEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitEntity.swift; sourceTree = "<group>"; };
+		DF51E0E921CFEAE200F770C0 /* HabitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCell.swift; sourceTree = "<group>"; };
 		DF81315F21CB309F003434E2 /* Habits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Habits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF81316221CB309F003434E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DF81316421CB30A0003434E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DF81316421CB30A0003434E2 /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = "<group>"; };
 		DF81316721CB30A0003434E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DF81316921CB30A1003434E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DF81316C21CB30A1003434E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DF81316E21CB30A1003434E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF81317321CB30A1003434E2 /* HabitsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HabitsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DF81317721CB30A1003434E2 /* HabitsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsTests.swift; sourceTree = "<group>"; };
 		DF81317921CB30A1003434E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF81317E21CB30A1003434E2 /* HabitsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HabitsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF81318221CB30A1003434E2 /* HabitsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsUITests.swift; sourceTree = "<group>"; };
 		DF81318421CB30A1003434E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF826C4721D065BA00A525B2 /* HabitDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDataSource.swift; sourceTree = "<group>"; };
+		DF826C4921D068A100A525B2 /* HabitDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDataSourceTest.swift; sourceTree = "<group>"; };
+		DFDC4F7B21D093B200C95C13 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		ED1FE072B05A2C53A1344E5E /* Pods-Habits.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Habits.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Habits/Pods-Habits.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,11 +148,15 @@
 			isa = PBXGroup;
 			children = (
 				DF81316221CB309F003434E2 /* AppDelegate.swift */,
-				DF81316421CB30A0003434E2 /* ViewController.swift */,
+				DF81316421CB30A0003434E2 /* HabitsViewController.swift */,
 				DF81316621CB30A0003434E2 /* Main.storyboard */,
 				DF81316921CB30A1003434E2 /* Assets.xcassets */,
 				DF81316B21CB30A1003434E2 /* LaunchScreen.storyboard */,
 				DF81316E21CB30A1003434E2 /* Info.plist */,
+				DF51E0E721CFDD4800F770C0 /* HabitEntity.swift */,
+				DF51E0E921CFEAE200F770C0 /* HabitCell.swift */,
+				DF826C4721D065BA00A525B2 /* HabitDataSource.swift */,
+				DFDC4F7B21D093B200C95C13 /* DataSource.swift */,
 			);
 			path = Habits;
 			sourceTree = "<group>";
@@ -152,8 +164,8 @@
 		DF81317621CB30A1003434E2 /* HabitsTests */ = {
 			isa = PBXGroup;
 			children = (
-				DF81317721CB30A1003434E2 /* HabitsTests.swift */,
 				DF81317921CB30A1003434E2 /* Info.plist */,
+				DF826C4921D068A100A525B2 /* HabitDataSourceTest.swift */,
 			);
 			path = HabitsTests;
 			sourceTree = "<group>";
@@ -179,6 +191,7 @@
 				DF81315B21CB309F003434E2 /* Sources */,
 				DF81315C21CB309F003434E2 /* Frameworks */,
 				DF81315D21CB309F003434E2 /* Resources */,
+				14402475548C5252A893C248 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -324,6 +337,30 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HabitsTests/Pods-HabitsTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		14402475548C5252A893C248 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Habits/Pods-Habits-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Habits/Pods-Habits-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3DE50A2C986B48DBA8D7C380 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -419,7 +456,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF81316521CB30A0003434E2 /* ViewController.swift in Sources */,
+				DFDC4F7C21D093B200C95C13 /* DataSource.swift in Sources */,
+				DF51E0E821CFDD4800F770C0 /* HabitEntity.swift in Sources */,
+				DF826C4821D065BA00A525B2 /* HabitDataSource.swift in Sources */,
+				DF81316521CB30A0003434E2 /* HabitsViewController.swift in Sources */,
+				DF51E0EA21CFEAE200F770C0 /* HabitCell.swift in Sources */,
 				DF81316321CB309F003434E2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,7 +469,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DF81317821CB30A1003434E2 /* HabitsTests.swift in Sources */,
+				DF826C4A21D068A100A525B2 /* HabitDataSourceTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

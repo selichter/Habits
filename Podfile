@@ -5,6 +5,7 @@ target 'Habits' do
   use_frameworks!
 
   pod 'SwiftLint'
+  pod 'RealmSwift'
 
   target 'HabitsTests' do
     inherit! :search_paths

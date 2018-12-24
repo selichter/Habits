@@ -17,8 +17,7 @@ class HabitsUITests: XCTestCase {
 
     func testHabitDisplay() {
         Given("I launch the app")
-        Then("I see a habit")
-
+        Then("I see habits displayed")
     }
 
 }
