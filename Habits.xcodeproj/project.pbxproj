@@ -210,7 +210,6 @@
 				DF81316F21CB30A1003434E2 /* Sources */,
 				DF81317021CB30A1003434E2 /* Frameworks */,
 				DF81317121CB30A1003434E2 /* Resources */,
-				0CFEE7D3BFC8AB0D6767112C /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -313,30 +312,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0CFEE7D3BFC8AB0D6767112C /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-HabitsTests/Pods-HabitsTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Nimble/Nimble.framework",
-				"${BUILT_PRODUCTS_DIR}/Quick/Quick.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Nimble.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Quick.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HabitsTests/Pods-HabitsTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		14402475548C5252A893C248 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;

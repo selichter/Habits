@@ -9,8 +9,6 @@ target 'Habits' do
 
   target 'HabitsTests' do
     inherit! :search_paths
-    pod 'Nimble', "~> 7.3.1"
-    pod 'Quick'
   end
 
   target 'HabitsUITests' do
