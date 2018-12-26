@@ -16,9 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     fileprivate func migrateRealm() {
         let config = Realm.Configuration(
-            schemaVersion: 1,
+            schemaVersion: 3,
             migrationBlock: { migration, oldSchemaVersion in
                 if (oldSchemaVersion < 1) {
+                    // The enumerateObjects(ofType:_:) method iterates
+                    // over every Person object stored in the Realm file
+                    migration.enumerateObjects(ofType: RealmHabit.className()) { oldObject, newObject in
+                        newObject!["currentCount"] = 0
+                        newObject!["target"] = 0
+                    }
                 }
         })
         Realm.Configuration.defaultConfiguration = config
@@ -26,8 +32,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     fileprivate func populateHabits() {
         let habitDataSource = HabitDataSource()
-        let habit1 = HabitEntity(name: "workout")
-        let habit2 = HabitEntity(name: "drink water")
+        let habit1 = HabitEntity(name: "workout", currentCount: 1, target: 3, timePeriod: "weekly", measurement: "hours")
+        let habit2 = HabitEntity(name: "drink water", currentCount: 0, target: 2, timePeriod: "daily", measurement: "ounces")
         habitDataSource.insert(item: habit1)
         habitDataSource.insert(item: habit2)
     }

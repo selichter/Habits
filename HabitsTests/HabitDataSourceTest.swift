@@ -19,8 +19,8 @@ class HabitDataSourceTest: XCTestCase {
 
         habitDataSource.clean()
 
-        let habit1 = HabitEntity(name: "drink water")
-        let habit2 = HabitEntity(name: "exercise")
+        let habit1 = HabitEntity(name: "drink water", currentCount: 0, target: 2, timePeriod: "daily", measurement: "ounces")
+        let habit2 = HabitEntity(name: "exercise", currentCount: 0, target: 2, timePeriod: "weekly", measurement: "hours")
 
         try! realm.write {
             realm.add(RealmHabit(habit: habit1))
@@ -49,7 +49,7 @@ class HabitDataSourceTest: XCTestCase {
     }
 
     func testInsertPutsHabitIntoRealm() {
-        let habit3 = HabitEntity(name: "sleep")
+        let habit3 = HabitEntity(name: "sleep", currentCount: 0, target: 2, timePeriod: "daily", measurement: "ounces")
 
         habitDataSource.insert(item: habit3)
         let fetchedHabit = habitDataSource.getById(id: habit3.name)
@@ -58,7 +58,7 @@ class HabitDataSourceTest: XCTestCase {
     }
 
     func testUpdateHabitUpdatesGivenHabit() {
-        let habit = HabitEntity(name: "something")
+        let habit = HabitEntity(name: "something", currentCount: 0, target: 2, timePeriod: "daily", measurement: "ounces")
         habitDataSource.insert(item: habit)
 
         XCTAssertThrowsError(try habitDataSource.update(item: habit))
