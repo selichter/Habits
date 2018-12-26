@@ -26,6 +26,15 @@ class HabitsStepDefinitions: StepDefiner {
             XCTAssert(cells.staticTexts["drink water"].waitForExistence(timeout: 2))
             XCTAssert(cells.staticTexts["workout"].waitForExistence(timeout: 2))
             
+            XCTAssert(cells.staticTexts["1/3"].waitForExistence(timeout: 2))
+            XCTAssert(cells.staticTexts["0/2"].waitForExistence(timeout: 2))
+            
+            XCTAssert(cells.staticTexts["weekly"].waitForExistence(timeout: 2))
+            XCTAssert(cells.staticTexts["daily"].waitForExistence(timeout: 2))
+            
+            XCTAssert(cells.staticTexts["ounces"].waitForExistence(timeout: 2))
+            XCTAssert(cells.staticTexts["hours"].waitForExistence(timeout: 2))
+            
             XCTAssertEqual(cells.count, 2)
         }
       

@@ -12,7 +12,11 @@ import XCTest
 
 class HabitTests: XCTestCase {
     func testCreateRealmHabitFromHabitEntity() {
-        let habitEntity = HabitEntity(name:"drink water")
+        let habitEntity = HabitEntity(name:"drink water",
+                                      currentCount: 0,
+                                      target: 0,
+                                      timePeriod: "daily",
+                                      measurement: "ounces")
         let realmHabit = RealmHabit(habit: habitEntity)
         XCTAssertEqual(habitEntity.name, realmHabit.name)
     }
