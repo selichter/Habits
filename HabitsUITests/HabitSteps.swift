@@ -23,17 +23,19 @@ class HabitsStepDefinitions: StepDefiner {
         
         step("I see habits displayed") {
             let cells = self.app.collectionViews.cells
-            XCTAssert(cells.staticTexts["drink water"].waitForExistence(timeout: 2))
-            XCTAssert(cells.staticTexts["workout"].waitForExistence(timeout: 2))
+            let firstCell = self.app.collectionViews.cells.element(boundBy: 0)
             
-            XCTAssert(cells.staticTexts["1/3"].waitForExistence(timeout: 2))
-            XCTAssert(cells.staticTexts["0/2"].waitForExistence(timeout: 2))
+            XCTAssertEqual(firstCell.staticTexts["habitTitle"].label, "workout")
+            XCTAssertEqual(firstCell.staticTexts["habitValues"].label, "1/3")
+            XCTAssertEqual(firstCell.staticTexts["measurement"].label, "hours")
+            XCTAssertEqual(firstCell.staticTexts["timePeriod"].label, "weekly")
+
+            let secondCell = self.app.collectionViews.cells.element(boundBy: 1)
             
-            XCTAssert(cells.staticTexts["weekly"].waitForExistence(timeout: 2))
-            XCTAssert(cells.staticTexts["daily"].waitForExistence(timeout: 2))
-            
-            XCTAssert(cells.staticTexts["ounces"].waitForExistence(timeout: 2))
-            XCTAssert(cells.staticTexts["hours"].waitForExistence(timeout: 2))
+            XCTAssertEqual(secondCell.staticTexts["habitTitle"].label, "drink water")
+            XCTAssertEqual(secondCell.staticTexts["habitValues"].label, "0/2")
+            XCTAssertEqual(secondCell.staticTexts["measurement"].label, "ounces")
+            XCTAssertEqual(secondCell.staticTexts["timePeriod"].label, "daily")
             
             XCTAssertEqual(cells.count, 2)
         }
