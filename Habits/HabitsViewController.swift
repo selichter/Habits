@@ -26,6 +26,16 @@ class HabitsCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return habits.count
     }
+    
+    override func collectionView(_ collectionView: UICollectionView,
+                        didSelectItemAt indexPath: IndexPath) {
+        
+        var habit = habits[indexPath.row]
+        habit.currentCount += 1
+        let _ = habits[indexPath.row].currentCount += 1
+        try? dataSource.update(item: habit)
+        collectionView.reloadData()
+    }
 
     override func collectionView(_ collectionView: UICollectionView,
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

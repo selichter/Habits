@@ -18,6 +18,8 @@ class HabitsUITests: XCTestCase {
     func testHabitDisplay() {
         Given("I launch the app")
         Then("I see habits displayed")
+        Then("I tap on the first cell")
+        And("The count is increased")
     }
 
 }

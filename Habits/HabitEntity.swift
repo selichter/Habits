@@ -3,7 +3,7 @@ import RealmSwift
 
 struct HabitEntity {
     let name: String
-    let currentCount: Int
+    var currentCount: Int
     let target: Int
     let timePeriod: String
     let measurement: String

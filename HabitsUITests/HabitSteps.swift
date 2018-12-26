@@ -37,6 +37,19 @@ class HabitsStepDefinitions: StepDefiner {
             
             XCTAssertEqual(cells.count, 2)
         }
+        
+        step("I tap on the first cell") {
+            let cell = self.app.collectionViews.cells.element(boundBy: 0)
+            XCTAssertEqual(cell.staticTexts["habitValues"].label, "1/3")
+
+            cell.tap()
+        }
+        
+        step("The count is increased"){
+            let cell = self.app.collectionViews.cells.element(boundBy: 0)
+            XCTAssertEqual(cell.staticTexts["habitValues"].label, "2/3")
+        }
+        
       
     }
 }
