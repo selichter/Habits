@@ -37,7 +37,6 @@ class HabitsStepDefinitions: StepDefiner {
             XCTAssertEqual(secondCell.staticTexts["measurement"].label, "ounces")
             XCTAssertEqual(secondCell.staticTexts["timePeriod"].label, "daily")
             
-            XCTAssertEqual(cells.count, 2)
         }
         
         step("I tap on the first cell") {
