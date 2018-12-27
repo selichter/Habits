@@ -42,8 +42,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                  target: 2,
                                  timePeriod: "daily",
                                  measurement: "ounces")
+        let habit3 = HabitEntity(name: "wat",
+                                 currentCount: 0,
+                                 target: 2,
+                                 timePeriod: "daily",
+                                 measurement: "ounces")
+        let habit4 = HabitEntity(name: "ummm",
+                                 currentCount: 0,
+                                 target: 2,
+                                 timePeriod: "daily",
+                                 measurement: "ounces")
         habitDataSource.insert(item: habit1)
         habitDataSource.insert(item: habit2)
+        habitDataSource.insert(item: habit3)
+        habitDataSource.insert(item: habit4)
     }
 
     func application(_ application: UIApplication,
