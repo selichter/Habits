@@ -22,7 +22,6 @@ class HabitsStepDefinitions: StepDefiner {
         }
         
         step("I see habits displayed") {
-            let cells = self.app.collectionViews.cells
             let firstCell = self.app.collectionViews.cells.element(boundBy: 0)
             
             XCTAssertEqual(firstCell.staticTexts["habitTitle"].label, "workout")
