@@ -41,11 +41,7 @@ class HabitsCollectionViewController: UICollectionViewController {
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let identifier = "HabitCell"
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! HabitCell
-        let habit = habits[indexPath.row]
-        cell.name.text = habit.name
-        cell.standings.text = "\(habit.currentCount)/\(habit.target)"
-        cell.measurement.text = habit.measurement
-        cell.timePeriod.text = habit.timePeriod
+        cell.render(habit: habits[indexPath.row])
         return cell
     }
 }
