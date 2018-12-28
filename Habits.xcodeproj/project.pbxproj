@@ -23,6 +23,9 @@
 		DF826C4A21D068A100A525B2 /* HabitDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF826C4921D068A100A525B2 /* HabitDataSourceTest.swift */; };
 		DFDC4F7C21D093B200C95C13 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC4F7B21D093B200C95C13 /* DataSource.swift */; };
 		DFDC4F7E21D1318700C95C13 /* HabitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC4F7D21D1318700C95C13 /* HabitTests.swift */; };
+		DFDC4FA921D5A0D500C95C13 /* NewHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC4FA821D5A0D500C95C13 /* NewHabitViewController.swift */; };
+		DFDC4FAB21D5C16D00C95C13 /* NavigationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC4FAA21D5C16D00C95C13 /* NavigationUITests.swift */; };
+		DFDC4FAD21D5C18100C95C13 /* NavigationSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC4FAC21D5C18100C95C13 /* NavigationSteps.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +73,9 @@
 		DF826C4921D068A100A525B2 /* HabitDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDataSourceTest.swift; sourceTree = "<group>"; };
 		DFDC4F7B21D093B200C95C13 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		DFDC4F7D21D1318700C95C13 /* HabitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTests.swift; sourceTree = "<group>"; };
+		DFDC4FA821D5A0D500C95C13 /* NewHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitViewController.swift; sourceTree = "<group>"; };
+		DFDC4FAA21D5C16D00C95C13 /* NavigationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUITests.swift; sourceTree = "<group>"; };
+		DFDC4FAC21D5C18100C95C13 /* NavigationSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationSteps.swift; sourceTree = "<group>"; };
 		ED1FE072B05A2C53A1344E5E /* Pods-Habits.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Habits.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Habits/Pods-Habits.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -159,6 +165,7 @@
 				DF51E0E921CFEAE200F770C0 /* HabitCell.swift */,
 				DF826C4721D065BA00A525B2 /* HabitDataSource.swift */,
 				DFDC4F7B21D093B200C95C13 /* DataSource.swift */,
+				DFDC4FA821D5A0D500C95C13 /* NewHabitViewController.swift */,
 			);
 			path = Habits;
 			sourceTree = "<group>";
@@ -179,6 +186,8 @@
 				DF81318221CB30A1003434E2 /* HabitsUITests.swift */,
 				DF51E0E121CC9C7500F770C0 /* HabitSteps.swift */,
 				DF81318421CB30A1003434E2 /* Info.plist */,
+				DFDC4FAA21D5C16D00C95C13 /* NavigationUITests.swift */,
+				DFDC4FAC21D5C18100C95C13 /* NavigationSteps.swift */,
 			);
 			path = HabitsUITests;
 			sourceTree = "<group>";
@@ -435,6 +444,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFDC4F7C21D093B200C95C13 /* DataSource.swift in Sources */,
+				DFDC4FA921D5A0D500C95C13 /* NewHabitViewController.swift in Sources */,
 				DF51E0E821CFDD4800F770C0 /* HabitEntity.swift in Sources */,
 				DF826C4821D065BA00A525B2 /* HabitDataSource.swift in Sources */,
 				DF81316521CB30A0003434E2 /* HabitsViewController.swift in Sources */,
@@ -457,7 +467,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				DF51E0E221CC9C7500F770C0 /* HabitSteps.swift in Sources */,
+				DFDC4FAB21D5C16D00C95C13 /* NavigationUITests.swift in Sources */,
 				DF81318321CB30A1003434E2 /* HabitsUITests.swift in Sources */,
+				DFDC4FAD21D5C18100C95C13 /* NavigationSteps.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
