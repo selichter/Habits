@@ -10,7 +10,7 @@ platform :ios do
     lane :test do
       scan(
         scheme: "Habits",
-        devices: ["iPhone 8"],
+        devices: ["iPhone X"],
       )
     end
 

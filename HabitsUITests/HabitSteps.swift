@@ -55,10 +55,11 @@ class HabitsStepDefinitions: StepDefiner {
             enterText("1", inTextField: "targetInput")
             enterText("Test Measurement", inTextField: "measurementInput")
             enterText("Test Time Period", inTextField: "timePeriodInput")
-            
-            self.app.buttons["Create Habit"].tap()
+            XCTAssert(self.app.buttons["CreateHabit"].waitForExistence(timeout: 3))
+
+            self.app.buttons["CreateHabit"].tap()
         }
-        
+
         step("The new habit is displayed") {
             let cellCount = self.app.collectionViews.cells.count
             let lastCellIndex = cellCount - 1
@@ -76,6 +77,7 @@ class HabitsStepDefinitions: StepDefiner {
             textField(name).tap()
             textField(name).typeText(text)
             textField(name).typeText(enterButton)
+
         }
         
         func textField(_ name: String) -> XCUIElement {

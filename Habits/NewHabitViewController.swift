@@ -20,7 +20,7 @@ extension UIViewController {
 }
 
 
-class NewHabitViewController: UIViewController {
+class NewHabitViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var habitNameTextField: UITextField!
     @IBOutlet weak var targetTextField: UITextField!
     @IBOutlet weak var measurementTextField: UITextField!
@@ -36,6 +36,18 @@ class NewHabitViewController: UIViewController {
         HabitDataSource.sharedRealm.insert(item: newHabit)
         print("saved realm")
         performSegueToReturnBack()
+    }
+    
+    override func viewDidLoad() {
+        habitNameTextField.delegate = self
+        targetTextField.delegate = self
+        measurementTextField.delegate = self
+        timePeriodTextField.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
 }
