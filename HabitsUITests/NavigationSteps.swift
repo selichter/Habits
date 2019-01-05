@@ -13,12 +13,17 @@ class NavigationStepDefinitions: StepDefiner {
             self.launchApp()
         }
         
-        step("I tap on the '(.*)' tab") { (match: String) in
-            self.app.tabBars.buttons[match].tap()
+        step("I tap on the '(.*)' navigation") { (match: String) in
+//            self.app.tabBars.buttons[match].tap()
+            self.app.navigationBars.buttons["+"].tap()
         }
         
         step("I am on the new habit view") {
-            XCTAssert(self.app.staticTexts["new habit"].waitForExistence(timeout: 2))
+            XCTAssert(self.app.textFields["newHabitName"].waitForExistence(timeout: 2))
+        }
+        
+        step("I tap on the back navigation") {
+            self.app.navigationBars.buttons["Back"].tap()
         }
         
         step("I am on the habits view") {

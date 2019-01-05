@@ -11,6 +11,7 @@ import RealmSwift
 
 class HabitDataSource: DataSource {
     let realm = try! Realm()
+    static let sharedRealm = HabitDataSource()
 
     func getAll() -> [HabitEntity] {
         return realm.objects(RealmHabit.self).map { $0.entity }
