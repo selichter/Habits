@@ -8,9 +8,9 @@ class NavigationUITests: XCTestCase {
     
     func testTabBarNav() {
         Given("I launch the app")
-        When("I tap on the 'New Habit' tab")
+        When("I tap on the 'New Habit' navigation")
         Then("I am on the new habit view")
-        When("I tap on the 'Habits' tab")
+        When("I tap on the back navigation")
         Then("I am on the habits view")
     }
 }

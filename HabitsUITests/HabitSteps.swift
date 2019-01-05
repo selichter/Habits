@@ -50,6 +50,37 @@ class HabitsStepDefinitions: StepDefiner {
             XCTAssertEqual(cell.staticTexts["habitValues"].label, "2/3")
         }
         
-      
+        step("I enter data for a new habit") {
+            enterText("Test Habit Name", inTextField: "newHabitName")
+            enterText("1", inTextField: "targetInput")
+            enterText("Test Measurement", inTextField: "measurementInput")
+            enterText("Test Time Period", inTextField: "timePeriodInput")
+            
+            self.app.buttons["Create Habit"].tap()
+        }
+        
+        step("The new habit is displayed") {
+            let cellCount = self.app.collectionViews.cells.count
+            let lastCellIndex = cellCount - 1
+            let lastCell = self.app.collectionViews.cells.element(boundBy: lastCellIndex)
+
+            XCTAssertEqual(lastCell.staticTexts["habitTitle"].label, "Test Habit Name")
+            XCTAssertEqual(lastCell.staticTexts["habitValues"].label, "0/1")
+            XCTAssertEqual(lastCell.staticTexts["measurement"].label, "Test Measurement")
+            XCTAssertEqual(lastCell.staticTexts["timePeriod"].label, "Test Time Period")
+        }
+        
+        func enterText(_ text: String, inTextField name: String) {
+            let enterButton = "\n"
+            
+            textField(name).tap()
+            textField(name).typeText(text)
+            textField(name).typeText(enterButton)
+        }
+        
+        func textField(_ name: String) -> XCUIElement {
+            return XCUIApplication().textFields[name]
+        }
+        
     }
 }

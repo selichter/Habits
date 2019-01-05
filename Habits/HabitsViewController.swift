@@ -18,6 +18,13 @@ class HabitsCollectionViewController: UICollectionViewController {
         dataSource = HabitDataSource()
         habits = dataSource.getAll()
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(false)
+        dataSource = HabitDataSource()
+        habits = dataSource.getAll()
+        collectionView.reloadData()
+    }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
