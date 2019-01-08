@@ -24,18 +24,10 @@ class HabitsStepDefinitions: StepDefiner {
         step("I see habits displayed") {
             let firstCell = self.app.collectionViews.cells.element(boundBy: 0)
             
-            XCTAssertEqual(firstCell.staticTexts["habitTitle"].label, "workout")
+            XCTAssertEqual(firstCell.staticTexts["habitTitle"].label, "WORKOUT")
             XCTAssertEqual(firstCell.staticTexts["habitValues"].label, "1/3")
             XCTAssertEqual(firstCell.staticTexts["measurement"].label, "hours")
             XCTAssertEqual(firstCell.staticTexts["timePeriod"].label, "weekly")
-
-            let secondCell = self.app.collectionViews.cells.element(boundBy: 1)
-            
-            XCTAssertEqual(secondCell.staticTexts["habitTitle"].label, "drink water")
-            XCTAssertEqual(secondCell.staticTexts["habitValues"].label, "0/2")
-            XCTAssertEqual(secondCell.staticTexts["measurement"].label, "ounces")
-            XCTAssertEqual(secondCell.staticTexts["timePeriod"].label, "daily")
-            
         }
         
         step("I tap on the first cell") {
@@ -61,14 +53,13 @@ class HabitsStepDefinitions: StepDefiner {
         }
 
         step("The new habit is displayed") {
-            let cellCount = self.app.collectionViews.cells.count
-            let lastCellIndex = cellCount - 1
-            let lastCell = self.app.collectionViews.cells.element(boundBy: lastCellIndex)
+            sleep(5)
+            let lastCell = self.app.collectionViews.cells.element(boundBy: 1)
 
-            XCTAssertEqual(lastCell.staticTexts["habitTitle"].label, "Test Habit Name")
+            XCTAssertEqual(lastCell.staticTexts["habitTitle"].label, "TEST HABIT NAME")
             XCTAssertEqual(lastCell.staticTexts["habitValues"].label, "0/1")
-            XCTAssertEqual(lastCell.staticTexts["measurement"].label, "Test Measurement")
-            XCTAssertEqual(lastCell.staticTexts["timePeriod"].label, "Test Time Period")
+            XCTAssertEqual(lastCell.staticTexts["measurement"].label, "test measurement")
+            XCTAssertEqual(lastCell.staticTexts["timePeriod"].label, "test time period")
         }
         
         func enterText(_ text: String, inTextField name: String) {
@@ -77,7 +68,6 @@ class HabitsStepDefinitions: StepDefiner {
             textField(name).tap()
             textField(name).typeText(text)
             textField(name).typeText(enterButton)
-
         }
         
         func textField(_ name: String) -> XCUIElement {

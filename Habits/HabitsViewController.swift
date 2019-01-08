@@ -15,8 +15,18 @@ class HabitsCollectionViewController: UICollectionViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        
+        let width = UIScreen.main.bounds.width - 20
+        layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
+        layout.itemSize = CGSize(width: width / 2, height: width / 2)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        collectionView.collectionViewLayout = layout
+
         dataSource = HabitDataSource()
         habits = dataSource.getAll()
+        collectionView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {

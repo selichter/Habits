@@ -14,7 +14,6 @@ class NavigationStepDefinitions: StepDefiner {
         }
         
         step("I tap on the '(.*)' navigation") { (match: String) in
-//            self.app.tabBars.buttons[match].tap()
             self.app.navigationBars.buttons["+"].tap()
         }
         
@@ -29,7 +28,7 @@ class NavigationStepDefinitions: StepDefiner {
         step("I am on the habits view") {
             let firstCell = self.app.collectionViews.cells.element(boundBy: 0)
             
-            XCTAssertEqual(firstCell.staticTexts["habitTitle"].label, "workout")
+            XCTAssertEqual(firstCell.staticTexts["habitTitle"].label, "WORKOUT")
             XCTAssertEqual(firstCell.staticTexts["habitValues"].label, "1/3")
 
         }
