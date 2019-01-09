@@ -18,55 +18,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="G11-7I-1p5">
-                            <size key="itemSize" width="122" height="104"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Myk-8s-zcT">
+                            <size key="itemSize" width="50" height="50"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HabitCell" id="05c-Dt-uzW" customClass="HabitCell" customModule="Habits" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="122" height="104"/>
+                                <rect key="frame" x="0.0" y="0.0" width="151" height="135"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="122" height="104"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="151" height="135"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Daily Water" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2u-lS-SqV">
-                                            <rect key="frame" x="14" y="12" width="79" height="18"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Daily Water" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2u-lS-SqV">
+                                            <rect key="frame" x="26" y="20" width="99" height="22"/>
                                             <accessibility key="accessibilityConfiguration" identifier="habitTitle"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="60/80" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2TO-be-NwP">
-                                            <rect key="frame" x="38" y="42" width="47" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <accessibility key="accessibilityConfiguration" identifier="habitValues"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="measurement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2x1-xX-Uq2">
-                                            <rect key="frame" x="14" y="63" width="83" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="measurement" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2x1-xX-Uq2">
+                                            <rect key="frame" x="14" y="84" width="117" height="16"/>
                                             <accessibility key="accessibilityConfiguration" identifier="measurement"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time period" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMS-dW-vmo">
-                                            <rect key="frame" x="14" y="83" width="69" height="16"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="time period" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lMS-dW-vmo">
+                                            <rect key="frame" x="14" y="104" width="117" height="16"/>
                                             <accessibility key="accessibilityConfiguration" identifier="timePeriod"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <nil key="textColor"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="60/80" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2TO-be-NwP">
+                                            <rect key="frame" x="14" y="49" width="117" height="27"/>
+                                            <accessibility key="accessibilityConfiguration" identifier="habitValues"/>
+                                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                 </view>
                                 <color key="backgroundColor" red="0.72336632010000002" green="0.68902040639999995" blue="0.21332695679999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="J2u-lS-SqV" firstAttribute="centerX" secondItem="05c-Dt-uzW" secondAttribute="centerX" id="5MV-3K-bUh"/>
+                                    <constraint firstItem="2x1-xX-Uq2" firstAttribute="leading" secondItem="05c-Dt-uzW" secondAttribute="leading" constant="14" id="9ng-Me-Div"/>
+                                    <constraint firstItem="2x1-xX-Uq2" firstAttribute="centerX" secondItem="05c-Dt-uzW" secondAttribute="centerX" id="ACh-mO-iap"/>
+                                    <constraint firstItem="lMS-dW-vmo" firstAttribute="top" secondItem="2x1-xX-Uq2" secondAttribute="bottom" constant="4" id="CJj-3s-faT"/>
+                                    <constraint firstItem="2TO-be-NwP" firstAttribute="top" secondItem="J2u-lS-SqV" secondAttribute="bottom" constant="7" id="Ezd-ie-bSb"/>
+                                    <constraint firstItem="lMS-dW-vmo" firstAttribute="centerX" secondItem="05c-Dt-uzW" secondAttribute="centerX" id="bn0-Hi-qPB"/>
+                                    <constraint firstItem="J2u-lS-SqV" firstAttribute="top" secondItem="05c-Dt-uzW" secondAttribute="top" constant="20" id="mGj-xD-4TR"/>
+                                    <constraint firstItem="2x1-xX-Uq2" firstAttribute="top" secondItem="05c-Dt-uzW" secondAttribute="top" constant="84" id="o1L-Vu-kW2"/>
+                                    <constraint firstItem="2TO-be-NwP" firstAttribute="centerX" secondItem="05c-Dt-uzW" secondAttribute="centerX" id="pWf-yH-HJJ"/>
+                                    <constraint firstItem="2x1-xX-Uq2" firstAttribute="top" secondItem="2TO-be-NwP" secondAttribute="bottom" constant="8" id="vky-h4-y22"/>
+                                </constraints>
+                                <size key="customSize" width="151" height="135"/>
                                 <connections>
                                     <outlet property="measurement" destination="2x1-xX-Uq2" id="FYe-7O-3qq"/>
                                     <outlet property="name" destination="J2u-lS-SqV" id="IPs-ON-NFN"/>
@@ -92,7 +101,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rg1-NP-HXp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="188" y="670.61469265367316"/>
+            <point key="canvasLocation" x="188" y="669.71514242878561"/>
         </scene>
         <!--New Habit View Controller-->
         <scene sceneID="wTo-MX-4m8">
