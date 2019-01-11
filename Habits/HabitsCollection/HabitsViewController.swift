@@ -43,16 +43,6 @@ class HabitsCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return habits.count
     }
-    
-    override func collectionView(_ collectionView: UICollectionView,
-                        didSelectItemAt indexPath: IndexPath) {
-        
-        var habit = habits[indexPath.row]
-        habit.currentCount += 1
-        let _ = habits[indexPath.row].currentCount += 1
-        try? dataSource.update(item: habit)
-        collectionView.reloadData()
-    }
 
     override func collectionView(_ collectionView: UICollectionView,
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -60,5 +50,16 @@ class HabitsCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! HabitCell
         cell.render(habit: habits[indexPath.row])
         return cell
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showHabit" {
+            let viewController = segue.destination as! HabitViewController
+            let cell = sender as! HabitCell
+            let indexPaths = collectionView.indexPath(for: cell)
+            var thisHabitEntity = self.habits[indexPaths!.row] as HabitEntity
+            viewController.habitEntity = thisHabitEntity
+        }
+        
     }
 }
