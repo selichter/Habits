@@ -1,11 +1,3 @@
-//
-//  HabitDataSourceTest.swift
-//  HabitsTests
-//
-//  Created by Sarah Lichter on 12/23/18.
-//  Copyright © 2018 Sarah Lichter. All rights reserved.
-//
-
 import XCTest
 import RealmSwift
 @testable import Habits
