@@ -162,8 +162,8 @@
 				DFDC4FB421E8FCE800C95C13 /* HabitsCollection */,
 				DFDC4FB521E8FD1900C95C13 /* DataSource */,
 				DF81316621CB30A0003434E2 /* Main.storyboard */,
+				DF51E0E721CFDD4800F770C0 /* HabitEntity.swift */,
 				DF81316221CB309F003434E2 /* AppDelegate.swift */,
-				DF826C4721D065BA00A525B2 /* HabitDataSource.swift */,
 				DF81316921CB30A1003434E2 /* Assets.xcassets */,
 				DF81316B21CB30A1003434E2 /* LaunchScreen.storyboard */,
 				DF81316E21CB30A1003434E2 /* Info.plist */,
@@ -205,7 +205,7 @@
 		DFDC4FB521E8FD1900C95C13 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
-				DF51E0E721CFDD4800F770C0 /* HabitEntity.swift */,
+				DF826C4721D065BA00A525B2 /* HabitDataSource.swift */,
 				DFDC4F7B21D093B200C95C13 /* DataSource.swift */,
 			);
 			path = DataSource;
