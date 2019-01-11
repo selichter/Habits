@@ -37,9 +37,34 @@ class HabitsStepDefinitions: StepDefiner {
             cell.tap()
         }
         
+        step("The habit is displayed") {
+            let habitName = self.app.staticTexts["habitName"].label
+            let currentCount = self.app.staticTexts["currentCount"].label
+            
+            XCTAssertEqual(habitName, "WORKOUT")
+            XCTAssertEqual(currentCount, "1")
+        }
+        
+        step("I tap the increase button") {
+            self.app.buttons["increaseCount"].tap()
+        }
+        
         step("The count is increased"){
-            let cell = self.app.collectionViews.cells.element(boundBy: 0)
-            XCTAssertEqual(cell.staticTexts["habitValues"].label, "2/3")
+            let currentCount = self.app.staticTexts["currentCount"].label
+            XCTAssertEqual(currentCount, "2")
+        }
+        
+        step("I tap the decrease button") {
+            self.app.buttons["decreaseCount"].tap()
+        }
+        
+        step("The count is decreased"){
+            let currentCount = self.app.staticTexts["currentCount"].label
+            XCTAssertEqual(currentCount, "1")
+        }
+        
+        step("I tap the back button") {
+            self.app.navigationBars.buttons["Back"].tap()
         }
         
         step("I enter data for a new habit") {

@@ -26,6 +26,7 @@
 		DFDC4FA921D5A0D500C95C13 /* NewHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC4FA821D5A0D500C95C13 /* NewHabitViewController.swift */; };
 		DFDC4FAB21D5C16D00C95C13 /* NavigationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC4FAA21D5C16D00C95C13 /* NavigationUITests.swift */; };
 		DFDC4FAD21D5C18100C95C13 /* NavigationSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC4FAC21D5C18100C95C13 /* NavigationSteps.swift */; };
+		DFDC4FB321E8FBE900C95C13 /* HabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC4FB221E8FBE900C95C13 /* HabitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +77,7 @@
 		DFDC4FA821D5A0D500C95C13 /* NewHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitViewController.swift; sourceTree = "<group>"; };
 		DFDC4FAA21D5C16D00C95C13 /* NavigationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUITests.swift; sourceTree = "<group>"; };
 		DFDC4FAC21D5C18100C95C13 /* NavigationSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationSteps.swift; sourceTree = "<group>"; };
+		DFDC4FB221E8FBE900C95C13 /* HabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewController.swift; sourceTree = "<group>"; };
 		ED1FE072B05A2C53A1344E5E /* Pods-Habits.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Habits.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Habits/Pods-Habits.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,17 +157,16 @@
 		DF81316121CB309F003434E2 /* Habits */ = {
 			isa = PBXGroup;
 			children = (
-				DF81316221CB309F003434E2 /* AppDelegate.swift */,
-				DF81316421CB30A0003434E2 /* HabitsViewController.swift */,
+				DFDC4FB721E8FD9800C95C13 /* Habit */,
+				DFDC4FB621E8FD7100C95C13 /* NewHabit */,
+				DFDC4FB421E8FCE800C95C13 /* HabitsCollection */,
+				DFDC4FB521E8FD1900C95C13 /* DataSource */,
 				DF81316621CB30A0003434E2 /* Main.storyboard */,
+				DF81316221CB309F003434E2 /* AppDelegate.swift */,
+				DF826C4721D065BA00A525B2 /* HabitDataSource.swift */,
 				DF81316921CB30A1003434E2 /* Assets.xcassets */,
 				DF81316B21CB30A1003434E2 /* LaunchScreen.storyboard */,
 				DF81316E21CB30A1003434E2 /* Info.plist */,
-				DF51E0E721CFDD4800F770C0 /* HabitEntity.swift */,
-				DF51E0E921CFEAE200F770C0 /* HabitCell.swift */,
-				DF826C4721D065BA00A525B2 /* HabitDataSource.swift */,
-				DFDC4F7B21D093B200C95C13 /* DataSource.swift */,
-				DFDC4FA821D5A0D500C95C13 /* NewHabitViewController.swift */,
 			);
 			path = Habits;
 			sourceTree = "<group>";
@@ -190,6 +191,40 @@
 				DFDC4FAC21D5C18100C95C13 /* NavigationSteps.swift */,
 			);
 			path = HabitsUITests;
+			sourceTree = "<group>";
+		};
+		DFDC4FB421E8FCE800C95C13 /* HabitsCollection */ = {
+			isa = PBXGroup;
+			children = (
+				DF81316421CB30A0003434E2 /* HabitsViewController.swift */,
+				DF51E0E921CFEAE200F770C0 /* HabitCell.swift */,
+			);
+			path = HabitsCollection;
+			sourceTree = "<group>";
+		};
+		DFDC4FB521E8FD1900C95C13 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				DF51E0E721CFDD4800F770C0 /* HabitEntity.swift */,
+				DFDC4F7B21D093B200C95C13 /* DataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		DFDC4FB621E8FD7100C95C13 /* NewHabit */ = {
+			isa = PBXGroup;
+			children = (
+				DFDC4FA821D5A0D500C95C13 /* NewHabitViewController.swift */,
+			);
+			path = NewHabit;
+			sourceTree = "<group>";
+		};
+		DFDC4FB721E8FD9800C95C13 /* Habit */ = {
+			isa = PBXGroup;
+			children = (
+				DFDC4FB221E8FBE900C95C13 /* HabitViewController.swift */,
+			);
+			path = Habit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -446,6 +481,7 @@
 				DFDC4F7C21D093B200C95C13 /* DataSource.swift in Sources */,
 				DFDC4FA921D5A0D500C95C13 /* NewHabitViewController.swift in Sources */,
 				DF51E0E821CFDD4800F770C0 /* HabitEntity.swift in Sources */,
+				DFDC4FB321E8FBE900C95C13 /* HabitViewController.swift in Sources */,
 				DF826C4821D065BA00A525B2 /* HabitDataSource.swift in Sources */,
 				DF81316521CB30A0003434E2 /* HabitsViewController.swift in Sources */,
 				DF51E0EA21CFEAE200F770C0 /* HabitCell.swift in Sources */,
