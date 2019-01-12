@@ -27,7 +27,8 @@ class NewHabitViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var timePeriodTextField: UITextField!
     
     @IBAction func createHabit(_ sender: Any) {
-        let newHabit = HabitEntity(name: habitNameTextField.text ?? "",
+        let newHabit = HabitEntity(habitId: UUID().uuidString,
+                name: habitNameTextField.text ?? "",
                                    currentCount: 0,
                                    target: Int(targetTextField.text!) ?? 0,
                                    timePeriod: timePeriodTextField.text ?? "",
