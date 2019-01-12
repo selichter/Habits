@@ -20,7 +20,7 @@ class HabitViewController: UIViewController {
             print(habit.currentCount)
             
             habit.currentCount += 1
-            try? HabitDataSource.sharedRealm.update(item: habit)
+            HabitDataSource.sharedRealm.insert(item: habit)
             
             habitEntity = habit
             currentCount.text = "\(habit.currentCount)"
@@ -35,7 +35,7 @@ class HabitViewController: UIViewController {
             print(habit.currentCount)
             habit.currentCount -= 1
             print(habit.currentCount)
-            try? HabitDataSource.sharedRealm.update(item: habit)
+            HabitDataSource.sharedRealm.insert(item: habit)
             
             habitEntity = habit
             currentCount.text = "\(habit.currentCount)"

@@ -11,12 +11,12 @@ class HabitDataSource: DataSource {
     }
 
     func getById(id: String) -> HabitEntity {
-        return realm.objects(RealmHabit.self).filter("name == %@", id).first!.entity
+        return realm.objects(RealmHabit.self).filter("habitId == %@", id).first!.entity
     }
 
     func insert(item: HabitEntity) {
         try! realm.write {
-            realm.add(RealmHabit(habit: item))
+            realm.add(RealmHabit(habit: item), update: true)
         }
     }
 
