@@ -12,6 +12,7 @@ class HabitViewController: UIViewController {
         guard let habit = self.habitEntity else {
             return
         }
+        view.backgroundColor = allColors[habit.colorScheme]!.primary
         populateDisplay(habit)
     }
     
@@ -42,7 +43,9 @@ class HabitViewController: UIViewController {
     
     func populateDisplay(_ habit: HabitEntity) {
         name.text = habit.name.uppercased()
+        name.textColor = allColors[habit.colorScheme]!.secondary
         currentCount.text = "\(habit.currentCount)"
+        currentCount.textColor = allColors[habit.colorScheme]!.secondary
     }
     
 }

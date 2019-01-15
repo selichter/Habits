@@ -17,9 +17,12 @@ class NewHabitViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var measurementTextField: UITextField!
     
     @IBOutlet weak var timePeriodStackView: UIStackView!
+    let colorChoices = allColors
 
+    @IBOutlet weak var colorChoiceStackView: UIStackView!
     
     var timePeriodValue = String()
+    var colorChoice = String()
     
     @IBAction func createHabit(_ sender: Any) {
         let newHabit = HabitEntity(habitId: UUID().uuidString,
@@ -27,7 +30,7 @@ class NewHabitViewController: UIViewController, UITextFieldDelegate {
                                    currentCount: 0,
                                    target: Int(targetTextField.text!) ?? 0,
                                    timePeriod: timePeriodValue,
-                                   measurement: measurementTextField.text ?? ""
+                                   measurement: measurementTextField.text ?? "", colorScheme: colorChoice
                                    )
         HabitDataSource.sharedRealm.insert(item: newHabit)
         print("saved realm")
@@ -44,6 +47,10 @@ class NewHabitViewController: UIViewController, UITextFieldDelegate {
         measurementTextField.delegate = self
         for choice in timePeriodChoices {
             timePeriodStackView.addArrangedSubview(makeButtonsWithText(choice))
+        }
+        
+        for choice in Array(colorChoices.keys) {
+            colorChoiceStackView.addArrangedSubview(makeColorButtons(choice))
         }
     }
     
@@ -66,6 +73,21 @@ class NewHabitViewController: UIViewController, UITextFieldDelegate {
         return timePeriodButton
     }
     
+    func makeColorButtons(_ color: String) -> UIButton {
+        let colorChoiceButton = UIButton(type: UIButton.ButtonType.system)
+        colorChoiceButton.backgroundColor = allColors[color]!.primary
+        colorChoiceButton.accessibilityIdentifier = color
+        
+        let width = colorChoiceButton.intrinsicContentSize.width
+        colorChoiceButton.frame = CGRect(x: 20, y: 20, width: width, height: 10)
+        colorChoiceButton.layer.masksToBounds = true
+        colorChoiceButton.layer.cornerRadius = colorChoiceButton.frame.width/2
+        
+        colorChoiceButton.addTarget(self, action: #selector(selectColor), for: .touchUpInside)
+        return colorChoiceButton
+
+    }
+    
     @IBAction func selectButtonValue(sender:UIButton){
         for button in timePeriodStackView.subviews {
             if button is UIButton {
@@ -74,6 +96,18 @@ class NewHabitViewController: UIViewController, UITextFieldDelegate {
         }
         sender.backgroundColor = UIColor.lightGray
         timePeriodValue = sender.titleLabel!.text ?? "daily"
+    }
+    
+    @IBAction func selectColor(sender:UIButton){
+        for button in colorChoiceStackView.subviews {
+            if button is UIButton {
+                button.layer.borderWidth = 0
+                button.layer.borderColor = UIColor.white.cgColor
+            }
+        }
+        sender.layer.borderColor = UIColor.black.cgColor
+        sender.layer.borderWidth = 2
+        colorChoice = sender.accessibilityIdentifier ?? "cyan"
     }
     
     
