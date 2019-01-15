@@ -17,7 +17,6 @@ class HabitViewController: UIViewController {
     
     @IBAction func increaseCount(_ sender: Any) {
         if var habit = habitEntity {
-            print(habit.currentCount)
             
             habit.currentCount += 1
             HabitDataSource.sharedRealm.insert(item: habit)
@@ -32,9 +31,7 @@ class HabitViewController: UIViewController {
     
     @IBAction func decreaseCount(_ sender: Any) {
         if var habit = habitEntity {
-            print(habit.currentCount)
             habit.currentCount -= 1
-            print(habit.currentCount)
             HabitDataSource.sharedRealm.insert(item: habit)
             
             habitEntity = habit

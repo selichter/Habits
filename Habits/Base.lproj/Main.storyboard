@@ -161,16 +161,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lTF-Xn-LKb">
-                                <rect key="frame" x="32" y="369" width="281" height="30"/>
-                                <accessibility key="accessibilityConfiguration" identifier="timePeriodInput"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create A Habit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jU-ti-zmM">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Create A Habit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jU-ti-zmM">
                                 <rect key="frame" x="131" y="20" width="112" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -183,6 +175,9 @@
                                     <action selector="createHabit:" destination="lOQ-Nn-gm6" eventType="touchUpInside" id="VjN-vu-hTj"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="esE-P9-hvJ">
+                                <rect key="frame" x="16" y="369" width="343" height="55"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -190,16 +185,19 @@
                             <constraint firstItem="BdH-nG-OMJ" firstAttribute="leading" secondItem="fJs-Of-tMy" secondAttribute="leading" constant="32" id="0wa-Yj-a5u"/>
                             <constraint firstItem="MbK-YI-fBM" firstAttribute="top" secondItem="h5t-bu-L3l" secondAttribute="bottom" constant="17" id="2LZ-6B-gY3"/>
                             <constraint firstItem="fJs-Of-tMy" firstAttribute="trailing" secondItem="BdH-nG-OMJ" secondAttribute="trailing" constant="62" id="3Ev-u3-Zb4"/>
+                            <constraint firstItem="esE-P9-hvJ" firstAttribute="leading" secondItem="fJs-Of-tMy" secondAttribute="leading" constant="16" id="4qt-nw-D4e"/>
                             <constraint firstItem="fJs-Of-tMy" firstAttribute="trailing" secondItem="fvY-n9-cA8" secondAttribute="trailing" constant="62" id="6tz-Wi-j4z"/>
                             <constraint firstItem="fJs-Of-tMy" firstAttribute="bottom" secondItem="fef-Bv-6mM" secondAttribute="bottom" constant="156" id="7vZ-Yt-nP4"/>
                             <constraint firstItem="fvY-n9-cA8" firstAttribute="leading" secondItem="ILA-9b-Wgj" secondAttribute="trailing" constant="-80" id="BkW-PS-42K"/>
                             <constraint firstItem="MbK-YI-fBM" firstAttribute="leading" secondItem="fJs-Of-tMy" secondAttribute="leading" constant="32" id="Buc-BA-P9J"/>
+                            <constraint firstItem="fJs-Of-tMy" firstAttribute="trailing" secondItem="esE-P9-hvJ" secondAttribute="trailing" constant="16" id="EVb-wd-sp6"/>
+                            <constraint firstItem="esE-P9-hvJ" firstAttribute="centerX" secondItem="6jU-ti-zmM" secondAttribute="centerX" id="Eao-Hc-ax9"/>
                             <constraint firstItem="fJs-Of-tMy" firstAttribute="trailing" secondItem="MbK-YI-fBM" secondAttribute="trailing" constant="237" id="LQT-zO-lT7"/>
-                            <constraint firstItem="fJs-Of-tMy" firstAttribute="trailing" secondItem="lTF-Xn-LKb" secondAttribute="trailing" constant="62" id="M1d-N4-j6f"/>
+                            <constraint firstItem="fef-Bv-6mM" firstAttribute="top" secondItem="esE-P9-hvJ" secondAttribute="bottom" constant="8" symbolic="YES" id="LX3-qz-Ok8"/>
                             <constraint firstItem="fJs-Of-tMy" firstAttribute="trailing" secondItem="3hk-Cb-gik" secondAttribute="trailing" constant="251" id="PMr-4l-LO2"/>
-                            <constraint firstItem="lTF-Xn-LKb" firstAttribute="top" secondItem="3hk-Cb-gik" secondAttribute="bottom" constant="8" id="Vlq-yK-dYz"/>
+                            <constraint firstItem="esE-P9-hvJ" firstAttribute="leading" secondItem="3hk-Cb-gik" secondAttribute="trailing" constant="-108" id="T0M-Fe-HQp"/>
                             <constraint firstItem="fef-Bv-6mM" firstAttribute="top" secondItem="fJs-Of-tMy" secondAttribute="top" constant="368" id="WXZ-ko-RYI"/>
-                            <constraint firstItem="lTF-Xn-LKb" firstAttribute="leading" secondItem="fJs-Of-tMy" secondAttribute="leading" constant="32" id="ZrC-2p-zhM"/>
+                            <constraint firstItem="esE-P9-hvJ" firstAttribute="top" secondItem="3hk-Cb-gik" secondAttribute="bottom" constant="8" symbolic="YES" id="Z83-KK-ULV"/>
                             <constraint firstItem="BdH-nG-OMJ" firstAttribute="top" secondItem="MbK-YI-fBM" secondAttribute="bottom" constant="8" id="aPb-qZ-vdG"/>
                             <constraint firstItem="ILA-9b-Wgj" firstAttribute="leading" secondItem="fJs-Of-tMy" secondAttribute="leading" constant="32" id="aXR-JA-bk5"/>
                             <constraint firstItem="h5t-bu-L3l" firstAttribute="leading" secondItem="fJs-Of-tMy" secondAttribute="leading" constant="32" id="aiP-zc-Ld3"/>
@@ -224,12 +222,12 @@
                         <outlet property="habitNameTextField" destination="fvY-n9-cA8" id="fRw-2T-vzC"/>
                         <outlet property="measurementTextField" destination="BdH-nG-OMJ" id="Sex-jr-QXU"/>
                         <outlet property="targetTextField" destination="h5t-bu-L3l" id="smT-M6-NbI"/>
-                        <outlet property="timePeriodTextField" destination="lTF-Xn-LKb" id="V9j-Dg-cGi"/>
+                        <outlet property="timePeriodStackView" destination="esE-P9-hvJ" id="hvF-3T-oHr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qN2-WK-EeL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="188" y="1415"/>
+            <point key="canvasLocation" x="188" y="1414.5427286356824"/>
         </scene>
         <!--Habit View Controller-->
         <scene sceneID="hjo-15-xp8">
