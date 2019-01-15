@@ -178,6 +178,10 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="esE-P9-hvJ">
                                 <rect key="frame" x="16" y="369" width="343" height="55"/>
                             </stackView>
+                            <stackView opaque="NO" contentMode="center" fixedFrame="YES" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RMM-O2-gRM">
+                                <rect key="frame" x="16" y="487" width="343" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -219,6 +223,7 @@
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="colorChoiceStackView" destination="RMM-O2-gRM" id="5jV-Sz-9Zm"/>
                         <outlet property="habitNameTextField" destination="fvY-n9-cA8" id="fRw-2T-vzC"/>
                         <outlet property="measurementTextField" destination="BdH-nG-OMJ" id="Sex-jr-QXU"/>
                         <outlet property="targetTextField" destination="h5t-bu-L3l" id="smT-M6-NbI"/>

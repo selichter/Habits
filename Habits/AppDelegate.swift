@@ -41,7 +41,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                  currentCount: 1,
                                  target: 3,
                                  timePeriod: "weekly",
-                                 measurement: "hours")
+                                 measurement: "hours",
+                                 colorScheme: "cyan")
         habitDataSource.insert(item: habit1)
     }
 
