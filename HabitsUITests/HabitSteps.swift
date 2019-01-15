@@ -71,7 +71,7 @@ class HabitsStepDefinitions: StepDefiner {
             enterText("Test Habit Name", inTextField: "newHabitName")
             enterText("1", inTextField: "targetInput")
             enterText("Test Measurement", inTextField: "measurementInput")
-            enterText("Test Time Period", inTextField: "timePeriodInput")
+            self.app.buttons["daily"].tap()
             XCTAssert(self.app.buttons["CreateHabit"].waitForExistence(timeout: 3))
 
             self.app.buttons["CreateHabit"].tap()
@@ -84,7 +84,7 @@ class HabitsStepDefinitions: StepDefiner {
             XCTAssertEqual(lastCell.staticTexts["habitTitle"].label, "TEST HABIT NAME")
             XCTAssertEqual(lastCell.staticTexts["habitValues"].label, "0/1")
             XCTAssertEqual(lastCell.staticTexts["measurement"].label, "test measurement")
-            XCTAssertEqual(lastCell.staticTexts["timePeriod"].label, "test time period")
+            XCTAssertEqual(lastCell.staticTexts["timePeriod"].label, "daily")
         }
         
         func enterText(_ text: String, inTextField name: String) {
