@@ -58,7 +58,7 @@ class HabitsCollectionViewController: UICollectionViewController {
             let cell = sender as! HabitCell
             let indexPaths = collectionView.indexPath(for: cell)
             var thisHabitEntity = self.habits[indexPaths!.row] as HabitEntity
-            viewController.habitEntity = thisHabitEntity
+            viewController.habit = thisHabitEntity
         }
         
     }
