@@ -1,10 +1,3 @@
-//
-//  HabitTests.swift
-//  HabitsTests
-//
-//  Created by Sarah Lichter on 12/24/18.
-//  Copyright © 2018 Sarah Lichter. All rights reserved.
-//
 
 import XCTest
 @testable import Habits
