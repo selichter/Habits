@@ -25,6 +25,7 @@
 		DFC409A921EE530A0020AF73 /* Palettes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC409A821EE530A0020AF73 /* Palettes.swift */; };
 		DFC409E921FBA0F10020AF73 /* HabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC409E821FBA0F10020AF73 /* HabitViewModel.swift */; };
 		DFC409EB21FFFAE60020AF73 /* HabitViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC409EA21FFFAE50020AF73 /* HabitViewModelTests.swift */; };
+		DFC409EF220157070020AF73 /* HabitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC409EE220157070020AF73 /* HabitsViewModel.swift */; };
 		DFDC4F7C21D093B200C95C13 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC4F7B21D093B200C95C13 /* DataSource.swift */; };
 		DFDC4F7E21D1318700C95C13 /* HabitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC4F7D21D1318700C95C13 /* HabitTests.swift */; };
 		DFDC4FA921D5A0D500C95C13 /* NewHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC4FA821D5A0D500C95C13 /* NewHabitViewController.swift */; };
@@ -80,6 +81,7 @@
 		DFC409A821EE530A0020AF73 /* Palettes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palettes.swift; sourceTree = "<group>"; };
 		DFC409E821FBA0F10020AF73 /* HabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HabitViewModel.swift; path = Habits/Habit/HabitViewModel.swift; sourceTree = SOURCE_ROOT; };
 		DFC409EA21FFFAE50020AF73 /* HabitViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewModelTests.swift; sourceTree = "<group>"; };
+		DFC409EE220157070020AF73 /* HabitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewModel.swift; sourceTree = "<group>"; };
 		DFDC4F7B21D093B200C95C13 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		DFDC4F7D21D1318700C95C13 /* HabitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTests.swift; sourceTree = "<group>"; };
 		DFDC4FA821D5A0D500C95C13 /* NewHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitViewController.swift; sourceTree = "<group>"; };
@@ -208,6 +210,7 @@
 			children = (
 				DF81316421CB30A0003434E2 /* HabitsViewController.swift */,
 				DF51E0E921CFEAE200F770C0 /* HabitCell.swift */,
+				DFC409EE220157070020AF73 /* HabitsViewModel.swift */,
 			);
 			path = HabitsCollection;
 			sourceTree = "<group>";
@@ -493,6 +496,7 @@
 				DFDC4F7C21D093B200C95C13 /* DataSource.swift in Sources */,
 				DFDC4FA921D5A0D500C95C13 /* NewHabitViewController.swift in Sources */,
 				DF51E0E821CFDD4800F770C0 /* HabitEntity.swift in Sources */,
+				DFC409EF220157070020AF73 /* HabitsViewModel.swift in Sources */,
 				DFDC4FB321E8FBE900C95C13 /* HabitViewController.swift in Sources */,
 				DF826C4821D065BA00A525B2 /* HabitDataSource.swift in Sources */,
 				DFC409E921FBA0F10020AF73 /* HabitViewModel.swift in Sources */,

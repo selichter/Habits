@@ -8,6 +8,8 @@ class HabitViewModel {
     var currentCount: Int
     let measurement: String
     let colorScheme: String
+    var standings: String
+    let timePeriod: String
 
     init(habitEntity: HabitEntity) {
         thisHabitEntity = habitEntity
@@ -15,6 +17,8 @@ class HabitViewModel {
         currentCount = habitEntity.currentCount
         measurement = habitEntity.measurement
         colorScheme = habitEntity.colorScheme
+        standings = "\(habitEntity.currentCount)/\(habitEntity.target)"
+        timePeriod = habitEntity.timePeriod
     }
 
     func increaseCount() {

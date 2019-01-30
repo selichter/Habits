@@ -8,9 +8,9 @@ class HabitCell: UICollectionViewCell {
     
 
     
-    func render(habit: HabitEntity) {
-        self.name.text = habit.name.uppercased()
-        self.standings.text = "\(habit.currentCount)/\(habit.target)"
+    func render(habit: HabitViewModel) {
+        self.name.text = habit.name
+        self.standings.text = habit.standings
         self.measurement.text = habit.measurement.lowercased()
         self.timePeriod.text = habit.timePeriod.lowercased()
         

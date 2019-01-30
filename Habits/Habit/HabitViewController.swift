@@ -4,14 +4,10 @@ class HabitViewController: UIViewController {
     @IBOutlet var name: UILabel!
     @IBOutlet weak var currentCount: UILabel!
     
-    var habit: HabitEntity!
     var hvm: HabitViewModel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        hvm = HabitViewModel(habitEntity: habit)
-        print("hvm in vc")
-        print(hvm.currentCount)
         view.backgroundColor = allColors[hvm.colorScheme]!.primary
         populateDisplay(hvm)
     }
@@ -23,8 +19,7 @@ class HabitViewController: UIViewController {
     
     @IBAction func decreaseCount(_ sender: Any) {
         hvm.decreaseCount()
-        habit = hvm.thisHabitEntity
-        self.viewDidLoad()
+        populateDisplay(hvm)
     }
     
     func populateDisplay(_ habit: HabitViewModel) {
