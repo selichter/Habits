@@ -26,6 +26,7 @@
 		DFC409E921FBA0F10020AF73 /* HabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC409E821FBA0F10020AF73 /* HabitViewModel.swift */; };
 		DFC409EB21FFFAE60020AF73 /* HabitViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC409EA21FFFAE50020AF73 /* HabitViewModelTests.swift */; };
 		DFC409EF220157070020AF73 /* HabitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC409EE220157070020AF73 /* HabitsViewModel.swift */; };
+		DFC409F12201DC840020AF73 /* HabitsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC409F02201DC840020AF73 /* HabitsViewModelTests.swift */; };
 		DFDC4F7C21D093B200C95C13 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC4F7B21D093B200C95C13 /* DataSource.swift */; };
 		DFDC4F7E21D1318700C95C13 /* HabitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC4F7D21D1318700C95C13 /* HabitTests.swift */; };
 		DFDC4FA921D5A0D500C95C13 /* NewHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC4FA821D5A0D500C95C13 /* NewHabitViewController.swift */; };
@@ -82,6 +83,7 @@
 		DFC409E821FBA0F10020AF73 /* HabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HabitViewModel.swift; path = Habits/Habit/HabitViewModel.swift; sourceTree = SOURCE_ROOT; };
 		DFC409EA21FFFAE50020AF73 /* HabitViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewModelTests.swift; sourceTree = "<group>"; };
 		DFC409EE220157070020AF73 /* HabitsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewModel.swift; sourceTree = "<group>"; };
+		DFC409F02201DC840020AF73 /* HabitsViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewModelTests.swift; sourceTree = "<group>"; };
 		DFDC4F7B21D093B200C95C13 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		DFDC4F7D21D1318700C95C13 /* HabitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTests.swift; sourceTree = "<group>"; };
 		DFDC4FA821D5A0D500C95C13 /* NewHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 				DF826C4921D068A100A525B2 /* HabitDataSourceTest.swift */,
 				DFDC4F7D21D1318700C95C13 /* HabitTests.swift */,
 				DFC409EA21FFFAE50020AF73 /* HabitViewModelTests.swift */,
+				DFC409F02201DC840020AF73 /* HabitsViewModelTests.swift */,
 			);
 			path = HabitsTests;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 				DFDC4F7E21D1318700C95C13 /* HabitTests.swift in Sources */,
 				DFC409EB21FFFAE60020AF73 /* HabitViewModelTests.swift in Sources */,
 				DF826C4A21D068A100A525B2 /* HabitDataSourceTest.swift in Sources */,
+				DFC409F12201DC840020AF73 /* HabitsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
