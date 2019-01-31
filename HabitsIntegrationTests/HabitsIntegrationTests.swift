@@ -1,33 +1,64 @@
-//
-//  HabitsIntegrationTests.swift
-//  HabitsIntegrationTests
-//
-//  Created by Sarah Lichter on 1/30/19.
-//  Copyright © 2019 Sarah Lichter. All rights reserved.
-//
-
+@testable import Habits
 import XCTest
 
-class HabitsIntegrationTests: XCTestCase {
 
+extension XCTestCase {
+    func instantiateWithoutLoad<T>(fromStoryboard name: String, withIdentifier identifier: String) -> T {
+        let storyboard = UIStoryboard(name: name, bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: identifier) as! T
+        return viewController
+    }
+    
+    func instantiateViewController<T>(fromStoryboard name: String, withIdentifier identifier: String) -> T {
+        let storyboard = UIStoryboard(name: name, bundle: nil)
+        let viewController = storyboard.instantiateViewController(withIdentifier: identifier) as! T
+        _ = (viewController as! UIViewController).view
+        return viewController
+    }
+}
+
+class HabitsCollectionIntegrationTests: XCTestCase {
+    var habitsCollectionViewController: HabitsCollectionViewController!
+    var dataSource = HabitDataSource()
+
+    
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        habitsCollectionViewController = instantiateWithoutLoad(fromStoryboard: "Main", withIdentifier: "HabitsCollectionVC")
+        
     }
+    
+    
+    func testGameCellDisplayValues() {
+        let entity = HabitEntity(habitId: "test-habit", name: "eat", currentCount: 1, target: 3, timePeriod: "daily", measurement: "meals", colorScheme: "lime")
+        
+        let entityTwo = HabitEntity(habitId: UUID().uuidString,
+                                    name:"drink water",
+                                    currentCount: 0,
+                                    target: 0,
+                                    timePeriod: "daily",
+                                    measurement: "ounces",
+                                    colorScheme: "deepPurple")
+        dataSource.insert(item: entity)
+        dataSource.insert(item: entityTwo)
+        habitsCollectionViewController.loadView()
+        habitsCollectionViewController.render(HabitsViewModel([entity, entityTwo]))
+        
+        let habitOne = habitsCollectionViewController.collectionView(habitsCollectionViewController.collectionView, cellForItemAt: IndexPath(row: 0, section: 0)) as! HabitCell
 
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+        XCTAssertEqual(habitOne.name.text, "EAT")
+        XCTAssertEqual(habitOne.standings.text, "1/3")
+        XCTAssertEqual(habitOne.timePeriod.text, "daily")
+        XCTAssertEqual(habitOne.measurement.text, "meals")
+        
+        let habitTwo = habitsCollectionViewController.collectionView(habitsCollectionViewController.collectionView, cellForItemAt: IndexPath(row: 1, section: 0)) as! HabitCell
+        
+        XCTAssertEqual(habitTwo.name.text, "DRINK WATER")
+        XCTAssertEqual(habitTwo.standings.text, "0/0")
+        XCTAssertEqual(habitTwo.timePeriod.text, "daily")
+        XCTAssertEqual(habitTwo.measurement.text, "ounces")
     }
-
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
+    
 
 }
+

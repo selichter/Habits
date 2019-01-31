@@ -13,7 +13,7 @@
         <!--Habits Collection View Controller-->
         <scene sceneID="PUe-Ua-Uqd">
             <objects>
-                <collectionViewController id="trn-mz-Dgx" customClass="HabitsCollectionViewController" customModule="Habits" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="HabitsCollectionVC" id="trn-mz-Dgx" customClass="HabitsCollectionViewController" customModule="Habits" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="0WJ-2U-zcJ">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -2,26 +2,22 @@ import UIKit
 import RealmSwift
 
 class HabitsCollectionViewController: UICollectionViewController {
-    var habits: [HabitEntity] = []
     var dataSource: HabitDataSource!
     var habitsVM: HabitsViewModel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.collectionViewLayout = collectionLayout()
-        
-        //        this happens twice...
         dataSource = HabitDataSource()
-        habitsVM = HabitsViewModel(dataSource.getAll())
-        collectionView.reloadData()
+        let entities = dataSource.getAll()
+        render(HabitsViewModel(entities))
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
-//        this happens twice...
         dataSource = HabitDataSource()
-        habitsVM = HabitsViewModel(dataSource.getAll())
-        collectionView.reloadData()
+        let entities = dataSource.getAll()
+        render(HabitsViewModel(entities))
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -40,12 +36,18 @@ class HabitsCollectionViewController: UICollectionViewController {
         return cell
     }
     
+    func render(_ habits: HabitsViewModel) {
+        habitsVM = habits
+        
+        collectionView.reloadData()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showHabit" {
             let viewController = segue.destination as! HabitViewController
             let cell = sender as! HabitCell
             let indexPaths = collectionView.indexPath(for: cell)
-            var habitVM = habitsVM?.habits[indexPaths!.row]
+            let habitVM = habitsVM?.habits[indexPaths!.row]
             viewController.hvm = habitVM
         }
     }
