@@ -7,7 +7,6 @@ class HabitViewController: UIViewController {
     var hvm: HabitViewModel!
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         view.backgroundColor = allColors[hvm.colorScheme]!.primary
         populateDisplay(hvm)
     }
@@ -23,7 +22,7 @@ class HabitViewController: UIViewController {
     }
     
     func populateDisplay(_ habit: HabitViewModel) {
-        name.text = habit.name.uppercased()
+        name.text = habit.name
         name.textColor = allColors[habit.colorScheme]!.secondary
         currentCount.text = "\(habit.currentCount)"
         currentCount.textColor = allColors[habit.colorScheme]!.secondary

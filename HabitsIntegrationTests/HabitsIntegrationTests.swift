@@ -29,7 +29,7 @@ class HabitsCollectionIntegrationTests: XCTestCase {
     }
     
     
-    func testGameCellDisplayValues() {
+    func testHabitCellsDisplayValues() {
         let entity = HabitEntity(habitId: "test-habit", name: "eat", currentCount: 1, target: 3, timePeriod: "daily", measurement: "meals", colorScheme: "lime")
         
         let entityTwo = HabitEntity(habitId: UUID().uuidString,

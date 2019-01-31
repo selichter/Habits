@@ -28,6 +28,7 @@
 		DFC409EF220157070020AF73 /* HabitsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC409EE220157070020AF73 /* HabitsViewModel.swift */; };
 		DFC409F12201DC840020AF73 /* HabitsViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC409F02201DC840020AF73 /* HabitsViewModelTests.swift */; };
 		DFC40A0A2201E2780020AF73 /* HabitsIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC40A092201E2780020AF73 /* HabitsIntegrationTests.swift */; };
+		DFC40A122202A9350020AF73 /* HabitIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC40A112202A9340020AF73 /* HabitIntegrationTests.swift */; };
 		DFDC4F7C21D093B200C95C13 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC4F7B21D093B200C95C13 /* DataSource.swift */; };
 		DFDC4F7E21D1318700C95C13 /* HabitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC4F7D21D1318700C95C13 /* HabitTests.swift */; };
 		DFDC4FA921D5A0D500C95C13 /* NewHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDC4FA821D5A0D500C95C13 /* NewHabitViewController.swift */; };
@@ -96,6 +97,7 @@
 		DFC40A072201E2780020AF73 /* HabitsIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HabitsIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFC40A092201E2780020AF73 /* HabitsIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsIntegrationTests.swift; sourceTree = "<group>"; };
 		DFC40A0B2201E2780020AF73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFC40A112202A9340020AF73 /* HabitIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitIntegrationTests.swift; sourceTree = "<group>"; };
 		DFDC4F7B21D093B200C95C13 /* DataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		DFDC4F7D21D1318700C95C13 /* HabitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitTests.swift; sourceTree = "<group>"; };
 		DFDC4FA821D5A0D500C95C13 /* NewHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewHabitViewController.swift; sourceTree = "<group>"; };
@@ -235,6 +237,7 @@
 			children = (
 				DFC40A092201E2780020AF73 /* HabitsIntegrationTests.swift */,
 				DFC40A0B2201E2780020AF73 /* Info.plist */,
+				DFC40A112202A9340020AF73 /* HabitIntegrationTests.swift */,
 			);
 			path = HabitsIntegrationTests;
 			sourceTree = "<group>";
@@ -600,6 +603,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFC40A0A2201E2780020AF73 /* HabitsIntegrationTests.swift in Sources */,
+				DFC40A122202A9350020AF73 /* HabitIntegrationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
