@@ -10,6 +10,8 @@
 		0D29EE44B3693151BBEEBBC2 /* Pods_HabitsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E7E34C3DC879F25A3BEB44C /* Pods_HabitsTests.framework */; };
 		B1A0F544502D5C56B8D80D2B /* Pods_HabitsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AB5F9BDBAD1038C44A664A1 /* Pods_HabitsUITests.framework */; };
 		B831821BC1C92C34AEAEA480 /* Pods_Habits.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85AD2E7FC1DB61CE5C55A44F /* Pods_Habits.framework */; };
+		DF2A02B62209279A000C4462 /* HabitForm.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF2A02B52209279A000C4462 /* HabitForm.xib */; };
+		DF2A02B8220927BA000C4462 /* HabitForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2A02B7220927BA000C4462 /* HabitForm.swift */; };
 		DF51E0E221CC9C7500F770C0 /* HabitSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF51E0E121CC9C7500F770C0 /* HabitSteps.swift */; };
 		DF51E0E821CFDD4800F770C0 /* HabitEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF51E0E721CFDD4800F770C0 /* HabitEntity.swift */; };
 		DF51E0EA21CFEAE200F770C0 /* HabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF51E0E921CFEAE200F770C0 /* HabitCell.swift */; };
@@ -70,6 +72,8 @@
 		A935B1B561E279AC31B20026 /* Pods-HabitsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HabitsUITests/Pods-HabitsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		AFF818BF946BFD597FFC97EC /* Pods-HabitsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HabitsUITests/Pods-HabitsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C7CCD31BAEF6C95215514D97 /* Pods-HabitsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HabitsTests/Pods-HabitsTests.release.xcconfig"; sourceTree = "<group>"; };
+		DF2A02B52209279A000C4462 /* HabitForm.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HabitForm.xib; sourceTree = "<group>"; };
+		DF2A02B7220927BA000C4462 /* HabitForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitForm.swift; sourceTree = "<group>"; };
 		DF51E0E121CC9C7500F770C0 /* HabitSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitSteps.swift; sourceTree = "<group>"; };
 		DF51E0E721CFDD4800F770C0 /* HabitEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitEntity.swift; sourceTree = "<group>"; };
 		DF51E0E921CFEAE200F770C0 /* HabitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCell.swift; sourceTree = "<group>"; };
@@ -204,6 +208,8 @@
 				DF81316B21CB30A1003434E2 /* LaunchScreen.storyboard */,
 				DF81316E21CB30A1003434E2 /* Info.plist */,
 				DFC409A821EE530A0020AF73 /* Palettes.swift */,
+				DF2A02B52209279A000C4462 /* HabitForm.xib */,
+				DF2A02B7220927BA000C4462 /* HabitForm.swift */,
 			);
 			path = Habits;
 			sourceTree = "<group>";
@@ -414,6 +420,7 @@
 			files = (
 				DF81316D21CB30A1003434E2 /* LaunchScreen.storyboard in Resources */,
 				DF81316A21CB30A1003434E2 /* Assets.xcassets in Resources */,
+				DF2A02B62209279A000C4462 /* HabitForm.xib in Resources */,
 				DF81316821CB30A0003434E2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,6 +580,7 @@
 				DF51E0EA21CFEAE200F770C0 /* HabitCell.swift in Sources */,
 				DF81316321CB309F003434E2 /* AppDelegate.swift in Sources */,
 				DFC409A921EE530A0020AF73 /* Palettes.swift in Sources */,
+				DF2A02B8220927BA000C4462 /* HabitForm.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
