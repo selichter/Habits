@@ -37,5 +37,11 @@ class HabitsUITests: XCTestCase {
         When("I tap the decrease button")
         Then("The count is decreased")
     }
+    
+    func testEditSingleHabit() {
+        Given("I am viewing a single habit")
+        When("I tap the edit icon")
+        Then("I am on the edit habit screen")
+    }
 
 }

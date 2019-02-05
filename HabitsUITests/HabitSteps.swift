@@ -1,11 +1,3 @@
-//
-//  HabitSteps.swift
-//  HabitsUITests
-//
-//  Created by Sarah Lichter on 12/20/18.
-//  Copyright © 2018 Sarah Lichter. All rights reserved.
-//
-
 import XCTest
 import XCTest_Gherkin
 
@@ -88,6 +80,20 @@ class HabitsStepDefinitions: StepDefiner {
             XCTAssertEqual(lastCell.staticTexts["timePeriod"].label, "daily")
         }
         
+        step("I am viewing a single habit") {
+            self.step("I launch the app")
+            self.step("I tap on the first cell")
+            self.step("The habit is displayed")
+        }
+        
+        step("I tap the edit icon") {
+            self.app.buttons["EditHabit"].tap()
+        }
+        
+        step("I am on the edit habit screen") {
+            XCTAssert(self.app.textFields["editHabitName"].waitForExistence(timeout: 2))
+        }
+        
         func enterText(_ text: String, inTextField name: String) {
             let enterButton = "\n"
             
@@ -99,6 +105,8 @@ class HabitsStepDefinitions: StepDefiner {
         func textField(_ name: String) -> XCUIElement {
             return XCUIApplication().textFields[name]
         }
+        
+
         
     }
 }
