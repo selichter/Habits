@@ -1,27 +1,24 @@
 import UIKit
 
-extension UIViewController {
-    func performSegueToReturnBack()  {
-        if let nav = self.navigationController {
-            nav.popViewController(animated: true)
-        } else {
-            self.dismiss(animated: true, completion: nil)
-        }
-    }
-}
-
-
 class NewHabitViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var habitFormView: HabitForm!
+    
+    @IBOutlet weak var timePeriodStackView: UIStackView!
+    @IBOutlet weak var colorChoicesStackView: UIStackView!
+
+    var timePeriodValue = String()
+    var colorChoice = String()
+
     
     @IBAction func createHabit(_ sender: Any) {
         let newHabit = HabitEntity(habitId: UUID().uuidString,
                 name: habitFormView.xibHabitNameInput.text ?? "",
                                    currentCount: 0,
                                    target: Int(habitFormView.xibTargetInput.text!) ?? 0,
-                                   timePeriod: habitFormView.timePeriodValue,
-                                   measurement: habitFormView.xibMeasurementInput.text ?? "", colorScheme: habitFormView.colorChoice
+                                   timePeriod: timePeriodValue,
+                                   measurement: habitFormView.xibMeasurementInput.text ?? "",
+                                   colorScheme: colorChoice
                                    )
         HabitDataSource.sharedRealm.insert(item: newHabit)
         print("saved realm")
@@ -37,6 +34,29 @@ class NewHabitViewController: UIViewController, UITextFieldDelegate {
         habitFormView.xibHabitNameInput.placeholder = "HABIT NAME"
         habitFormView.xibTargetInput.placeholder = "4"
         habitFormView.xibMeasurementInput.placeholder = "DAILY"
+        
+        for choice in timePeriodChoices {
+            let button = makeButtonsWithText(choice)
+            button.addTarget(self, action: #selector(selectButtonValue), for: .touchUpInside)
+            timePeriodStackView.addArrangedSubview(button)
+        }
+
+        for choice in Array(allColors.keys) {
+            let button = makeColorButtons(choice)
+            button.addTarget(self, action: #selector(selectColor), for: .touchUpInside)
+            colorChoicesStackView.addArrangedSubview(button)
+        }
     }
     
+    @IBAction func selectButtonValue(sender:UIButton){
+        unhighlightAllButtons(timePeriodStackView)
+        highlightSelectedButton(sender)
+        timePeriodValue = sender.titleLabel!.text ?? "daily"
+    }
+
+    @IBAction func selectColor(sender:UIButton){
+        unhighlightAllButtons(colorChoicesStackView)
+        highlightSelectedButton(sender)
+        colorChoice = sender.accessibilityIdentifier ?? "cyan"
+    }
 }

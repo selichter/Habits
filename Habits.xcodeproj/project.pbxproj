@@ -12,6 +12,7 @@
 		B831821BC1C92C34AEAEA480 /* Pods_Habits.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85AD2E7FC1DB61CE5C55A44F /* Pods_Habits.framework */; };
 		DF2A02B62209279A000C4462 /* HabitForm.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF2A02B52209279A000C4462 /* HabitForm.xib */; };
 		DF2A02B8220927BA000C4462 /* HabitForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2A02B7220927BA000C4462 /* HabitForm.swift */; };
+		DF2A02BB220A0CDE000C4462 /* EditHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2A02BA220A0CDE000C4462 /* EditHabitViewController.swift */; };
 		DF51E0E221CC9C7500F770C0 /* HabitSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF51E0E121CC9C7500F770C0 /* HabitSteps.swift */; };
 		DF51E0E821CFDD4800F770C0 /* HabitEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF51E0E721CFDD4800F770C0 /* HabitEntity.swift */; };
 		DF51E0EA21CFEAE200F770C0 /* HabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF51E0E921CFEAE200F770C0 /* HabitCell.swift */; };
@@ -23,6 +24,8 @@
 		DF81318321CB30A1003434E2 /* HabitsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF81318221CB30A1003434E2 /* HabitsUITests.swift */; };
 		DF826C4821D065BA00A525B2 /* HabitDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF826C4721D065BA00A525B2 /* HabitDataSource.swift */; };
 		DF826C4A21D068A100A525B2 /* HabitDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF826C4921D068A100A525B2 /* HabitDataSourceTest.swift */; };
+		DFA7390D220CB32C001E6971 /* EditHabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA7390C220CB32C001E6971 /* EditHabitViewModel.swift */; };
+		DFA7390F220D1D12001E6971 /* SegueUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFA7390E220D1D12001E6971 /* SegueUtils.swift */; };
 		DFC409A521EACD8F0020AF73 /* HabitChoices.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC409A421EACD8F0020AF73 /* HabitChoices.swift */; };
 		DFC409A921EE530A0020AF73 /* Palettes.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC409A821EE530A0020AF73 /* Palettes.swift */; };
 		DFC409E921FBA0F10020AF73 /* HabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFC409E821FBA0F10020AF73 /* HabitViewModel.swift */; };
@@ -74,6 +77,7 @@
 		C7CCD31BAEF6C95215514D97 /* Pods-HabitsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HabitsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HabitsTests/Pods-HabitsTests.release.xcconfig"; sourceTree = "<group>"; };
 		DF2A02B52209279A000C4462 /* HabitForm.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HabitForm.xib; sourceTree = "<group>"; };
 		DF2A02B7220927BA000C4462 /* HabitForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitForm.swift; sourceTree = "<group>"; };
+		DF2A02BA220A0CDE000C4462 /* EditHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHabitViewController.swift; sourceTree = "<group>"; };
 		DF51E0E121CC9C7500F770C0 /* HabitSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitSteps.swift; sourceTree = "<group>"; };
 		DF51E0E721CFDD4800F770C0 /* HabitEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitEntity.swift; sourceTree = "<group>"; };
 		DF51E0E921CFEAE200F770C0 /* HabitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCell.swift; sourceTree = "<group>"; };
@@ -91,6 +95,8 @@
 		DF81318421CB30A1003434E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DF826C4721D065BA00A525B2 /* HabitDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDataSource.swift; sourceTree = "<group>"; };
 		DF826C4921D068A100A525B2 /* HabitDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDataSourceTest.swift; sourceTree = "<group>"; };
+		DFA7390C220CB32C001E6971 /* EditHabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHabitViewModel.swift; sourceTree = "<group>"; };
+		DFA7390E220D1D12001E6971 /* SegueUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueUtils.swift; sourceTree = "<group>"; };
 		DFC409A421EACD8F0020AF73 /* HabitChoices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitChoices.swift; sourceTree = "<group>"; };
 		DFC409A821EE530A0020AF73 /* Palettes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Palettes.swift; sourceTree = "<group>"; };
 		DFC409E821FBA0F10020AF73 /* HabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HabitViewModel.swift; path = Habits/Habit/HabitViewModel.swift; sourceTree = SOURCE_ROOT; };
@@ -169,6 +175,16 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		DF2A02B9220A0C9F000C4462 /* EditHabit */ = {
+			isa = PBXGroup;
+			children = (
+				DF2A02BA220A0CDE000C4462 /* EditHabitViewController.swift */,
+				DFA7390C220CB32C001E6971 /* EditHabitViewModel.swift */,
+			);
+			name = EditHabit;
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 		DF81315621CB309F003434E2 = {
 			isa = PBXGroup;
 			children = (
@@ -197,6 +213,7 @@
 		DF81316121CB309F003434E2 /* Habits */ = {
 			isa = PBXGroup;
 			children = (
+				DF2A02B9220A0C9F000C4462 /* EditHabit */,
 				DFDC4FB721E8FD9800C95C13 /* Habit */,
 				DFDC4FB621E8FD7100C95C13 /* NewHabit */,
 				DFDC4FB421E8FCE800C95C13 /* HabitsCollection */,
@@ -210,6 +227,7 @@
 				DFC409A821EE530A0020AF73 /* Palettes.swift */,
 				DF2A02B52209279A000C4462 /* HabitForm.xib */,
 				DF2A02B7220927BA000C4462 /* HabitForm.swift */,
+				DFA7390E220D1D12001E6971 /* SegueUtils.swift */,
 			);
 			path = Habits;
 			sourceTree = "<group>";
@@ -569,15 +587,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFDC4F7C21D093B200C95C13 /* DataSource.swift in Sources */,
+				DF2A02BB220A0CDE000C4462 /* EditHabitViewController.swift in Sources */,
 				DFDC4FA921D5A0D500C95C13 /* NewHabitViewController.swift in Sources */,
 				DF51E0E821CFDD4800F770C0 /* HabitEntity.swift in Sources */,
 				DFC409EF220157070020AF73 /* HabitsViewModel.swift in Sources */,
+				DFA7390F220D1D12001E6971 /* SegueUtils.swift in Sources */,
 				DFDC4FB321E8FBE900C95C13 /* HabitViewController.swift in Sources */,
 				DF826C4821D065BA00A525B2 /* HabitDataSource.swift in Sources */,
 				DFC409E921FBA0F10020AF73 /* HabitViewModel.swift in Sources */,
 				DFC409A521EACD8F0020AF73 /* HabitChoices.swift in Sources */,
 				DF81316521CB30A0003434E2 /* HabitsViewController.swift in Sources */,
 				DF51E0EA21CFEAE200F770C0 /* HabitCell.swift in Sources */,
+				DFA7390D220CB32C001E6971 /* EditHabitViewModel.swift in Sources */,
 				DF81316321CB309F003434E2 /* AppDelegate.swift in Sources */,
 				DFC409A921EE530A0020AF73 /* Palettes.swift in Sources */,
 				DF2A02B8220927BA000C4462 /* HabitForm.swift in Sources */,

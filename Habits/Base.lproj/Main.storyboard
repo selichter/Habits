@@ -119,10 +119,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GJO-2P-8j7" customClass="HabitForm" customModule="Habits" customModuleProvider="target">
-                                <rect key="frame" x="16" y="82" width="343" height="401"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fef-Bv-6mM">
                                 <rect key="frame" x="131" y="552" width="87" height="30"/>
                                 <accessibility key="accessibilityConfiguration" identifier="CreateHabit"/>
@@ -131,29 +127,47 @@
                                     <action selector="createHabit:" destination="lOQ-Nn-gm6" eventType="touchUpInside" id="VjN-vu-hTj"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GJO-2P-8j7" customClass="HabitForm" customModule="Habits" customModuleProvider="target">
+                                <rect key="frame" x="16" y="82" width="343" height="259"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="feK-kL-KLb">
+                                <rect key="frame" x="24" y="411" width="327" height="54"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yeg-af-hmb">
+                                <rect key="frame" x="24" y="488" width="327" height="41"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="yeg-af-hmb" firstAttribute="top" secondItem="fJs-Of-tMy" secondAttribute="top" constant="424" id="0XH-5C-Qeo"/>
+                            <constraint firstItem="fJs-Of-tMy" firstAttribute="trailing" secondItem="feK-kL-KLb" secondAttribute="trailing" constant="24" id="3ZA-3A-Gsb"/>
                             <constraint firstItem="fJs-Of-tMy" firstAttribute="bottom" secondItem="GJO-2P-8j7" secondAttribute="bottom" constant="135" id="5gZ-Al-MUP"/>
+                            <constraint firstItem="feK-kL-KLb" firstAttribute="top" secondItem="fJs-Of-tMy" secondAttribute="top" constant="347" id="9JC-3Q-GUd"/>
                             <constraint firstItem="fJs-Of-tMy" firstAttribute="trailing" secondItem="fef-Bv-6mM" secondAttribute="trailing" constant="157" id="BZB-9e-pGL"/>
+                            <constraint firstItem="yeg-af-hmb" firstAttribute="leading" secondItem="fJs-Of-tMy" secondAttribute="leading" constant="24" id="Jr5-0J-keD"/>
                             <constraint firstItem="fef-Bv-6mM" firstAttribute="leading" secondItem="fJs-Of-tMy" secondAttribute="leading" constant="131" id="Zgr-ke-ePi"/>
                             <constraint firstItem="GJO-2P-8j7" firstAttribute="top" secondItem="fJs-Of-tMy" secondAttribute="top" constant="18" id="beS-Jw-1VO"/>
                             <constraint firstItem="fJs-Of-tMy" firstAttribute="trailing" secondItem="GJO-2P-8j7" secondAttribute="trailing" constant="16" id="fUF-ce-JNI"/>
                             <constraint firstItem="GJO-2P-8j7" firstAttribute="leading" secondItem="fJs-Of-tMy" secondAttribute="leading" constant="16" id="i4K-x3-MBA"/>
+                            <constraint firstItem="feK-kL-KLb" firstAttribute="leading" secondItem="fJs-Of-tMy" secondAttribute="leading" constant="24" id="k4P-HZ-ReH"/>
                             <constraint firstItem="fef-Bv-6mM" firstAttribute="top" secondItem="GJO-2P-8j7" secondAttribute="bottom" constant="69" id="kZQ-9Q-X5J"/>
+                            <constraint firstItem="fJs-Of-tMy" firstAttribute="trailing" secondItem="yeg-af-hmb" secondAttribute="trailing" constant="24" id="vcJ-S5-4Lc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fJs-Of-tMy"/>
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="colorChoicesStackView" destination="yeg-af-hmb" id="EEg-Ga-rvF"/>
                         <outlet property="habitFormView" destination="GJO-2P-8j7" id="nUN-yP-8Yz"/>
+                        <outlet property="timePeriodStackView" destination="feK-kL-KLb" id="lVa-2n-EnA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qN2-WK-EeL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="188" y="1414.5427286356824"/>
         </scene>
-        <!--Habit View Controller-->
+        <!--Title-->
         <scene sceneID="hjo-15-xp8">
             <objects>
                 <viewController storyboardIdentifier="HabitVC" id="LY7-GL-bbn" customClass="HabitViewController" customModule="Habits" customModuleProvider="target" sceneMemberID="viewController">
@@ -211,6 +225,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kcc-UU-35T"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="8mW-O4-Bat">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="S1M-7t-NbR">
+                            <connections>
+                                <segue destination="WeQ-tf-3U3" kind="show" identifier="editHabit" id="IMW-3o-XgD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="currentCount" destination="J8h-3s-ZLu" id="97U-Ps-k7q"/>
                         <outlet property="name" destination="0gN-Fd-IZc" id="ALO-p4-QaS"/>
@@ -219,6 +240,58 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OuQ-rP-Rby" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="984.79999999999995" y="669.71514242878561"/>
+        </scene>
+        <!--Edit Habit View Controller-->
+        <scene sceneID="CBb-9c-pty">
+            <objects>
+                <viewController id="WeQ-tf-3U3" customClass="EditHabitViewController" customModule="Habits" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fgz-tk-Cjk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h2F-We-79I" customClass="HabitForm" customModule="Habits" customModuleProvider="target">
+                                <rect key="frame" x="16" y="76" width="343" height="290"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DOC-CT-3sJ">
+                                <rect key="frame" x="16" y="387" width="349" height="50"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="U3B-eC-mfS">
+                                <rect key="frame" x="16" y="465" width="343" height="58"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3L-4W-L1i">
+                                <rect key="frame" x="126" y="564" width="91" height="30"/>
+                                <state key="normal" title="Update Habit"/>
+                                <connections>
+                                    <action selector="updateHabit:" destination="WeQ-tf-3U3" eventType="touchUpInside" id="7ld-Pm-utw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="2En-z0-KEW" firstAttribute="trailing" secondItem="U3B-eC-mfS" secondAttribute="trailing" constant="16" id="61I-FK-DJb"/>
+                            <constraint firstItem="U3B-eC-mfS" firstAttribute="top" secondItem="2En-z0-KEW" secondAttribute="top" constant="401" id="Ar5-GR-Sj8"/>
+                            <constraint firstItem="2En-z0-KEW" firstAttribute="trailing" secondItem="k3L-4W-L1i" secondAttribute="trailing" constant="158" id="EIc-cU-SI3"/>
+                            <constraint firstItem="U3B-eC-mfS" firstAttribute="leading" secondItem="2En-z0-KEW" secondAttribute="leading" constant="16" id="GTz-3i-HXF"/>
+                            <constraint firstItem="2En-z0-KEW" firstAttribute="bottom" secondItem="k3L-4W-L1i" secondAttribute="bottom" constant="73" id="MIW-Ho-XoG"/>
+                            <constraint firstItem="h2F-We-79I" firstAttribute="leading" secondItem="2En-z0-KEW" secondAttribute="leading" constant="16" id="Q8b-sG-yHd"/>
+                            <constraint firstItem="k3L-4W-L1i" firstAttribute="leading" secondItem="2En-z0-KEW" secondAttribute="leading" constant="126" id="Xdz-Vh-P78"/>
+                            <constraint firstItem="2En-z0-KEW" firstAttribute="trailing" secondItem="h2F-We-79I" secondAttribute="trailing" constant="16" id="Zq4-Kv-TX6"/>
+                            <constraint firstItem="h2F-We-79I" firstAttribute="top" secondItem="2En-z0-KEW" secondAttribute="top" constant="12" id="p5Z-Df-eFB"/>
+                            <constraint firstItem="k3L-4W-L1i" firstAttribute="top" secondItem="2En-z0-KEW" secondAttribute="top" constant="500" id="wPE-Sx-sGi"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2En-z0-KEW"/>
+                    </view>
+                    <connections>
+                        <outlet property="colorChoicesStackView" destination="U3B-eC-mfS" id="tGB-sH-V7J"/>
+                        <outlet property="habitForm" destination="h2F-We-79I" id="06M-P9-QbS"/>
+                        <outlet property="timePeriodStackView" destination="DOC-CT-3sJ" id="UrY-qQ-qO3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aGX-xs-Z4C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1784.8" y="669.71514242878561"/>
         </scene>
         <!--Habits-->
         <scene sceneID="8Iv-KL-U7u">

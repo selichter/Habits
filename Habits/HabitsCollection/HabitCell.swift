@@ -14,7 +14,7 @@ class HabitCell: UICollectionViewCell {
         self.measurement.text = habit.measurement.lowercased()
         self.timePeriod.text = habit.timePeriod.lowercased()
         
-//        self.backgroundColor = allColors[habit.colorScheme]!.primary
+        self.backgroundColor = allColors[habit.colorScheme]?.primary 
 
         layer.cornerRadius = 10
 
