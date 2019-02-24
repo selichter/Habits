@@ -7,3 +7,4 @@ enum TimePeriod: String, CaseIterable {
     case yearly
 }
 
+var timePeriodChoices = TimePeriod.allCases.map({$0.rawValue})

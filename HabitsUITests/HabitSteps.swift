@@ -1,17 +1,9 @@
-//
-//  HabitSteps.swift
-//  HabitsUITests
-//
-//  Created by Sarah Lichter on 12/20/18.
-//  Copyright © 2018 Sarah Lichter. All rights reserved.
-//
-
 import XCTest
 import XCTest_Gherkin
 
 class HabitsStepDefinitions: StepDefiner {
     let app = XCUIApplication()
-    
+
     func launchApp() {
         self.app.launch()
     }
@@ -88,6 +80,40 @@ class HabitsStepDefinitions: StepDefiner {
             XCTAssertEqual(lastCell.staticTexts["timePeriod"].label, "daily")
         }
         
+        step("I am viewing a single habit") {
+            self.step("I launch the app")
+            self.step("I tap on the first cell")
+            self.step("The habit is displayed")
+        }
+        
+        step("I tap the edit icon") {
+            self.app.buttons["Edit"].tap()
+        }
+        
+        step("I am on the edit habit screen") {
+            XCTAssert(self.app.windows.staticTexts["Habit Name"].waitForExistence(timeout: 10))
+        }
+
+        step("There is a habit name placeholder") {
+            let existingPlaceholder = self.app.textFields["newHabitName"].value as! String
+            XCTAssertEqual(existingPlaceholder, "WORKOUT")
+
+        }
+
+        step("I update the habit name") {
+            enterText("edit", inTextField: "newHabitName")
+
+
+            self.app.buttons["monthly"].tap()
+            self.app.buttons["Update Habit"].tap()
+        }
+
+        step("The edited habit is displayed") {
+            sleep(4)
+            let habitName = self.app.staticTexts["habitName"].label
+            XCTAssertEqual(habitName, "WORKOUTEDIT")
+        }
+
         func enterText(_ text: String, inTextField name: String) {
             let enterButton = "\n"
             
@@ -99,6 +125,6 @@ class HabitsStepDefinitions: StepDefiner {
         func textField(_ name: String) -> XCUIElement {
             return XCUIApplication().textFields[name]
         }
-        
+
     }
 }

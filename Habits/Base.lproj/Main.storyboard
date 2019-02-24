@@ -112,129 +112,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Habit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ILA-9b-Wgj">
-                                <rect key="frame" x="32" y="96" width="80" height="21"/>
-                                <accessibility key="accessibilityConfiguration" identifier="newHabit"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fvY-n9-cA8">
-                                <rect key="frame" x="32" y="125" width="281" height="30"/>
-                                <accessibility key="accessibilityConfiguration" identifier="newHabitName"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fw-3h-iBl">
-                                <rect key="frame" x="32" y="177" width="49" height="21"/>
-                                <accessibility key="accessibilityConfiguration" identifier="target"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h5t-bu-L3l">
-                                <rect key="frame" x="32" y="206" width="281" height="30"/>
-                                <accessibility key="accessibilityConfiguration" identifier="targetInput"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Measurement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MbK-YI-fBM">
-                                <rect key="frame" x="32" y="253" width="106" height="21"/>
-                                <accessibility key="accessibilityConfiguration" identifier="measurement"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BdH-nG-OMJ">
-                                <rect key="frame" x="32" y="282" width="281" height="30"/>
-                                <accessibility key="accessibilityConfiguration" identifier="measurementInput"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Period" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3hk-Cb-gik">
-                                <rect key="frame" x="32" y="340" width="92" height="21"/>
-                                <accessibility key="accessibilityConfiguration" identifier="measurement"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Create A Habit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jU-ti-zmM">
-                                <rect key="frame" x="131" y="20" width="112" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create A Habit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6jU-ti-zmM">
+                                <rect key="frame" x="131.5" y="20" width="112" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fef-Bv-6mM">
-                                <rect key="frame" x="117" y="432" width="87" height="30"/>
+                                <rect key="frame" x="131" y="552" width="87" height="30"/>
                                 <accessibility key="accessibilityConfiguration" identifier="CreateHabit"/>
                                 <state key="normal" title="Create Habit"/>
                                 <connections>
                                     <action selector="createHabit:" destination="lOQ-Nn-gm6" eventType="touchUpInside" id="VjN-vu-hTj"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="esE-P9-hvJ">
-                                <rect key="frame" x="16" y="369" width="343" height="55"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GJO-2P-8j7" customClass="HabitForm" customModule="Habits" customModuleProvider="target">
+                                <rect key="frame" x="16" y="82" width="343" height="259"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="feK-kL-KLb">
+                                <rect key="frame" x="24" y="411" width="327" height="54"/>
                             </stackView>
-                            <stackView opaque="NO" contentMode="center" fixedFrame="YES" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="RMM-O2-gRM">
-                                <rect key="frame" x="16" y="487" width="343" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yeg-af-hmb">
+                                <rect key="frame" x="24" y="488" width="327" height="41"/>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="fvY-n9-cA8" firstAttribute="top" secondItem="fJs-Of-tMy" secondAttribute="top" constant="61" id="0F2-6r-1JS"/>
-                            <constraint firstItem="BdH-nG-OMJ" firstAttribute="leading" secondItem="fJs-Of-tMy" secondAttribute="leading" constant="32" id="0wa-Yj-a5u"/>
-                            <constraint firstItem="MbK-YI-fBM" firstAttribute="top" secondItem="h5t-bu-L3l" secondAttribute="bottom" constant="17" id="2LZ-6B-gY3"/>
-                            <constraint firstItem="fJs-Of-tMy" firstAttribute="trailing" secondItem="BdH-nG-OMJ" secondAttribute="trailing" constant="62" id="3Ev-u3-Zb4"/>
-                            <constraint firstItem="esE-P9-hvJ" firstAttribute="leading" secondItem="fJs-Of-tMy" secondAttribute="leading" constant="16" id="4qt-nw-D4e"/>
-                            <constraint firstItem="fJs-Of-tMy" firstAttribute="trailing" secondItem="fvY-n9-cA8" secondAttribute="trailing" constant="62" id="6tz-Wi-j4z"/>
-                            <constraint firstItem="fJs-Of-tMy" firstAttribute="bottom" secondItem="fef-Bv-6mM" secondAttribute="bottom" constant="156" id="7vZ-Yt-nP4"/>
-                            <constraint firstItem="fvY-n9-cA8" firstAttribute="leading" secondItem="ILA-9b-Wgj" secondAttribute="trailing" constant="-80" id="BkW-PS-42K"/>
-                            <constraint firstItem="MbK-YI-fBM" firstAttribute="leading" secondItem="fJs-Of-tMy" secondAttribute="leading" constant="32" id="Buc-BA-P9J"/>
-                            <constraint firstItem="fJs-Of-tMy" firstAttribute="trailing" secondItem="esE-P9-hvJ" secondAttribute="trailing" constant="16" id="EVb-wd-sp6"/>
-                            <constraint firstItem="esE-P9-hvJ" firstAttribute="centerX" secondItem="6jU-ti-zmM" secondAttribute="centerX" id="Eao-Hc-ax9"/>
-                            <constraint firstItem="fJs-Of-tMy" firstAttribute="trailing" secondItem="MbK-YI-fBM" secondAttribute="trailing" constant="237" id="LQT-zO-lT7"/>
-                            <constraint firstItem="fef-Bv-6mM" firstAttribute="top" secondItem="esE-P9-hvJ" secondAttribute="bottom" constant="8" symbolic="YES" id="LX3-qz-Ok8"/>
-                            <constraint firstItem="fJs-Of-tMy" firstAttribute="trailing" secondItem="3hk-Cb-gik" secondAttribute="trailing" constant="251" id="PMr-4l-LO2"/>
-                            <constraint firstItem="esE-P9-hvJ" firstAttribute="leading" secondItem="3hk-Cb-gik" secondAttribute="trailing" constant="-108" id="T0M-Fe-HQp"/>
-                            <constraint firstItem="fef-Bv-6mM" firstAttribute="top" secondItem="fJs-Of-tMy" secondAttribute="top" constant="368" id="WXZ-ko-RYI"/>
-                            <constraint firstItem="esE-P9-hvJ" firstAttribute="top" secondItem="3hk-Cb-gik" secondAttribute="bottom" constant="8" symbolic="YES" id="Z83-KK-ULV"/>
-                            <constraint firstItem="BdH-nG-OMJ" firstAttribute="top" secondItem="MbK-YI-fBM" secondAttribute="bottom" constant="8" id="aPb-qZ-vdG"/>
-                            <constraint firstItem="ILA-9b-Wgj" firstAttribute="leading" secondItem="fJs-Of-tMy" secondAttribute="leading" constant="32" id="aXR-JA-bk5"/>
-                            <constraint firstItem="h5t-bu-L3l" firstAttribute="leading" secondItem="fJs-Of-tMy" secondAttribute="leading" constant="32" id="aiP-zc-Ld3"/>
-                            <constraint firstItem="3hk-Cb-gik" firstAttribute="top" secondItem="BdH-nG-OMJ" secondAttribute="bottom" constant="28" id="avq-tG-2Ka"/>
-                            <constraint firstItem="fJs-Of-tMy" firstAttribute="trailing" secondItem="h5t-bu-L3l" secondAttribute="trailing" constant="62" id="gQ2-ij-Pva"/>
-                            <constraint firstItem="h5t-bu-L3l" firstAttribute="top" secondItem="fJs-Of-tMy" secondAttribute="top" constant="142" id="kCt-hA-qPB"/>
-                            <constraint firstItem="fJs-Of-tMy" firstAttribute="trailing" secondItem="0fw-3h-iBl" secondAttribute="trailing" constant="294" id="nHB-6a-nqh"/>
-                            <constraint firstItem="0fw-3h-iBl" firstAttribute="leading" secondItem="fJs-Of-tMy" secondAttribute="leading" constant="32" id="pr6-bq-2FJ"/>
-                            <constraint firstItem="3hk-Cb-gik" firstAttribute="leading" secondItem="fJs-Of-tMy" secondAttribute="leading" constant="32" id="s8p-ji-QWj"/>
-                            <constraint firstItem="fJs-Of-tMy" firstAttribute="trailing" secondItem="fef-Bv-6mM" secondAttribute="trailing" constant="171" id="v8Y-Io-XoU"/>
-                            <constraint firstItem="ILA-9b-Wgj" firstAttribute="top" secondItem="fJs-Of-tMy" secondAttribute="top" constant="32" id="xXa-fS-guO"/>
-                            <constraint firstItem="fJs-Of-tMy" firstAttribute="trailing" secondItem="ILA-9b-Wgj" secondAttribute="trailing" constant="263" id="xco-Zy-c0M"/>
-                            <constraint firstItem="fvY-n9-cA8" firstAttribute="leading" secondItem="fJs-Of-tMy" secondAttribute="leading" constant="32" id="xmx-2k-PrB"/>
-                            <constraint firstItem="BdH-nG-OMJ" firstAttribute="leading" secondItem="MbK-YI-fBM" secondAttribute="trailing" constant="-106" id="yJl-A9-ngJ"/>
-                            <constraint firstItem="0fw-3h-iBl" firstAttribute="top" secondItem="fvY-n9-cA8" secondAttribute="bottom" constant="22" id="ywg-Aj-6Ly"/>
-                            <constraint firstItem="fef-Bv-6mM" firstAttribute="leading" secondItem="fJs-Of-tMy" secondAttribute="leading" constant="117" id="zl6-9e-QtY"/>
+                            <constraint firstItem="yeg-af-hmb" firstAttribute="top" secondItem="fJs-Of-tMy" secondAttribute="top" constant="424" id="0XH-5C-Qeo"/>
+                            <constraint firstItem="fJs-Of-tMy" firstAttribute="trailing" secondItem="feK-kL-KLb" secondAttribute="trailing" constant="24" id="3ZA-3A-Gsb"/>
+                            <constraint firstItem="fJs-Of-tMy" firstAttribute="bottom" secondItem="GJO-2P-8j7" secondAttribute="bottom" constant="135" id="5gZ-Al-MUP"/>
+                            <constraint firstItem="feK-kL-KLb" firstAttribute="top" secondItem="fJs-Of-tMy" secondAttribute="top" constant="347" id="9JC-3Q-GUd"/>
+                            <constraint firstItem="fJs-Of-tMy" firstAttribute="trailing" secondItem="fef-Bv-6mM" secondAttribute="trailing" constant="157" id="BZB-9e-pGL"/>
+                            <constraint firstItem="yeg-af-hmb" firstAttribute="leading" secondItem="fJs-Of-tMy" secondAttribute="leading" constant="24" id="Jr5-0J-keD"/>
+                            <constraint firstItem="fef-Bv-6mM" firstAttribute="leading" secondItem="fJs-Of-tMy" secondAttribute="leading" constant="131" id="Zgr-ke-ePi"/>
+                            <constraint firstItem="GJO-2P-8j7" firstAttribute="top" secondItem="fJs-Of-tMy" secondAttribute="top" constant="18" id="beS-Jw-1VO"/>
+                            <constraint firstItem="fJs-Of-tMy" firstAttribute="trailing" secondItem="GJO-2P-8j7" secondAttribute="trailing" constant="16" id="fUF-ce-JNI"/>
+                            <constraint firstItem="GJO-2P-8j7" firstAttribute="leading" secondItem="fJs-Of-tMy" secondAttribute="leading" constant="16" id="i4K-x3-MBA"/>
+                            <constraint firstItem="feK-kL-KLb" firstAttribute="leading" secondItem="fJs-Of-tMy" secondAttribute="leading" constant="24" id="k4P-HZ-ReH"/>
+                            <constraint firstItem="fef-Bv-6mM" firstAttribute="top" secondItem="GJO-2P-8j7" secondAttribute="bottom" constant="69" id="kZQ-9Q-X5J"/>
+                            <constraint firstItem="fJs-Of-tMy" firstAttribute="trailing" secondItem="yeg-af-hmb" secondAttribute="trailing" constant="24" id="vcJ-S5-4Lc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fJs-Of-tMy"/>
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="colorChoiceStackView" destination="RMM-O2-gRM" id="5jV-Sz-9Zm"/>
-                        <outlet property="habitNameTextField" destination="fvY-n9-cA8" id="fRw-2T-vzC"/>
-                        <outlet property="measurementTextField" destination="BdH-nG-OMJ" id="Sex-jr-QXU"/>
-                        <outlet property="targetTextField" destination="h5t-bu-L3l" id="smT-M6-NbI"/>
-                        <outlet property="timePeriodStackView" destination="esE-P9-hvJ" id="hvF-3T-oHr"/>
+                        <outlet property="colorChoicesStackView" destination="yeg-af-hmb" id="EEg-Ga-rvF"/>
+                        <outlet property="habitFormView" destination="GJO-2P-8j7" id="nUN-yP-8Yz"/>
+                        <outlet property="timePeriodStackView" destination="feK-kL-KLb" id="lVa-2n-EnA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qN2-WK-EeL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="188" y="1414.5427286356824"/>
         </scene>
-        <!--Habit View Controller-->
+        <!--Title-->
         <scene sceneID="hjo-15-xp8">
             <objects>
                 <viewController storyboardIdentifier="HabitVC" id="LY7-GL-bbn" customClass="HabitViewController" customModule="Habits" customModuleProvider="target" sceneMemberID="viewController">
@@ -292,6 +225,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kcc-UU-35T"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="8mW-O4-Bat">
+                        <barButtonItem key="rightBarButtonItem" title="Edit" id="S1M-7t-NbR">
+                            <connections>
+                                <segue destination="WeQ-tf-3U3" kind="show" identifier="editHabit" id="IMW-3o-XgD"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="currentCount" destination="J8h-3s-ZLu" id="97U-Ps-k7q"/>
                         <outlet property="name" destination="0gN-Fd-IZc" id="ALO-p4-QaS"/>
@@ -300,6 +240,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OuQ-rP-Rby" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="984.79999999999995" y="669.71514242878561"/>
+        </scene>
+        <!--Edit Habit View Controller-->
+        <scene sceneID="CBb-9c-pty">
+            <objects>
+                <viewController id="WeQ-tf-3U3" customClass="EditHabitViewController" customModule="Habits" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Fgz-tk-Cjk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h2F-We-79I" customClass="HabitForm" customModule="Habits" customModuleProvider="target">
+                                <rect key="frame" x="16" y="76" width="343" height="290"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="habitForm"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DOC-CT-3sJ">
+                                <rect key="frame" x="16" y="387" width="349" height="50"/>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="U3B-eC-mfS">
+                                <rect key="frame" x="16" y="465" width="343" height="58"/>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3L-4W-L1i">
+                                <rect key="frame" x="213" y="64" width="91" height="30"/>
+                                <state key="normal" title="Update Habit"/>
+                                <connections>
+                                    <action selector="updateHabit:" destination="WeQ-tf-3U3" eventType="touchUpInside" id="7ld-Pm-utw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="DOC-CT-3sJ" firstAttribute="top" secondItem="Fgz-tk-Cjk" secondAttribute="top" constant="387" id="5ks-gF-c6N"/>
+                            <constraint firstItem="U3B-eC-mfS" firstAttribute="top" secondItem="DOC-CT-3sJ" secondAttribute="bottom" constant="28" id="5zL-LK-KHl"/>
+                            <constraint firstItem="2En-z0-KEW" firstAttribute="trailing" secondItem="U3B-eC-mfS" secondAttribute="trailing" constant="16" id="61I-FK-DJb"/>
+                            <constraint firstItem="U3B-eC-mfS" firstAttribute="top" secondItem="2En-z0-KEW" secondAttribute="top" constant="401" id="Ar5-GR-Sj8"/>
+                            <constraint firstItem="2En-z0-KEW" firstAttribute="trailing" secondItem="k3L-4W-L1i" secondAttribute="trailing" constant="158" id="EIc-cU-SI3"/>
+                            <constraint firstItem="U3B-eC-mfS" firstAttribute="leading" secondItem="2En-z0-KEW" secondAttribute="leading" constant="16" id="GTz-3i-HXF"/>
+                            <constraint firstItem="U3B-eC-mfS" firstAttribute="leading" secondItem="DOC-CT-3sJ" secondAttribute="leading" id="L2y-rm-MUi"/>
+                            <constraint firstItem="2En-z0-KEW" firstAttribute="bottom" secondItem="k3L-4W-L1i" secondAttribute="bottom" constant="73" id="MIW-Ho-XoG"/>
+                            <constraint firstItem="h2F-We-79I" firstAttribute="leading" secondItem="2En-z0-KEW" secondAttribute="leading" constant="16" id="Q8b-sG-yHd"/>
+                            <constraint firstItem="2En-z0-KEW" firstAttribute="trailing" secondItem="DOC-CT-3sJ" secondAttribute="trailing" constant="10" id="TdH-yz-SEH"/>
+                            <constraint firstItem="k3L-4W-L1i" firstAttribute="leading" secondItem="2En-z0-KEW" secondAttribute="leading" constant="126" id="Xdz-Vh-P78"/>
+                            <constraint firstItem="2En-z0-KEW" firstAttribute="trailing" secondItem="h2F-We-79I" secondAttribute="trailing" constant="16" id="Zq4-Kv-TX6"/>
+                            <constraint firstItem="h2F-We-79I" firstAttribute="top" secondItem="2En-z0-KEW" secondAttribute="top" constant="12" id="p5Z-Df-eFB"/>
+                            <constraint firstItem="k3L-4W-L1i" firstAttribute="top" secondItem="2En-z0-KEW" secondAttribute="top" constant="500" id="wPE-Sx-sGi"/>
+                            <constraint firstItem="DOC-CT-3sJ" firstAttribute="top" secondItem="h2F-We-79I" secondAttribute="bottom" constant="21" id="yqi-Pw-Xb0"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="2En-z0-KEW"/>
+                    </view>
+                    <connections>
+                        <outlet property="colorChoicesStackView" destination="U3B-eC-mfS" id="tGB-sH-V7J"/>
+                        <outlet property="habitForm" destination="h2F-We-79I" id="06M-P9-QbS"/>
+                        <outlet property="timePeriodStackView" destination="DOC-CT-3sJ" id="UrY-qQ-qO3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aGX-xs-Z4C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1784.8" y="669.71514242878561"/>
         </scene>
         <!--Habits-->
         <scene sceneID="8Iv-KL-U7u">

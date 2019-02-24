@@ -14,6 +14,7 @@ class HabitViewModelTests: XCTestCase {
         XCTAssertEqual(hvm.name, entity.name.uppercased())
         XCTAssertEqual(hvm.currentCount, entity.currentCount)
         XCTAssertEqual(hvm.measurement, entity.measurement)
+        XCTAssertEqual(hvm.target, entity.target)
         dataSource.clean()
     }
     
@@ -25,7 +26,6 @@ class HabitViewModelTests: XCTestCase {
         
         XCTAssertEqual(hvm.name, entity.name.uppercased())
         XCTAssertEqual(hvm.currentCount, 2)
-        XCTAssertEqual(hvm.thisHabitEntity.currentCount, 2)
         dataSource.clean()
     }
     
@@ -37,9 +37,7 @@ class HabitViewModelTests: XCTestCase {
         
         XCTAssertEqual(hvm.name, entity.name.uppercased())
         XCTAssertEqual(hvm.currentCount, 1)
-        XCTAssertEqual(hvm.thisHabitEntity.currentCount, 1)
         dataSource.clean()
-
     }
     
     func testdecreaseCountDoesNotDecreaseBelow0() {
@@ -50,9 +48,7 @@ class HabitViewModelTests: XCTestCase {
         
         XCTAssertEqual(hvm.name, entity.name.uppercased())
         XCTAssertEqual(hvm.currentCount, 0)
-        XCTAssertEqual(hvm.thisHabitEntity.currentCount, 0)
         dataSource.clean()
-
     }
     
 }

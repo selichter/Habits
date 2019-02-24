@@ -4,6 +4,7 @@ PODS:
   - Realm/Headers (3.13.0)
   - RealmSwift (3.13.0):
     - Realm (= 3.13.0)
+  - SnapKit (4.2.0)
   - SwiftLint (0.29.1)
   - XCTest-Gherkin (0.18.0):
     - XCTest-Gherkin/Core (= 0.18.0)
@@ -11,6 +12,7 @@ PODS:
 
 DEPENDENCIES:
   - RealmSwift
+  - SnapKit (~> 4.0)
   - SwiftLint
   - XCTest-Gherkin
 
@@ -18,15 +20,17 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Realm
     - RealmSwift
+    - SnapKit
     - SwiftLint
     - XCTest-Gherkin
 
 SPEC CHECKSUMS:
   Realm: 5edd2ee65406aef591a4f9895de5a3440e51b3d8
   RealmSwift: be5ebc7930e37cd3376b41cec7f21984528aaa16
+  SnapKit: fe8a619752f3f27075cc9a90244d75c6c3f27e2a
   SwiftLint: 6772320e40b52049053a518c17db9b0634a0b45a
   XCTest-Gherkin: dcd08cf80c456c46edc7a1cfb18d3a8f4fa3293c
 
-PODFILE CHECKSUM: 10c664766bf2bbecb4802474b5e98e414feb9fd5
+PODFILE CHECKSUM: b2bcc6cddca0eeafeff576e64d1a3997f999420c
 
 COCOAPODS: 1.5.3
