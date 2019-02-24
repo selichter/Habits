@@ -1,6 +1,6 @@
 import UIKit
 
-class EditHabitViewController: UIViewController {
+class EditHabitViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var habitForm: HabitForm!
     var hvm: HabitViewModel!
@@ -13,6 +13,7 @@ class EditHabitViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         colorChoice = hvm.colorScheme
         timePeriodValue = hvm.timePeriod
         
@@ -34,6 +35,10 @@ class EditHabitViewController: UIViewController {
     }
 
     func populateForm(_ habit: HabitViewModel){
+        habitForm.xibHabitNameInput.delegate = self
+        habitForm.xibTargetInput.delegate = self
+        habitForm.xibMeasurementInput.delegate = self
+
         habitForm.xibHabitNameInput.text = habit.name
         habitForm.xibTargetInput.text = "\(habit.target)"
         habitForm.xibMeasurementInput.text = habit.measurement
@@ -65,6 +70,11 @@ class EditHabitViewController: UIViewController {
         hvm = HabitViewModel(habitEntity: entity)
         hvm.persistHabit()
         performSegueToReturnBack()
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
     
 }

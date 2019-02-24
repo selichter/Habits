@@ -6,6 +6,7 @@ target 'Habits' do
 
   pod 'SwiftLint'
   pod 'RealmSwift'
+  pod 'SnapKit', '~> 4.0'
 
   target 'HabitsTests' do
     inherit! :search_paths

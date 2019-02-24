@@ -50,10 +50,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didFinishLaunchingWithOptions launchOptions:[UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         migrateRealm()
         let habitDataSource = HabitDataSource()
-        let habits = habitDataSource.getAll()
-        if habits.count == 0 {
-            populateHabits()
-        }
+        habitDataSource.clean()
+        populateHabits()
         return true
     }
 

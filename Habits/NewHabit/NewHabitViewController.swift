@@ -59,4 +59,9 @@ class NewHabitViewController: UIViewController, UITextFieldDelegate {
         highlightSelectedButton(sender)
         colorChoice = sender.accessibilityIdentifier ?? "cyan"
     }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
 }

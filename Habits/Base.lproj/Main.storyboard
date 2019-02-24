@@ -249,19 +249,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h2F-We-79I" customClass="HabitForm" customModule="Habits" customModuleProvider="target">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h2F-We-79I" customClass="HabitForm" customModule="Habits" customModuleProvider="target">
                                 <rect key="frame" x="16" y="76" width="343" height="290"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <accessibility key="accessibilityConfiguration" identifier="habitForm"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DOC-CT-3sJ">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DOC-CT-3sJ">
                                 <rect key="frame" x="16" y="387" width="349" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="U3B-eC-mfS">
                                 <rect key="frame" x="16" y="465" width="343" height="58"/>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3L-4W-L1i">
-                                <rect key="frame" x="126" y="564" width="91" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3L-4W-L1i">
+                                <rect key="frame" x="213" y="64" width="91" height="30"/>
                                 <state key="normal" title="Update Habit"/>
                                 <connections>
                                     <action selector="updateHabit:" destination="WeQ-tf-3U3" eventType="touchUpInside" id="7ld-Pm-utw"/>
@@ -270,16 +270,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="DOC-CT-3sJ" firstAttribute="top" secondItem="Fgz-tk-Cjk" secondAttribute="top" constant="387" id="5ks-gF-c6N"/>
+                            <constraint firstItem="U3B-eC-mfS" firstAttribute="top" secondItem="DOC-CT-3sJ" secondAttribute="bottom" constant="28" id="5zL-LK-KHl"/>
                             <constraint firstItem="2En-z0-KEW" firstAttribute="trailing" secondItem="U3B-eC-mfS" secondAttribute="trailing" constant="16" id="61I-FK-DJb"/>
                             <constraint firstItem="U3B-eC-mfS" firstAttribute="top" secondItem="2En-z0-KEW" secondAttribute="top" constant="401" id="Ar5-GR-Sj8"/>
                             <constraint firstItem="2En-z0-KEW" firstAttribute="trailing" secondItem="k3L-4W-L1i" secondAttribute="trailing" constant="158" id="EIc-cU-SI3"/>
                             <constraint firstItem="U3B-eC-mfS" firstAttribute="leading" secondItem="2En-z0-KEW" secondAttribute="leading" constant="16" id="GTz-3i-HXF"/>
+                            <constraint firstItem="U3B-eC-mfS" firstAttribute="leading" secondItem="DOC-CT-3sJ" secondAttribute="leading" id="L2y-rm-MUi"/>
                             <constraint firstItem="2En-z0-KEW" firstAttribute="bottom" secondItem="k3L-4W-L1i" secondAttribute="bottom" constant="73" id="MIW-Ho-XoG"/>
                             <constraint firstItem="h2F-We-79I" firstAttribute="leading" secondItem="2En-z0-KEW" secondAttribute="leading" constant="16" id="Q8b-sG-yHd"/>
+                            <constraint firstItem="2En-z0-KEW" firstAttribute="trailing" secondItem="DOC-CT-3sJ" secondAttribute="trailing" constant="10" id="TdH-yz-SEH"/>
                             <constraint firstItem="k3L-4W-L1i" firstAttribute="leading" secondItem="2En-z0-KEW" secondAttribute="leading" constant="126" id="Xdz-Vh-P78"/>
                             <constraint firstItem="2En-z0-KEW" firstAttribute="trailing" secondItem="h2F-We-79I" secondAttribute="trailing" constant="16" id="Zq4-Kv-TX6"/>
                             <constraint firstItem="h2F-We-79I" firstAttribute="top" secondItem="2En-z0-KEW" secondAttribute="top" constant="12" id="p5Z-Df-eFB"/>
                             <constraint firstItem="k3L-4W-L1i" firstAttribute="top" secondItem="2En-z0-KEW" secondAttribute="top" constant="500" id="wPE-Sx-sGi"/>
+                            <constraint firstItem="DOC-CT-3sJ" firstAttribute="top" secondItem="h2F-We-79I" secondAttribute="bottom" constant="21" id="yqi-Pw-Xb0"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2En-z0-KEW"/>
                     </view>

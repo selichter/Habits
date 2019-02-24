@@ -3,7 +3,7 @@ import XCTest_Gherkin
 
 class HabitsStepDefinitions: StepDefiner {
     let app = XCUIApplication()
-    
+
     func launchApp() {
         self.app.launch()
     }
@@ -87,13 +87,33 @@ class HabitsStepDefinitions: StepDefiner {
         }
         
         step("I tap the edit icon") {
-            self.app.buttons["EditHabit"].tap()
+            self.app.buttons["Edit"].tap()
         }
         
         step("I am on the edit habit screen") {
-            XCTAssert(self.app.textFields["editHabitName"].waitForExistence(timeout: 2))
+            XCTAssert(self.app.windows.staticTexts["Habit Name"].waitForExistence(timeout: 10))
         }
-        
+
+        step("There is a habit name placeholder") {
+            let existingPlaceholder = self.app.textFields["newHabitName"].value as! String
+            XCTAssertEqual(existingPlaceholder, "WORKOUT")
+
+        }
+
+        step("I update the habit name") {
+            enterText("edit", inTextField: "newHabitName")
+
+
+            self.app.buttons["monthly"].tap()
+            self.app.buttons["Update Habit"].tap()
+        }
+
+        step("The edited habit is displayed") {
+            sleep(4)
+            let habitName = self.app.staticTexts["habitName"].label
+            XCTAssertEqual(habitName, "WORKOUTEDIT")
+        }
+
         func enterText(_ text: String, inTextField name: String) {
             let enterButton = "\n"
             
@@ -105,8 +125,6 @@ class HabitsStepDefinitions: StepDefiner {
         func textField(_ name: String) -> XCUIElement {
             return XCUIApplication().textFields[name]
         }
-        
 
-        
     }
 }

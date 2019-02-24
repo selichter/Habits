@@ -16,7 +16,6 @@ class HabitsUITests: XCTestCase {
         Then("The habit is displayed")
         When("I tap the back buttons")
         Then("I see habits displayed")
-
     }
     
     func testCreateNewHabit() {
@@ -42,6 +41,9 @@ class HabitsUITests: XCTestCase {
         Given("I am viewing a single habit")
         When("I tap the edit icon")
         Then("I am on the edit habit screen")
+        And("There is a habit name placeholder")
+        When("I update the habit name")
+        Then("The edited habit is displayed")
     }
 
 }

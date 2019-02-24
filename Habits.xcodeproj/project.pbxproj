@@ -13,6 +13,7 @@
 		DF2A02B62209279A000C4462 /* HabitForm.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF2A02B52209279A000C4462 /* HabitForm.xib */; };
 		DF2A02B8220927BA000C4462 /* HabitForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2A02B7220927BA000C4462 /* HabitForm.swift */; };
 		DF2A02BB220A0CDE000C4462 /* EditHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2A02BA220A0CDE000C4462 /* EditHabitViewController.swift */; };
+		DF39CFF8221709F20013ABB3 /* HabitFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF39CFF7221709F20013ABB3 /* HabitFormView.swift */; };
 		DF51E0E221CC9C7500F770C0 /* HabitSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF51E0E121CC9C7500F770C0 /* HabitSteps.swift */; };
 		DF51E0E821CFDD4800F770C0 /* HabitEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF51E0E721CFDD4800F770C0 /* HabitEntity.swift */; };
 		DF51E0EA21CFEAE200F770C0 /* HabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF51E0E921CFEAE200F770C0 /* HabitCell.swift */; };
@@ -78,6 +79,7 @@
 		DF2A02B52209279A000C4462 /* HabitForm.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HabitForm.xib; sourceTree = "<group>"; };
 		DF2A02B7220927BA000C4462 /* HabitForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitForm.swift; sourceTree = "<group>"; };
 		DF2A02BA220A0CDE000C4462 /* EditHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHabitViewController.swift; sourceTree = "<group>"; };
+		DF39CFF7221709F20013ABB3 /* HabitFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitFormView.swift; sourceTree = "<group>"; };
 		DF51E0E121CC9C7500F770C0 /* HabitSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitSteps.swift; sourceTree = "<group>"; };
 		DF51E0E721CFDD4800F770C0 /* HabitEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitEntity.swift; sourceTree = "<group>"; };
 		DF51E0E921CFEAE200F770C0 /* HabitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCell.swift; sourceTree = "<group>"; };
@@ -185,6 +187,16 @@
 			path = "New Group";
 			sourceTree = "<group>";
 		};
+		DF39CFF6221709D90013ABB3 /* HabitForm */ = {
+			isa = PBXGroup;
+			children = (
+				DF2A02B52209279A000C4462 /* HabitForm.xib */,
+				DF2A02B7220927BA000C4462 /* HabitForm.swift */,
+				DF39CFF7221709F20013ABB3 /* HabitFormView.swift */,
+			);
+			path = HabitForm;
+			sourceTree = "<group>";
+		};
 		DF81315621CB309F003434E2 = {
 			isa = PBXGroup;
 			children = (
@@ -213,6 +225,7 @@
 		DF81316121CB309F003434E2 /* Habits */ = {
 			isa = PBXGroup;
 			children = (
+				DF39CFF6221709D90013ABB3 /* HabitForm */,
 				DF2A02B9220A0C9F000C4462 /* EditHabit */,
 				DFDC4FB721E8FD9800C95C13 /* Habit */,
 				DFDC4FB621E8FD7100C95C13 /* NewHabit */,
@@ -225,8 +238,6 @@
 				DF81316B21CB30A1003434E2 /* LaunchScreen.storyboard */,
 				DF81316E21CB30A1003434E2 /* Info.plist */,
 				DFC409A821EE530A0020AF73 /* Palettes.swift */,
-				DF2A02B52209279A000C4462 /* HabitForm.xib */,
-				DF2A02B7220927BA000C4462 /* HabitForm.swift */,
 				DFA7390E220D1D12001E6971 /* SegueUtils.swift */,
 			);
 			path = Habits;
@@ -478,6 +489,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-Habits/Pods-Habits-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -485,6 +497,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -600,6 +613,7 @@
 				DF51E0EA21CFEAE200F770C0 /* HabitCell.swift in Sources */,
 				DFA7390D220CB32C001E6971 /* EditHabitViewModel.swift in Sources */,
 				DF81316321CB309F003434E2 /* AppDelegate.swift in Sources */,
+				DF39CFF8221709F20013ABB3 /* HabitFormView.swift in Sources */,
 				DFC409A921EE530A0020AF73 /* Palettes.swift in Sources */,
 				DF2A02B8220927BA000C4462 /* HabitForm.swift in Sources */,
 			);
