@@ -13,7 +13,6 @@
 		DF2A02B62209279A000C4462 /* HabitForm.xib in Resources */ = {isa = PBXBuildFile; fileRef = DF2A02B52209279A000C4462 /* HabitForm.xib */; };
 		DF2A02B8220927BA000C4462 /* HabitForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2A02B7220927BA000C4462 /* HabitForm.swift */; };
 		DF2A02BB220A0CDE000C4462 /* EditHabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF2A02BA220A0CDE000C4462 /* EditHabitViewController.swift */; };
-		DF39CFF8221709F20013ABB3 /* HabitFormView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF39CFF7221709F20013ABB3 /* HabitFormView.swift */; };
 		DF51E0E221CC9C7500F770C0 /* HabitSteps.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF51E0E121CC9C7500F770C0 /* HabitSteps.swift */; };
 		DF51E0E821CFDD4800F770C0 /* HabitEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF51E0E721CFDD4800F770C0 /* HabitEntity.swift */; };
 		DF51E0EA21CFEAE200F770C0 /* HabitCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF51E0E921CFEAE200F770C0 /* HabitCell.swift */; };
@@ -79,7 +78,6 @@
 		DF2A02B52209279A000C4462 /* HabitForm.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HabitForm.xib; sourceTree = "<group>"; };
 		DF2A02B7220927BA000C4462 /* HabitForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitForm.swift; sourceTree = "<group>"; };
 		DF2A02BA220A0CDE000C4462 /* EditHabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditHabitViewController.swift; sourceTree = "<group>"; };
-		DF39CFF7221709F20013ABB3 /* HabitFormView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitFormView.swift; sourceTree = "<group>"; };
 		DF51E0E121CC9C7500F770C0 /* HabitSteps.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitSteps.swift; sourceTree = "<group>"; };
 		DF51E0E721CFDD4800F770C0 /* HabitEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitEntity.swift; sourceTree = "<group>"; };
 		DF51E0E921CFEAE200F770C0 /* HabitCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCell.swift; sourceTree = "<group>"; };
@@ -192,7 +190,6 @@
 			children = (
 				DF2A02B52209279A000C4462 /* HabitForm.xib */,
 				DF2A02B7220927BA000C4462 /* HabitForm.swift */,
-				DF39CFF7221709F20013ABB3 /* HabitFormView.swift */,
 			);
 			path = HabitForm;
 			sourceTree = "<group>";
@@ -613,7 +610,6 @@
 				DF51E0EA21CFEAE200F770C0 /* HabitCell.swift in Sources */,
 				DFA7390D220CB32C001E6971 /* EditHabitViewModel.swift in Sources */,
 				DF81316321CB309F003434E2 /* AppDelegate.swift in Sources */,
-				DF39CFF8221709F20013ABB3 /* HabitFormView.swift in Sources */,
 				DFC409A921EE530A0020AF73 /* Palettes.swift in Sources */,
 				DF2A02B8220927BA000C4462 /* HabitForm.swift in Sources */,
 			);
