@@ -49,14 +49,14 @@ class HabitsCollectionIntegrationTests: XCTestCase {
         XCTAssertEqual(habitOne.name.text, "EAT")
         XCTAssertEqual(habitOne.standings.text, "1/3")
         XCTAssertEqual(habitOne.timePeriod.text, "daily")
-        XCTAssertEqual(habitOne.measurement.text, "meals")
+        XCTAssertEqual(habitOne.currentCount.text, "1")
         
         let habitTwo = habitsCollectionViewController.collectionView(habitsCollectionViewController.collectionView, cellForItemAt: IndexPath(row: 1, section: 0)) as! HabitCell
         
         XCTAssertEqual(habitTwo.name.text, "DRINK WATER")
         XCTAssertEqual(habitTwo.standings.text, "0/0")
         XCTAssertEqual(habitTwo.timePeriod.text, "daily")
-        XCTAssertEqual(habitTwo.measurement.text, "ounces")
+        XCTAssertEqual(habitTwo.currentCount.text, "0")
     }
     
 

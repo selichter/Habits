@@ -31,10 +31,6 @@ class NewHabitViewController: UIViewController, UITextFieldDelegate {
         habitFormView.xibTargetInput.delegate = self
         habitFormView.xibMeasurementInput.delegate = self
         
-        habitFormView.xibHabitNameInput.placeholder = "HABIT NAME"
-        habitFormView.xibTargetInput.placeholder = "4"
-        habitFormView.xibMeasurementInput.placeholder = "DAILY"
-        
         for choice in timePeriodChoices {
             let button = makeButtonsWithText(choice)
             button.addTarget(self, action: #selector(selectButtonValue), for: .touchUpInside)

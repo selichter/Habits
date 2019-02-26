@@ -3,7 +3,7 @@ import UIKit
 
 fileprivate let roundedButtonRadious = CGFloat(10)
 fileprivate func buttonRect(_ width: CGFloat) -> CGRect {
-    return CGRect(x: 20, y: 20, width: width, height: 100)
+    return CGRect(x: 20, y: 20, width: width, height: 48)
 }
 
 func unhighlightAllButtons(_ stackView: UIStackView) {
@@ -31,13 +31,13 @@ func highlightButtonMatchingChoice(_ stackView: UIStackView, _ value: String) {
 func getButtonTemplate() -> UIButton {
     let button = UIButton(type: UIButton.ButtonType.system)
     button.frame = buttonRect(button.intrinsicContentSize.width)
-    button.layer.cornerRadius = roundedButtonRadious
     button.sizeToFit()
     return button
 }
 
 func makeButtonsWithText(_ text: String)-> UIButton {
     let button = getButtonTemplate()
+    button.layer.cornerRadius = roundedButtonRadious
     button.setTitle(text, for: .normal)
     button.setTitleColor(UIColor.black, for: .normal)
     button.accessibilityIdentifier = text

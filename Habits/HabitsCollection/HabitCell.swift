@@ -3,15 +3,14 @@ import UIKit
 class HabitCell: UICollectionViewCell {
     @IBOutlet var name: UILabel!
     @IBOutlet weak var standings: UILabel!
-    @IBOutlet weak var measurement: UILabel!
     @IBOutlet weak var timePeriod: UILabel!
-    
+    @IBOutlet weak var currentCount: UILabel!
 
     
     func render(habit: HabitViewModel) {
         self.name.text = habit.name
         self.standings.text = habit.standings
-        self.measurement.text = habit.measurement.lowercased()
+        self.currentCount.text = "\(habit.currentCount)"
         self.timePeriod.text = habit.timePeriod.lowercased()
         
         self.backgroundColor = allColors[habit.colorScheme]?.primary 
@@ -20,7 +19,7 @@ class HabitCell: UICollectionViewCell {
 
         self.name.sizeToFit()
         self.standings.sizeToFit()
-        self.measurement.sizeToFit()
+        self.currentCount.sizeToFit()
         self.timePeriod.sizeToFit()
     }
 }

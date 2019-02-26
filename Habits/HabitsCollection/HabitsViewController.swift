@@ -57,9 +57,9 @@ class HabitsCollectionViewController: UICollectionViewController {
 
         let width = UIScreen.main.bounds.width - 20
         layout.sectionInset = UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
-        layout.itemSize = CGSize(width: width / 2, height: width / 2)
+        layout.itemSize = CGSize(width: width, height: width / 4)
         layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
+        layout.minimumLineSpacing = 8
         return layout
     }
 }

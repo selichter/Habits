@@ -18,7 +18,7 @@ class HabitsStepDefinitions: StepDefiner {
             
             XCTAssertEqual(firstCell.staticTexts["habitTitle"].label, "WORKOUT")
             XCTAssertEqual(firstCell.staticTexts["habitValues"].label, "1/3")
-            XCTAssertEqual(firstCell.staticTexts["measurement"].label, "hours")
+            XCTAssertEqual(firstCell.staticTexts["currentCount"].label, "1")
             XCTAssertEqual(firstCell.staticTexts["timePeriod"].label, "weekly")
         }
         
@@ -30,6 +30,7 @@ class HabitsStepDefinitions: StepDefiner {
         }
         
         step("The habit is displayed") {
+            sleep(5)
             let habitName = self.app.staticTexts["habitName"].label
             let currentCount = self.app.staticTexts["currentCount"].label
             
@@ -76,7 +77,7 @@ class HabitsStepDefinitions: StepDefiner {
 
             XCTAssertEqual(lastCell.staticTexts["habitTitle"].label, "TEST HABIT NAME")
             XCTAssertEqual(lastCell.staticTexts["habitValues"].label, "0/1")
-            XCTAssertEqual(lastCell.staticTexts["measurement"].label, "test measurement")
+            XCTAssertEqual(lastCell.staticTexts["currentCount"].label, "0")
             XCTAssertEqual(lastCell.staticTexts["timePeriod"].label, "daily")
         }
         
@@ -91,7 +92,7 @@ class HabitsStepDefinitions: StepDefiner {
         }
         
         step("I am on the edit habit screen") {
-            XCTAssert(self.app.windows.staticTexts["Habit Name"].waitForExistence(timeout: 10))
+            XCTAssert(self.app.buttons["Update Habit"].waitForExistence(timeout: 10))
         }
 
         step("There is a habit name placeholder") {
