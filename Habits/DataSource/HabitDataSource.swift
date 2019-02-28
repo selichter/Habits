@@ -20,10 +20,6 @@ class HabitDataSource: DataSource {
         }
     }
 
-    func update(item: HabitEntity) throws {
-        throw NSError()
-    }
-
     func clean() {
         try! realm.write {
             realm.delete(realm.objects(RealmHabit.self))

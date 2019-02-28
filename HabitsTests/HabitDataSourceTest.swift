@@ -8,8 +8,6 @@ class HabitDataSourceTest: XCTestCase {
     let habitOneId = UUID().uuidString
     let habitOneName = "drink water"
 
-    
-
     override func setUp() {
         super.setUp()
 
