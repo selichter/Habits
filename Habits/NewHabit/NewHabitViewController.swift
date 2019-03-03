@@ -14,7 +14,6 @@ class NewHabitViewController: UIViewController, UITextFieldDelegate {
     @IBAction func createHabit(_ sender: Any) {
         let newHabit = HabitEntity(habitId: UUID().uuidString,
                 name: habitFormView.xibHabitNameInput.text ?? "",
-                                   currentCount: 0,
                                    target: Int(habitFormView.xibTargetInput.text!) ?? 0,
                                    timePeriod: timePeriodValue,
                                    measurement: habitFormView.xibMeasurementInput.text ?? "",

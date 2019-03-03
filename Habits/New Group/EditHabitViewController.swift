@@ -59,7 +59,6 @@ class EditHabitViewController: UIViewController, UITextFieldDelegate {
     @IBAction func updateHabit(_ sender: Any) {
         let entity = HabitEntity(habitId: hvm.habitId,
                                    name: habitForm.xibHabitNameInput.text ?? "",
-                                   currentCount: hvm.currentCount,
                                    target: Int(habitForm.xibTargetInput.text!) ?? 0,
                                    timePeriod: timePeriodValue,
                                    measurement: habitForm.xibMeasurementInput.text ?? "",

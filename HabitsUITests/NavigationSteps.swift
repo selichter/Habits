@@ -29,7 +29,7 @@ class NavigationStepDefinitions: StepDefiner {
             let firstCell = self.app.collectionViews.cells.element(boundBy: 0)
             
             XCTAssertEqual(firstCell.staticTexts["habitTitle"].label, "WORKOUT")
-            XCTAssertEqual(firstCell.staticTexts["habitValues"].label, "1/3")
+            XCTAssertEqual(firstCell.staticTexts["habitValues"].label, "0/3")
 
         }
     }

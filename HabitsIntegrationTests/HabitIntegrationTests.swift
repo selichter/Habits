@@ -10,7 +10,7 @@ class HabitIntegrationTests: XCTestCase {
     }
     
     func testValuesAreDisplayed() {
-        let entity = HabitEntity(habitId: "test-habit", name: "eat", currentCount: 1, target: 3, timePeriod: "daily", measurement: "meals", colorScheme: "lime", counts: [Count]())
+        let entity = HabitEntity(habitId: "test-habit", name: "eat", target: 3, timePeriod: "daily", measurement: "meals", colorScheme: "lime", counts: [Count(timestamp: Date(), count: CountEnum.increase)])
         let hvm = HabitViewModel(habitEntity: entity)
         habitViewController.hvm = hvm
         habitViewController.viewDidLoad()
@@ -20,7 +20,7 @@ class HabitIntegrationTests: XCTestCase {
     }
     
     func testCurrentCountCanIncrease() {
-        let entity = HabitEntity(habitId: "test-habit", name: "eat", currentCount: 1, target: 3, timePeriod: "daily", measurement: "meals", colorScheme: "lime", counts: [Count]())
+        let entity = HabitEntity(habitId: "test-habit", name: "eat", target: 3, timePeriod: "daily", measurement: "meals", colorScheme: "lime", counts: [Count(timestamp: Date(), count: CountEnum.increase)])
         let hvm = HabitViewModel(habitEntity: entity)
         habitViewController.hvm = hvm
         habitViewController.viewDidLoad()
@@ -31,7 +31,7 @@ class HabitIntegrationTests: XCTestCase {
     }
     
     func testCurrentCountCanDecrease() {
-        let entity = HabitEntity(habitId: "test-habit", name: "eat", currentCount: 1, target: 3, timePeriod: "daily", measurement: "meals", colorScheme: "lime", counts: [Count]())
+        let entity = HabitEntity(habitId: "test-habit", name: "eat", target: 3, timePeriod: "daily", measurement: "meals", colorScheme: "lime", counts: [Count(timestamp: Date(), count: CountEnum.increase)])
         let hvm = HabitViewModel(habitEntity: entity)
         habitViewController.hvm = hvm
         habitViewController.viewDidLoad()

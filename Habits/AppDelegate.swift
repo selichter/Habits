@@ -38,7 +38,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let habitDataSource = HabitDataSource()
         let habit1 = HabitEntity(habitId: UUID().uuidString,
                                 name: "workout",
-                                 currentCount: 1,
                                  target: 3,
                                  timePeriod: "weekly",
                                  measurement: "hours",

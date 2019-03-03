@@ -17,8 +17,8 @@ class HabitDataSourceTest: XCTestCase {
         let count2 = Count(timestamp: Date(), count: CountEnum.increase)
         let count3 = Count(timestamp: Date(), count: CountEnum.decrease)
 
-        let habit1 = HabitEntity(habitId: habitOneId, name: habitOneName, currentCount: 0, target: 2, timePeriod: "daily", measurement: "ounces", colorScheme: "green", counts: [count1])
-        let habit2 = HabitEntity(habitId: habitTwoId , name: "exercise", currentCount: 0, target: 2, timePeriod: "weekly", measurement: "hours", colorScheme: "indigo", counts: [count2])
+        let habit1 = HabitEntity(habitId: habitOneId, name: habitOneName,  target: 2, timePeriod: "daily", measurement: "ounces", colorScheme: "green", counts: [count1])
+        let habit2 = HabitEntity(habitId: habitTwoId , name: "exercise",  target: 2, timePeriod: "weekly", measurement: "hours", colorScheme: "indigo", counts: [count2, count3])
 
         try! realm.write {
             realm.add(RealmHabit(habit: habit1))
@@ -49,7 +49,7 @@ class HabitDataSourceTest: XCTestCase {
 
     func testInsertPutsHabitIntoRealm() {
         let id = UUID().uuidString
-        let habit3 = HabitEntity(habitId: id, name: "sleep", currentCount: 0, target: 2, timePeriod: "daily", measurement: "ounces", colorScheme: "red", counts: [Count]())
+        let habit3 = HabitEntity(habitId: id, name: "sleep",  target: 2, timePeriod: "daily", measurement: "ounces", colorScheme: "red", counts: [Count]())
 
         habitDataSource.insert(item: habit3)
         let fetchedHabit = habitDataSource.getById(id: habit3.habitId)
@@ -59,19 +59,19 @@ class HabitDataSourceTest: XCTestCase {
 
     func testInserteHabitUpdatesGivenHabit() {
         let habitId = UUID().uuidString
-        var habit = HabitEntity(habitId: habitId, name: "something", currentCount: 0, target: 2, timePeriod: "daily", measurement: "ounces", colorScheme: "purple", counts: [Count]())
+        var habit = HabitEntity(habitId: habitId, name: "something",  target: 2, timePeriod: "daily", measurement: "ounces", colorScheme: "purple", counts: [Count]())
         habitDataSource.insert(item: habit)
 
-        habit.currentCount = 3
+//        habit.currentCount = 3
         habitDataSource.insert(item: habit)
         let afterUpdate = habitDataSource.getById(id: habitId)
-        XCTAssertEqual(afterUpdate.currentCount, 3)
+//        XCTAssertEqual(afterUpdate.currentCount, 3)
         XCTAssertEqual(afterUpdate.name, habit.name)
         XCTAssertEqual(afterUpdate.habitId, habit.habitId)
 
     }
 
-    func testCleanRemovesAllHabitss() {
+    func testCleanRemovesAllHabits() {
         habitDataSource.clean()
         let habits = habitDataSource.getAll()
 
