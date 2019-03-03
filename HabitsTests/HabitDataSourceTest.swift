@@ -6,14 +6,19 @@ class HabitDataSourceTest: XCTestCase {
     let realm = try! Realm()
     let habitDataSource = HabitDataSource()
     let habitOneId = UUID().uuidString
+    let habitTwoId = UUID().uuidString
     let habitOneName = "drink water"
 
     override func setUp() {
         super.setUp()
 
         habitDataSource.clean()
-        let habit1 = HabitEntity(habitId: habitOneId, name: habitOneName, currentCount: 0, target: 2, timePeriod: "daily", measurement: "ounces", colorScheme: "green")
-        let habit2 = HabitEntity(habitId: UUID().uuidString, name: "exercise", currentCount: 0, target: 2, timePeriod: "weekly", measurement: "hours", colorScheme: "indigo")
+        let count1 = Count(timestamp: Date(), count: CountEnum.increase)
+        let count2 = Count(timestamp: Date(), count: CountEnum.increase)
+        let count3 = Count(timestamp: Date(), count: CountEnum.decrease)
+
+        let habit1 = HabitEntity(habitId: habitOneId, name: habitOneName, currentCount: 0, target: 2, timePeriod: "daily", measurement: "ounces", colorScheme: "green", counts: [count1])
+        let habit2 = HabitEntity(habitId: habitTwoId , name: "exercise", currentCount: 0, target: 2, timePeriod: "weekly", measurement: "hours", colorScheme: "indigo", counts: [count2])
 
         try! realm.write {
             realm.add(RealmHabit(habit: habit1))
@@ -44,7 +49,7 @@ class HabitDataSourceTest: XCTestCase {
 
     func testInsertPutsHabitIntoRealm() {
         let id = UUID().uuidString
-        let habit3 = HabitEntity(habitId: id, name: "sleep", currentCount: 0, target: 2, timePeriod: "daily", measurement: "ounces", colorScheme: "red")
+        let habit3 = HabitEntity(habitId: id, name: "sleep", currentCount: 0, target: 2, timePeriod: "daily", measurement: "ounces", colorScheme: "red", counts: [Count]())
 
         habitDataSource.insert(item: habit3)
         let fetchedHabit = habitDataSource.getById(id: habit3.habitId)
@@ -54,7 +59,7 @@ class HabitDataSourceTest: XCTestCase {
 
     func testInserteHabitUpdatesGivenHabit() {
         let habitId = UUID().uuidString
-        var habit = HabitEntity(habitId: habitId, name: "something", currentCount: 0, target: 2, timePeriod: "daily", measurement: "ounces", colorScheme: "purple")
+        var habit = HabitEntity(habitId: habitId, name: "something", currentCount: 0, target: 2, timePeriod: "daily", measurement: "ounces", colorScheme: "purple", counts: [Count]())
         habitDataSource.insert(item: habit)
 
         habit.currentCount = 3

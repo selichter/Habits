@@ -7,7 +7,7 @@ class HabitViewModelTests: XCTestCase {
     var dataSource = HabitDataSource()
     
     func testPropertiesAreSet() {
-        let entity = HabitEntity(habitId: "test-habit", name: "eat", currentCount: 1, target: 3, timePeriod: "daily", measurement: "meals", colorScheme: "lime")
+        let entity = HabitEntity(habitId: "test-habit", name: "eat", currentCount: 1, target: 3, timePeriod: "daily", measurement: "meals", colorScheme: "lime", counts: [Count(timestamp: Date(), count: CountEnum.increase)])
         
         let hvm = HabitViewModel(habitEntity: entity)
         XCTAssertEqual(hvm.colorScheme, entity.colorScheme)
@@ -19,7 +19,7 @@ class HabitViewModelTests: XCTestCase {
     }
     
     func testIncreaseCount() {
-        let entity = HabitEntity(habitId: "test-habit", name: "eat", currentCount: 1, target: 3, timePeriod: "daily", measurement: "meals", colorScheme: "lime")
+        let entity = HabitEntity(habitId: "test-habit", name: "eat", currentCount: 1, target: 3, timePeriod: "daily", measurement: "meals", colorScheme: "lime", counts: [Count(timestamp: Date(), count: CountEnum.increase)])
         
         let hvm = HabitViewModel(habitEntity: entity)
         hvm.increaseCount()
@@ -30,7 +30,7 @@ class HabitViewModelTests: XCTestCase {
     }
     
     func testDecreaseCount() {
-        let entity = HabitEntity(habitId: "test-habit", name: "eat", currentCount: 2, target: 3, timePeriod: "daily", measurement: "meals", colorScheme: "lime")
+        let entity = HabitEntity(habitId: "test-habit", name: "eat", currentCount: 2, target: 3, timePeriod: "daily", measurement: "meals", colorScheme: "lime", counts: [Count(timestamp: Date(), count: CountEnum.increase)])
         
         let hvm = HabitViewModel(habitEntity: entity)
         hvm.decreaseCount()
@@ -41,7 +41,7 @@ class HabitViewModelTests: XCTestCase {
     }
     
     func testdecreaseCountDoesNotDecreaseBelow0() {
-        let entity = HabitEntity(habitId: "test-habit", name: "eat", currentCount: 0, target: 3, timePeriod: "daily", measurement: "meals", colorScheme: "lime")
+        let entity = HabitEntity(habitId: "test-habit", name: "eat", currentCount: 0, target: 3, timePeriod: "daily", measurement: "meals", colorScheme: "lime", counts: [Count(timestamp: Date(), count: CountEnum.increase)])
         
         let hvm = HabitViewModel(habitEntity: entity)
         hvm.decreaseCount()

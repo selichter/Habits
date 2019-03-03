@@ -63,7 +63,8 @@ class EditHabitViewController: UIViewController, UITextFieldDelegate {
                                    target: Int(habitForm.xibTargetInput.text!) ?? 0,
                                    timePeriod: timePeriodValue,
                                    measurement: habitForm.xibMeasurementInput.text ?? "",
-                                   colorScheme: colorChoice
+                                   colorScheme: colorChoice,
+                                   counts: hvm.counts
         )
         
 //        figure out how to not new up an entity here

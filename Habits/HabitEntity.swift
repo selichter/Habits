@@ -1,6 +1,15 @@
 import Foundation
 import RealmSwift
 
+enum CountEnum {
+    case increase, decrease
+}
+
+struct Count {
+    var timestamp: Date
+    var count: CountEnum
+}
+
 struct HabitEntity {
     var habitId: String
     let name: String
@@ -9,6 +18,7 @@ struct HabitEntity {
     let timePeriod: String
     let measurement: String
     let colorScheme: String
+    var counts = [Count]()
 }
 
 class RealmHabit: Object {
@@ -19,7 +29,8 @@ class RealmHabit: Object {
     @objc dynamic var timePeriod = ""
     @objc dynamic var measurement = ""
     @objc dynamic var colorScheme = "cyan"
-    
+    var counts = [Count]()
+
     override static func primaryKey() -> String? {
         return "habitId"
     }
@@ -33,6 +44,7 @@ class RealmHabit: Object {
         timePeriod = habit.timePeriod
         measurement = habit.measurement
         colorScheme = habit.colorScheme
+        counts = habit.counts
         
     }
 
@@ -43,7 +55,8 @@ class RealmHabit: Object {
                            target: target,
                            timePeriod: timePeriod,
                            measurement: measurement,
-                           colorScheme: colorScheme
+                           colorScheme: colorScheme,
+                           counts: counts
         )
     }
 }

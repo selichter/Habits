@@ -42,7 +42,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                  target: 3,
                                  timePeriod: "weekly",
                                  measurement: "hours",
-                                 colorScheme: "cyan")
+                                 colorScheme: "cyan",
+                                 counts: [Count(timestamp: Date(), count: CountEnum.increase)])
         habitDataSource.insert(item: habit1)
     }
 

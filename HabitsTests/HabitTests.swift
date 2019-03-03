@@ -11,7 +11,8 @@ class HabitTests: XCTestCase {
                                       target: 0,
                                       timePeriod: "daily",
                                       measurement: "ounces",
-                                      colorScheme: "deepPurple")
+                                      colorScheme: "deepPurple",
+                                      counts: [Count]())
         let realmHabit = RealmHabit(habit: habitEntity)
         XCTAssertEqual(habitEntity.name, realmHabit.name)
     }
