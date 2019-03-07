@@ -20,6 +20,11 @@ struct HabitEntity {
     var counts = [Count]()
 }
 
+class RealmCount: Object {
+    @objc dynamic var timestamp: Date
+    @objc dynamic var count: String
+}
+
 class RealmHabit: Object {
     @objc dynamic var habitId = ""
     @objc dynamic var name = ""
@@ -27,7 +32,7 @@ class RealmHabit: Object {
     @objc dynamic var timePeriod = ""
     @objc dynamic var measurement = ""
     @objc dynamic var colorScheme = "cyan"
-    var counts = [Count]()
+    var counts = List<RealmCount>()
 
     override static func primaryKey() -> String? {
         return "habitId"

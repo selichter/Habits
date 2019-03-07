@@ -7,7 +7,16 @@ class HabitViewModelTests: XCTestCase {
     var dataSource = HabitDataSource()
     
     func testPropertiesAreSet() {
-        let entity = HabitEntity(habitId: "test-habit", name: "eat", target: 3, timePeriod: "daily", measurement: "meals", colorScheme: "lime", counts: [Count(timestamp: Date(), count: CountEnum.increase)])
+        let yesterday =  Calendar.current.date(byAdding: .day, value: -1, to: Date())
+
+        let entity = HabitEntity(habitId: "test-habit",
+                                 name: "eat",
+                                 target: 3,
+                                 timePeriod: "daily",
+                                 measurement: "meals",
+                                 colorScheme: "lime",
+                                 counts: [Count(timestamp: Date(), count: CountEnum.increase),
+                                          Count(timestamp: yesterday!, count: CountEnum.increase)])
         
         let hvm = HabitViewModel(habitEntity: entity)
         XCTAssertEqual(hvm.colorScheme, entity.colorScheme)
@@ -19,6 +28,8 @@ class HabitViewModelTests: XCTestCase {
     }
     
     func testIncreaseCount() {
+
+
         let entity = HabitEntity(habitId: "test-habit", name: "eat", target: 3, timePeriod: "daily", measurement: "meals", colorScheme: "lime", counts: [Count(timestamp: Date(), count: CountEnum.increase)])
         
         let hvm = HabitViewModel(habitEntity: entity)

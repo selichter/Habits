@@ -2,6 +2,7 @@ import Foundation
 
 class HabitViewModel {
     var dataSource = HabitDataSource()
+    let cal = Calendar.current
 
     let name: String
     let measurement: String
@@ -10,12 +11,17 @@ class HabitViewModel {
     var target: Int
     var habitId = String()
     var counts = [Count]()
-    var currentCount: Int {
-        return self.counts.filter{$0.count == CountEnum.increase}.count - self.counts.filter{$0.count == CountEnum.decrease}.count
-    }
+
+    var todayCounts = [Count]()
+
+    var currentCount = Int()
 
     var standings: String {
         return "\(currentCount)/\(target)"
+    }
+
+    var weekCounts: [Int: Int] {
+        return [1: 1]
     }
 
     init(habitEntity: HabitEntity) {
@@ -26,6 +32,8 @@ class HabitViewModel {
         target = habitEntity.target
         habitId = habitEntity.habitId
         counts = habitEntity.counts
+        todayCounts = habitEntity.counts.filter {cal.dateComponents([.day], from: $0.timestamp).day == cal.dateComponents([.day], from: Date()).day}
+        currentCount = todayCounts.filter{$0.count == CountEnum.increase}.count - self.counts.filter{$0.count == CountEnum.decrease}.count
     }
 
     func increaseCount() {
@@ -52,5 +60,15 @@ class HabitViewModel {
             colorScheme: colorScheme, counts: [])
         dataSource.insert(item: entity)
     }
-    
+
+//    func buildWeekCounts() -> [Int: Int] {
+//        var weekCounts = [Int: Int]()
+//
+//        for num in 0..<7 {
+//            let thisDate = cal.dateComponents([.day], from: cal.date(byAdding: .day, value: num, to: Date())!)
+//            weekCounts[num] = self.counts.filter {cal.dateComponents([.day], from: $0.timestamp).day == cal.dateComponents([.day], from: thisDate).day}.count
+//        }
+//        return weekCounts
+//    }
+
 }

@@ -35,6 +35,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     fileprivate func populateHabits() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "mm-dd-yyyy"
+        guard let date = dateFormatter.date(from: "03-06-2019") else {
+            fatalError()
+        }
+
+
         let habitDataSource = HabitDataSource()
         let habit1 = HabitEntity(habitId: UUID().uuidString,
                                 name: "workout",

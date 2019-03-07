@@ -44,17 +44,20 @@ class HabitDataSourceTest: XCTestCase {
 
         XCTAssertEqual(habit.name, self.habitOneName)
         XCTAssertEqual(habit.habitId, self.habitOneId)
+        XCTAssertEqual(habit.counts.count, 1)
+
 
     }
 
     func testInsertPutsHabitIntoRealm() {
         let id = UUID().uuidString
-        let habit3 = HabitEntity(habitId: id, name: "sleep",  target: 2, timePeriod: "daily", measurement: "ounces", colorScheme: "red", counts: [Count]())
+        let habit3 = HabitEntity(habitId: id, name: "sleep",  target: 2, timePeriod: "daily", measurement: "ounces", colorScheme: "red", counts: [Count(timestamp: Date(), count: CountEnum.increase)])
 
         habitDataSource.insert(item: habit3)
         let fetchedHabit = habitDataSource.getById(id: habit3.habitId)
 
         XCTAssertEqual(fetchedHabit.name, habit3.name)
+        XCTAssertEqual(fetchedHabit.counts.count, 1)
     }
 
     func testInserteHabitUpdatesGivenHabit() {
