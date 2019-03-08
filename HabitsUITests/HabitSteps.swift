@@ -65,7 +65,6 @@ class HabitsStepDefinitions: StepDefiner {
             enterText("1", inTextField: "targetInput")
             enterText("Test Measurement", inTextField: "measurementInput")
             self.app.buttons["daily"].tap()
-            self.app.buttons["lime"].tap()
             XCTAssert(self.app.buttons["CreateHabit"].waitForExistence(timeout: 3))
 
             self.app.buttons["CreateHabit"].tap()

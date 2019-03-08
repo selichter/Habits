@@ -7,14 +7,13 @@ class HabitViewController: UIViewController {
     var hvm: HabitViewModel!
     
     override func viewDidLoad() {
-        view.backgroundColor = allColors[hvm.colorScheme]!.primary
+        view.backgroundColor = spearmint
         populateDisplay(hvm)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         let thisHvm = HabitDataSource().getById(id: hvm.habitId)
         hvm = HabitViewModel(habitEntity: thisHvm)
-        view.backgroundColor = allColors[hvm.colorScheme]!.primary
         populateDisplay(hvm)
     }
     
@@ -30,9 +29,9 @@ class HabitViewController: UIViewController {
     
     func populateDisplay(_ habit: HabitViewModel) {
         name.text = habit.name
-        name.textColor = allColors[habit.colorScheme]!.secondary
+        name.textColor = sunflower
         currentCount.text = "\(habit.currentCount)"
-        currentCount.textColor = allColors[habit.colorScheme]!.secondary
+        currentCount.textColor = sunflower
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

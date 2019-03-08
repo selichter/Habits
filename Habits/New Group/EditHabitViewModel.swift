@@ -44,11 +44,3 @@ func makeButtonsWithText(_ text: String)-> UIButton {
     return button
 }
 
-func makeColorButtons(_ color: String) -> UIButton {
-    let button = getButtonTemplate()
-    button.backgroundColor = allColors[color]!.primary
-    button.accessibilityIdentifier = color
-    button.layer.cornerRadius = button.frame.width/2
-    return button
-    
-}

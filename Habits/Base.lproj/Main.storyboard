@@ -125,31 +125,24 @@
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="feK-kL-KLb">
                                 <rect key="frame" x="16" y="411" width="343" height="48"/>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="yeg-af-hmb">
-                                <rect key="frame" x="16" y="488" width="343" height="48"/>
-                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="yeg-af-hmb" firstAttribute="top" secondItem="fJs-Of-tMy" secondAttribute="top" constant="424" id="0XH-5C-Qeo"/>
                             <constraint firstItem="fJs-Of-tMy" firstAttribute="trailing" secondItem="feK-kL-KLb" secondAttribute="trailing" constant="16" id="3ZA-3A-Gsb"/>
                             <constraint firstItem="fJs-Of-tMy" firstAttribute="bottom" secondItem="GJO-2P-8j7" secondAttribute="bottom" constant="135" id="5gZ-Al-MUP"/>
                             <constraint firstItem="feK-kL-KLb" firstAttribute="top" secondItem="fJs-Of-tMy" secondAttribute="top" constant="347" id="9JC-3Q-GUd"/>
                             <constraint firstItem="fJs-Of-tMy" firstAttribute="trailing" secondItem="fef-Bv-6mM" secondAttribute="trailing" constant="157" id="BZB-9e-pGL"/>
-                            <constraint firstItem="yeg-af-hmb" firstAttribute="leading" secondItem="fJs-Of-tMy" secondAttribute="leading" constant="16" id="Jr5-0J-keD"/>
                             <constraint firstItem="fef-Bv-6mM" firstAttribute="leading" secondItem="fJs-Of-tMy" secondAttribute="leading" constant="131" id="Zgr-ke-ePi"/>
                             <constraint firstItem="GJO-2P-8j7" firstAttribute="top" secondItem="fJs-Of-tMy" secondAttribute="top" constant="18" id="beS-Jw-1VO"/>
                             <constraint firstItem="fJs-Of-tMy" firstAttribute="trailing" secondItem="GJO-2P-8j7" secondAttribute="trailing" constant="16" id="fUF-ce-JNI"/>
                             <constraint firstItem="GJO-2P-8j7" firstAttribute="leading" secondItem="fJs-Of-tMy" secondAttribute="leading" constant="16" id="i4K-x3-MBA"/>
                             <constraint firstItem="feK-kL-KLb" firstAttribute="leading" secondItem="fJs-Of-tMy" secondAttribute="leading" constant="16" id="k4P-HZ-ReH"/>
                             <constraint firstItem="fef-Bv-6mM" firstAttribute="top" secondItem="GJO-2P-8j7" secondAttribute="bottom" constant="69" id="kZQ-9Q-X5J"/>
-                            <constraint firstItem="fJs-Of-tMy" firstAttribute="trailing" secondItem="yeg-af-hmb" secondAttribute="trailing" constant="16" id="vcJ-S5-4Lc"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fJs-Of-tMy"/>
                     </view>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="colorChoicesStackView" destination="yeg-af-hmb" id="EEg-Ga-rvF"/>
                         <outlet property="habitFormView" destination="GJO-2P-8j7" id="nUN-yP-8Yz"/>
                         <outlet property="timePeriodStackView" destination="feK-kL-KLb" id="lVa-2n-EnA"/>
                     </connections>
@@ -245,11 +238,8 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration" identifier="habitForm"/>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DOC-CT-3sJ">
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="DOC-CT-3sJ">
                                 <rect key="frame" x="16" y="282" width="343" height="48"/>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="U3B-eC-mfS">
-                                <rect key="frame" x="16" y="346" width="343" height="100"/>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k3L-4W-L1i">
                                 <rect key="frame" x="142" y="478" width="91" height="30"/>
@@ -264,22 +254,16 @@
                             <constraint firstItem="DOC-CT-3sJ" firstAttribute="top" secondItem="Fgz-tk-Cjk" secondAttribute="top" constant="282" id="850-RN-veV"/>
                             <constraint firstItem="k3L-4W-L1i" firstAttribute="centerX" secondItem="2En-z0-KEW" secondAttribute="centerX" id="8Sk-gs-zqe"/>
                             <constraint firstItem="DOC-CT-3sJ" firstAttribute="leading" secondItem="2En-z0-KEW" secondAttribute="leading" constant="16" id="BVf-26-Xhz"/>
-                            <constraint firstItem="U3B-eC-mfS" firstAttribute="top" secondItem="DOC-CT-3sJ" secondAttribute="bottom" constant="16" id="Gak-2B-faz"/>
                             <constraint firstItem="2En-z0-KEW" firstAttribute="bottom" secondItem="k3L-4W-L1i" secondAttribute="bottom" constant="159" id="PiM-Op-6rR"/>
                             <constraint firstItem="DOC-CT-3sJ" firstAttribute="top" secondItem="h2F-We-79I" secondAttribute="bottom" constant="16" id="Z97-a3-UqU"/>
-                            <constraint firstItem="U3B-eC-mfS" firstAttribute="top" secondItem="Fgz-tk-Cjk" secondAttribute="top" constant="346" id="Zo1-dQ-6u4"/>
                             <constraint firstItem="h2F-We-79I" firstAttribute="leading" secondItem="2En-z0-KEW" secondAttribute="leading" constant="16" id="b1Y-70-G4W"/>
                             <constraint firstItem="2En-z0-KEW" firstAttribute="trailing" secondItem="h2F-We-79I" secondAttribute="trailing" constant="16" id="bTd-kI-VvV"/>
-                            <constraint firstItem="2En-z0-KEW" firstAttribute="trailing" secondItem="U3B-eC-mfS" secondAttribute="trailing" constant="16" id="goD-cB-8uF"/>
                             <constraint firstItem="h2F-We-79I" firstAttribute="top" secondItem="2En-z0-KEW" secondAttribute="top" constant="16" id="hsm-0W-5wR"/>
                             <constraint firstItem="2En-z0-KEW" firstAttribute="trailing" secondItem="DOC-CT-3sJ" secondAttribute="trailing" constant="16" id="jal-MR-OxM"/>
-                            <constraint firstItem="k3L-4W-L1i" firstAttribute="top" secondItem="U3B-eC-mfS" secondAttribute="bottom" constant="32" id="qT9-lF-6bN"/>
-                            <constraint firstItem="U3B-eC-mfS" firstAttribute="leading" secondItem="2En-z0-KEW" secondAttribute="leading" constant="16" id="zMf-SR-fui"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="2En-z0-KEW"/>
                     </view>
                     <connections>
-                        <outlet property="colorChoicesStackView" destination="U3B-eC-mfS" id="tGB-sH-V7J"/>
                         <outlet property="habitForm" destination="h2F-We-79I" id="06M-P9-QbS"/>
                         <outlet property="timePeriodStackView" destination="DOC-CT-3sJ" id="UrY-qQ-qO3"/>
                     </connections>

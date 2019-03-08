@@ -8,7 +8,6 @@ struct HabitEntity {
     let target: Int
     let timePeriod: String
     let measurement: String
-    let colorScheme: String
 }
 
 class RealmHabit: Object {
@@ -18,8 +17,7 @@ class RealmHabit: Object {
     @objc dynamic var target = 0
     @objc dynamic var timePeriod = ""
     @objc dynamic var measurement = ""
-    @objc dynamic var colorScheme = "cyan"
-    
+
     override static func primaryKey() -> String? {
         return "habitId"
     }
@@ -32,8 +30,7 @@ class RealmHabit: Object {
         target = habit.target
         timePeriod = habit.timePeriod
         measurement = habit.measurement
-        colorScheme = habit.colorScheme
-        
+
     }
 
     var entity: HabitEntity {
@@ -42,8 +39,7 @@ class RealmHabit: Object {
                            currentCount: currentCount,
                            target: target,
                            timePeriod: timePeriod,
-                           measurement: measurement,
-                           colorScheme: colorScheme
+                           measurement: measurement
         )
     }
 }
