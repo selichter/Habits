@@ -160,52 +160,73 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Habit Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0gN-Fd-IZc">
-                                <rect key="frame" x="98.5" y="85" width="178.5" height="43"/>
+                                <rect key="frame" x="121" y="172" width="120" height="29"/>
                                 <accessibility key="accessibilityConfiguration" identifier="habitName"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="36"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Bb-0w-Csp">
-                                <rect key="frame" x="65" y="165" width="30" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8h-3s-ZLu">
+                                <rect key="frame" x="169" y="225" width="37" height="67"/>
+                                <accessibility key="accessibilityConfiguration" identifier="currentCount"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="56"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOa-8V-dYY">
+                                <rect key="frame" x="242" y="238.5" width="37" height="40"/>
+                                <accessibility key="accessibilityConfiguration" identifier="increaseCount"/>
+                                <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="24"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="0.99607843139999996" green="0.78039215689999997" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="increaseCount:" destination="LY7-GL-bbn" eventType="touchUpInside" id="XYH-TR-sV7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Bb-0w-Csp">
+                                <rect key="frame" x="96" y="238" width="37" height="41"/>
                                 <accessibility key="accessibilityConfiguration" identifier="decreaseCount"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <state key="normal" title="-">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="0.99607843139999996" green="0.78039215689999997" blue="0.42352941179999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="2"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="decreaseCount:" destination="LY7-GL-bbn" eventType="touchUpInside" id="YX2-zo-fch"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Count" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J8h-3s-ZLu">
-                                <rect key="frame" x="136" y="159" width="103" height="43"/>
-                                <accessibility key="accessibilityConfiguration" identifier="currentCount"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="36"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vOa-8V-dYY">
-                                <rect key="frame" x="286" y="159" width="30" height="41"/>
-                                <accessibility key="accessibilityConfiguration" identifier="increaseCount"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal" title="+">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="increaseCount:" destination="LY7-GL-bbn" eventType="touchUpInside" id="XYH-TR-sV7"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.72336632010000002" green="0.68902040639999995" blue="0.21332695679999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="9Bb-0w-Csp" firstAttribute="leading" secondItem="kcc-UU-35T" secondAttribute="leading" constant="65" id="356-ax-taX"/>
-                            <constraint firstItem="0gN-Fd-IZc" firstAttribute="top" secondItem="kcc-UU-35T" secondAttribute="top" constant="21" id="L9l-RC-ylX"/>
-                            <constraint firstItem="0gN-Fd-IZc" firstAttribute="centerX" secondItem="kcc-UU-35T" secondAttribute="centerX" id="MNy-lG-kY5"/>
-                            <constraint firstItem="9Bb-0w-Csp" firstAttribute="centerY" secondItem="J8h-3s-ZLu" secondAttribute="centerY" id="XIr-Av-uLi"/>
-                            <constraint firstItem="vOa-8V-dYY" firstAttribute="centerY" secondItem="J8h-3s-ZLu" secondAttribute="centerY" id="iBz-4K-7xd"/>
-                            <constraint firstItem="J8h-3s-ZLu" firstAttribute="centerX" secondItem="kcc-UU-35T" secondAttribute="centerX" id="mkJ-Ng-7Zm"/>
-                            <constraint firstItem="kcc-UU-35T" firstAttribute="trailing" secondItem="vOa-8V-dYY" secondAttribute="trailing" constant="59" id="tq9-Do-Zcq"/>
-                            <constraint firstItem="J8h-3s-ZLu" firstAttribute="top" secondItem="0gN-Fd-IZc" secondAttribute="bottom" constant="31" id="ymi-Mx-pwn"/>
+                            <constraint firstItem="J8h-3s-ZLu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="9Bb-0w-Csp" secondAttribute="trailing" constant="36" id="0fw-Zh-dGu"/>
+                            <constraint firstItem="9Bb-0w-Csp" firstAttribute="centerY" secondItem="J8h-3s-ZLu" secondAttribute="centerY" id="2qN-fm-kkY"/>
+                            <constraint firstItem="vOa-8V-dYY" firstAttribute="width" secondItem="9Bb-0w-Csp" secondAttribute="width" id="GJP-bq-oRb"/>
+                            <constraint firstItem="J8h-3s-ZLu" firstAttribute="top" secondItem="0gN-Fd-IZc" secondAttribute="bottom" constant="24" id="Nqw-aQ-jDH"/>
+                            <constraint firstItem="0gN-Fd-IZc" firstAttribute="leading" secondItem="kcc-UU-35T" secondAttribute="leading" constant="121" id="Zdm-LM-Pdj"/>
+                            <constraint firstItem="J8h-3s-ZLu" firstAttribute="centerX" secondItem="kcc-UU-35T" secondAttribute="centerX" id="aQY-6n-6P5"/>
+                            <constraint firstItem="0gN-Fd-IZc" firstAttribute="top" secondItem="kcc-UU-35T" secondAttribute="top" constant="108" id="bUz-gx-VJ3"/>
+                            <constraint firstItem="vOa-8V-dYY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="J8h-3s-ZLu" secondAttribute="trailing" constant="36" id="h8p-du-0Sp"/>
+                            <constraint firstItem="vOa-8V-dYY" firstAttribute="centerY" secondItem="9Bb-0w-Csp" secondAttribute="centerY" id="m71-fX-e3k"/>
+                            <constraint firstItem="J8h-3s-ZLu" firstAttribute="width" secondItem="9Bb-0w-Csp" secondAttribute="width" id="pZr-nE-kBM"/>
+                            <constraint firstItem="kcc-UU-35T" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0gN-Fd-IZc" secondAttribute="trailing" symbolic="YES" id="sp1-a3-Fdy"/>
+                            <constraint firstItem="vOa-8V-dYY" firstAttribute="centerY" secondItem="9Bb-0w-Csp" secondAttribute="centerY" id="t56-DA-qHa"/>
+                            <constraint firstItem="J8h-3s-ZLu" firstAttribute="centerY" secondItem="9Bb-0w-Csp" secondAttribute="centerY" id="u5I-tP-wIj"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="kcc-UU-35T"/>
                     </view>

@@ -29,9 +29,9 @@ class HabitViewController: UIViewController {
     
     func populateDisplay(_ habit: HabitViewModel) {
         name.text = habit.name
-        name.textColor = sunflower
+        name.textColor = UIColor.white
         currentCount.text = "\(habit.currentCount)"
-        currentCount.textColor = sunflower
+        currentCount.textColor = UIColor.white
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
