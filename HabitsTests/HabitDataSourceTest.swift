@@ -14,8 +14,8 @@ class HabitDataSourceTest: XCTestCase {
         super.setUp()
 
         habitDataSource.clean()
-        let habit1 = HabitEntity(habitId: habitOneId, name: habitOneName, currentCount: 0, target: 2, timePeriod: "daily", measurement: "ounces", colorScheme: "green")
-        let habit2 = HabitEntity(habitId: UUID().uuidString, name: "exercise", currentCount: 0, target: 2, timePeriod: "weekly", measurement: "hours", colorScheme: "indigo")
+        let habit1 = HabitEntity(habitId: habitOneId, name: habitOneName, currentCount: 0, target: 2, timePeriod: "daily", measurement: "ounces")
+        let habit2 = HabitEntity(habitId: UUID().uuidString, name: "exercise", currentCount: 0, target: 2, timePeriod: "weekly", measurement: "hours")
 
         try! realm.write {
             realm.add(RealmHabit(habit: habit1))
@@ -46,7 +46,7 @@ class HabitDataSourceTest: XCTestCase {
 
     func testInsertPutsHabitIntoRealm() {
         let id = UUID().uuidString
-        let habit3 = HabitEntity(habitId: id, name: "sleep", currentCount: 0, target: 2, timePeriod: "daily", measurement: "ounces", colorScheme: "red")
+        let habit3 = HabitEntity(habitId: id, name: "sleep", currentCount: 0, target: 2, timePeriod: "daily", measurement: "ounces")
 
         habitDataSource.insert(item: habit3)
         let fetchedHabit = habitDataSource.getById(id: habit3.habitId)
@@ -56,7 +56,7 @@ class HabitDataSourceTest: XCTestCase {
 
     func testInserteHabitUpdatesGivenHabit() {
         let habitId = UUID().uuidString
-        var habit = HabitEntity(habitId: habitId, name: "something", currentCount: 0, target: 2, timePeriod: "daily", measurement: "ounces", colorScheme: "purple")
+        var habit = HabitEntity(habitId: habitId, name: "something", currentCount: 0, target: 2, timePeriod: "daily", measurement: "ounces")
         habitDataSource.insert(item: habit)
 
         habit.currentCount = 3

@@ -30,15 +30,14 @@ class HabitsCollectionIntegrationTests: XCTestCase {
     
     
     func testHabitCellsDisplayValues() {
-        let entity = HabitEntity(habitId: "test-habit", name: "eat", currentCount: 1, target: 3, timePeriod: "daily", measurement: "meals", colorScheme: "lime")
+        let entity = HabitEntity(habitId: "test-habit", name: "eat", currentCount: 1, target: 3, timePeriod: "daily", measurement: "meals")
         
         let entityTwo = HabitEntity(habitId: UUID().uuidString,
                                     name:"drink water",
                                     currentCount: 0,
                                     target: 0,
                                     timePeriod: "daily",
-                                    measurement: "ounces",
-                                    colorScheme: "deepPurple")
+                                    measurement: "ounces")
         dataSource.insert(item: entity)
         dataSource.insert(item: entityTwo)
         habitsCollectionViewController.loadView()

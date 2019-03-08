@@ -18,22 +18,5 @@ extension UIColor {
     }
 }
 
-struct ColorScheme {
-    let primary: UIColor
-    let secondary: UIColor
-    let surface: UIColor
-}
-
-let allColors = [
-    "red": ColorScheme(primary: UIColor(rgb: 0xF44336), secondary: UIColor(rgb: 0xFFEBEE), surface: UIColor(rgb: 0xFFFFFF)),
-    "deepPurple": ColorScheme(primary: UIColor(rgb: 0x6200ee), secondary: UIColor(rgb: 0xFFDBFF), surface: UIColor(rgb: 0xFFFFFF)),
-    "purple": ColorScheme(primary: UIColor(rgb: 0x9C27B0), secondary: UIColor(rgb: 0xF3E5F5), surface: UIColor(rgb: 0xFFFFFF)),
-    
-    "indigo": ColorScheme(primary: UIColor(rgb: 0x3F51B5), secondary: UIColor(rgb: 0xE8EAF6), surface: UIColor(rgb: 0xFFFFFF)),
-    "blue": ColorScheme(primary: UIColor(rgb: 0x2196F3), secondary: UIColor(rgb: 0xE3F2FD), surface: UIColor(rgb: 0xFFFFFF)),
-    "cyan": ColorScheme(primary: UIColor(rgb: 0x00BCD4), secondary: UIColor(rgb: 0xE0F7FA), surface: UIColor(rgb: 0xFFFFFF)),
-    "green": ColorScheme(primary: UIColor(rgb: 0x4CAF50), secondary: UIColor(rgb: 0xE8F5E9), surface: UIColor(rgb: 0xFFFFFF)),
-    "lime": ColorScheme(primary: UIColor(rgb: 0xCDDC39), secondary: UIColor(rgb: 0xF9FBE7), surface: UIColor(rgb: 0xFFFFFF)),
-    "amber": ColorScheme(primary: UIColor(rgb: 0xFFC107), secondary: UIColor(rgb: 0xFFF8E1), surface: UIColor(rgb: 0xFFFFFF)),
-    "blueGray": ColorScheme(primary: UIColor(rgb: 0x607D8B), secondary: UIColor(rgb: 0xECEFF1), surface: UIColor(rgb: 0xFFFFFF))    
-]
+let spearmint = UIColor(red:0.30, green:0.56, blue:0.49, alpha:1.0)
+let sunflower = UIColor(red:1.00, green:0.78, blue:0.42, alpha:1.0)

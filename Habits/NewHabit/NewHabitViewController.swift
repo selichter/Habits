@@ -5,10 +5,8 @@ class NewHabitViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var habitFormView: HabitForm!
     
     @IBOutlet weak var timePeriodStackView: UIStackView!
-    @IBOutlet weak var colorChoicesStackView: UIStackView!
 
     var timePeriodValue = String()
-    var colorChoice = String()
 
     
     @IBAction func createHabit(_ sender: Any) {
@@ -17,8 +15,7 @@ class NewHabitViewController: UIViewController, UITextFieldDelegate {
                                    currentCount: 0,
                                    target: Int(habitFormView.xibTargetInput.text!) ?? 0,
                                    timePeriod: timePeriodValue,
-                                   measurement: habitFormView.xibMeasurementInput.text ?? "",
-                                   colorScheme: colorChoice
+                                   measurement: habitFormView.xibMeasurementInput.text ?? ""
                                    )
         HabitDataSource.sharedRealm.insert(item: newHabit)
         print("saved realm")
@@ -36,24 +33,12 @@ class NewHabitViewController: UIViewController, UITextFieldDelegate {
             button.addTarget(self, action: #selector(selectButtonValue), for: .touchUpInside)
             timePeriodStackView.addArrangedSubview(button)
         }
-
-        for choice in Array(allColors.keys) {
-            let button = makeColorButtons(choice)
-            button.addTarget(self, action: #selector(selectColor), for: .touchUpInside)
-            colorChoicesStackView.addArrangedSubview(button)
-        }
     }
     
     @IBAction func selectButtonValue(sender:UIButton){
         unhighlightAllButtons(timePeriodStackView)
         highlightSelectedButton(sender)
         timePeriodValue = sender.titleLabel!.text ?? "daily"
-    }
-
-    @IBAction func selectColor(sender:UIButton){
-        unhighlightAllButtons(colorChoicesStackView)
-        highlightSelectedButton(sender)
-        colorChoice = sender.accessibilityIdentifier ?? "cyan"
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {

@@ -6,7 +6,6 @@ class HabitViewModel {
     let name: String
     var currentCount: Int
     let measurement: String
-    let colorScheme: String
     var standings: String
     let timePeriod: String
     var target: Int
@@ -16,7 +15,6 @@ class HabitViewModel {
         name = habitEntity.name.uppercased()
         currentCount = habitEntity.currentCount
         measurement = habitEntity.measurement
-        colorScheme = habitEntity.colorScheme
         standings = "\(habitEntity.currentCount)/\(habitEntity.target)"
         timePeriod = habitEntity.timePeriod
         target = habitEntity.target
@@ -42,8 +40,7 @@ class HabitViewModel {
             currentCount: currentCount,
             target: target,
             timePeriod: timePeriod,
-            measurement: measurement,
-            colorScheme: colorScheme)
+            measurement: measurement)
         dataSource.insert(item: entity)
     }
     

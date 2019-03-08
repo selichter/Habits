@@ -14,7 +14,6 @@ class EditHabitViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        colorChoice = hvm.colorScheme
         timePeriodValue = hvm.timePeriod
         
         for choice in timePeriodChoices {
@@ -22,15 +21,8 @@ class EditHabitViewController: UIViewController, UITextFieldDelegate {
             button.addTarget(self, action: #selector(selectButtonValue), for: .touchUpInside)
             timePeriodStackView.addArrangedSubview(button)
         }
-        
-        for choice in Array(allColors.keys) {
-            let button = makeColorButtons(choice)
-            button.addTarget(self, action: #selector(selectColor), for: .touchUpInside)
-            colorChoicesStackView.addArrangedSubview(button)
-        }
 
         populateForm(hvm)
-        highlightButtonMatchingChoice(colorChoicesStackView, colorChoice)
         highlightButtonMatchingChoice(timePeriodStackView, timePeriodValue)
     }
 
@@ -49,12 +41,6 @@ class EditHabitViewController: UIViewController, UITextFieldDelegate {
         highlightSelectedButton(sender)
         timePeriodValue = sender.titleLabel!.text ?? "daily"
     }
-    
-    @IBAction func selectColor(sender: UIButton) {
-        unhighlightAllButtons(colorChoicesStackView)
-        highlightSelectedButton(sender)
-        colorChoice = sender.accessibilityIdentifier ?? "cyan"
-    }
 
     @IBAction func updateHabit(_ sender: Any) {
         let entity = HabitEntity(habitId: hvm.habitId,
@@ -62,8 +48,7 @@ class EditHabitViewController: UIViewController, UITextFieldDelegate {
                                    currentCount: hvm.currentCount,
                                    target: Int(habitForm.xibTargetInput.text!) ?? 0,
                                    timePeriod: timePeriodValue,
-                                   measurement: habitForm.xibMeasurementInput.text ?? "",
-                                   colorScheme: colorChoice
+                                   measurement: habitForm.xibMeasurementInput.text ?? ""
         )
         
 //        figure out how to not new up an entity here
