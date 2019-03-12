@@ -13,7 +13,7 @@ class HabitCell: UICollectionViewCell {
         self.currentCount.text = "\(habit.currentCount)"
         self.timePeriod.text = habit.timePeriod.lowercased()
         
-        self.backgroundColor = allColors[habit.colorScheme]?.primary 
+        self.backgroundColor = spearmint
 
         layer.cornerRadius = 10
 

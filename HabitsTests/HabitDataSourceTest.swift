@@ -17,8 +17,8 @@ class HabitDataSourceTest: XCTestCase {
         let count2 = Count(timestamp: Date(), count: CountEnum.increase)
         let count3 = Count(timestamp: Date(), count: CountEnum.decrease)
 
-        let habit1 = HabitEntity(habitId: habitOneId, name: habitOneName,  target: 2, timePeriod: "daily", measurement: "ounces", colorScheme: "green", counts: [count1])
-        let habit2 = HabitEntity(habitId: habitTwoId , name: "exercise",  target: 2, timePeriod: "weekly", measurement: "hours", colorScheme: "indigo", counts: [count2, count3])
+        let habit1 = HabitEntity(habitId: habitOneId, name: habitOneName,  target: 2, timePeriod: "daily", measurement: "ounces", counts: [count1])
+        let habit2 = HabitEntity(habitId: habitTwoId , name: "exercise",  target: 2, timePeriod: "weekly", measurement: "hours", counts: [count2, count3])
 
         try! realm.write {
             realm.add(RealmHabit(habit: habit1))
@@ -39,7 +39,7 @@ class HabitDataSourceTest: XCTestCase {
     }
 
     func testGetByIdReturnsHabitByItsId() {
-        
+
         let habit = habitDataSource.getById(id: self.habitOneId)
 
         XCTAssertEqual(habit.name, self.habitOneName)
@@ -51,7 +51,7 @@ class HabitDataSourceTest: XCTestCase {
 
     func testInsertPutsHabitIntoRealm() {
         let id = UUID().uuidString
-        let habit3 = HabitEntity(habitId: id, name: "sleep",  target: 2, timePeriod: "daily", measurement: "ounces", colorScheme: "red", counts: [Count(timestamp: Date(), count: CountEnum.increase)])
+        let habit3 = HabitEntity(habitId: id, name: "sleep",  target: 2, timePeriod: "daily", measurement: "ounces", counts: [Count(timestamp: Date(), count: CountEnum.increase)])
 
         habitDataSource.insert(item: habit3)
         let fetchedHabit = habitDataSource.getById(id: habit3.habitId)
@@ -62,7 +62,7 @@ class HabitDataSourceTest: XCTestCase {
 
     func testInserteHabitUpdatesGivenHabit() {
         let habitId = UUID().uuidString
-        var habit = HabitEntity(habitId: habitId, name: "something",  target: 2, timePeriod: "daily", measurement: "ounces", colorScheme: "purple", counts: [Count]())
+        var habit = HabitEntity(habitId: habitId, name: "something",  target: 2, timePeriod: "daily", measurement: "ounces", counts: [Count]())
         habitDataSource.insert(item: habit)
 
 //        habit.currentCount = 3

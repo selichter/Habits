@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  Habits
-//
-//  Created by Sarah Lichter on 12/19/18.
-//  Copyright © 2018 Sarah Lichter. All rights reserved.
-//
-
 import UIKit
 import RealmSwift
 
@@ -16,7 +8,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     fileprivate func migrateRealm() {
         let config = Realm.Configuration(
-            schemaVersion: 5,
+            schemaVersion: 6,
             migrationBlock: { migration, oldSchemaVersion in
                 if (oldSchemaVersion < 1) {
                     // The enumerateObjects(ofType:_:) method iterates
@@ -31,7 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         )
         Realm.Configuration.defaultConfiguration = config
-        
+
     }
 
     fileprivate func populateHabits() {
@@ -48,7 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                  target: 3,
                                  timePeriod: "weekly",
                                  measurement: "hours",
-                                 colorScheme: "cyan",
                                  counts: [Count(timestamp: Date(), count: CountEnum.increase)])
         habitDataSource.insert(item: habit1)
     }

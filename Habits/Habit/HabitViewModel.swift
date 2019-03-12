@@ -6,7 +6,7 @@ class HabitViewModel {
 
     let name: String
     let measurement: String
-    let colorScheme: String
+    var standings: String
     let timePeriod: String
     var target: Int
     var habitId = String()
@@ -27,7 +27,7 @@ class HabitViewModel {
     init(habitEntity: HabitEntity) {
         name = habitEntity.name.uppercased()
         measurement = habitEntity.measurement
-        colorScheme = habitEntity.colorScheme
+        standings = "\(habitEntity.currentCount)/\(habitEntity.target)"
         timePeriod = habitEntity.timePeriod
         target = habitEntity.target
         habitId = habitEntity.habitId
@@ -41,7 +41,7 @@ class HabitViewModel {
         counts.append(count)
         persistHabit()
     }
-    
+
     func decreaseCount() {
         if currentCount >= 1 {
             let count = Count(timestamp: Date(), count: CountEnum.decrease)
@@ -57,7 +57,7 @@ class HabitViewModel {
             target: target,
             timePeriod: timePeriod,
             measurement: measurement,
-            colorScheme: colorScheme, counts: [])
+            counts: [])
         dataSource.insert(item: entity)
     }
 

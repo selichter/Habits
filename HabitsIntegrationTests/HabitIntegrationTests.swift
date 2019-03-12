@@ -3,14 +3,14 @@ import XCTest
 
 class HabitIntegrationTests: XCTestCase {
     var habitViewController: HabitViewController!
-    
+
     override func setUp() {
         super.setUp()
         habitViewController = instantiateWithoutLoad(fromStoryboard: "Main", withIdentifier: "HabitVC")
     }
-    
+
     func testValuesAreDisplayed() {
-        let entity = HabitEntity(habitId: "test-habit", name: "eat", target: 3, timePeriod: "daily", measurement: "meals", colorScheme: "lime", counts: [Count(timestamp: Date(), count: CountEnum.increase)])
+        let entity = HabitEntity(habitId: "test-habit", name: "eat", target: 3, timePeriod: "daily", measurement: "meals", counts: [Count(timestamp: Date(), count: CountEnum.increase)])
         let hvm = HabitViewModel(habitEntity: entity)
         habitViewController.hvm = hvm
         habitViewController.viewDidLoad()
@@ -18,28 +18,27 @@ class HabitIntegrationTests: XCTestCase {
         XCTAssertEqual(habitViewController.name.text, "EAT")
         XCTAssertEqual(habitViewController.currentCount.text, "1")
     }
-    
+
     func testCurrentCountCanIncrease() {
-        let entity = HabitEntity(habitId: "test-habit", name: "eat", target: 3, timePeriod: "daily", measurement: "meals", colorScheme: "lime", counts: [Count(timestamp: Date(), count: CountEnum.increase)])
+        let entity = HabitEntity(habitId: "test-habit", name: "eat", target: 3, timePeriod: "daily", measurement: "meals", counts: [Count(timestamp: Date(), count: CountEnum.increase)])
         let hvm = HabitViewModel(habitEntity: entity)
         habitViewController.hvm = hvm
         habitViewController.viewDidLoad()
         habitViewController.increaseCount("something")
-        
+
         XCTAssertEqual(habitViewController.name.text, "EAT")
         XCTAssertEqual(habitViewController.currentCount.text, "2")
     }
-    
+
     func testCurrentCountCanDecrease() {
-        let entity = HabitEntity(habitId: "test-habit", name: "eat", target: 3, timePeriod: "daily", measurement: "meals", colorScheme: "lime", counts: [Count(timestamp: Date(), count: CountEnum.increase)])
+        let entity = HabitEntity(habitId: "test-habit", name: "eat", target: 3, timePeriod: "daily", measurement: "meals", counts: [Count(timestamp: Date(), count: CountEnum.increase)])
         let hvm = HabitViewModel(habitEntity: entity)
         habitViewController.hvm = hvm
         habitViewController.viewDidLoad()
         habitViewController.decreaseCount("something")
-        
+
         XCTAssertEqual(habitViewController.name.text, "EAT")
         XCTAssertEqual(habitViewController.currentCount.text, "0")
     }
-    
-}
 
+}
