@@ -14,8 +14,7 @@ class NewHabitViewController: UIViewController, UITextFieldDelegate {
                 name: habitFormView.xibHabitNameInput.text ?? "",
                                    target: Int(habitFormView.xibTargetInput.text!) ?? 0,
                                    timePeriod: timePeriodValue,
-                                   measurement: habitFormView.xibMeasurementInput.text ?? "",
-                                   counts: []
+                                   measurement: habitFormView.xibMeasurementInput.text ?? ""
                                    )
         HabitDataSource.sharedRealm.insert(item: newHabit)
         print("saved realm")

@@ -6,15 +6,16 @@ class HabitViewModel {
 
     let name: String
     let measurement: String
-    var standings: String
     let timePeriod: String
     var target: Int
     var habitId = String()
-    var counts = [Count]()
-
-    var todayCounts = [Count]()
-
-    var currentCount = Int()
+    var counts: [CountEntity] {
+        return dataSource.getCountsByHabitId(id: habitId)
+    }
+    var currentCount: Int {
+        let habitCounts = counts.filter{ cal.isDateInToday($0.timestamp) }
+        return habitCounts.filter{$0.count == "increase"}.count - habitCounts.filter{$0.count == "decrease"}.count
+    }
 
     var standings: String {
         return "\(currentCount)/\(target)"
@@ -27,26 +28,20 @@ class HabitViewModel {
     init(habitEntity: HabitEntity) {
         name = habitEntity.name.uppercased()
         measurement = habitEntity.measurement
-        standings = "\(habitEntity.currentCount)/\(habitEntity.target)"
         timePeriod = habitEntity.timePeriod
         target = habitEntity.target
         habitId = habitEntity.habitId
-        counts = habitEntity.counts
-        todayCounts = habitEntity.counts.filter {cal.dateComponents([.day], from: $0.timestamp).day == cal.dateComponents([.day], from: Date()).day}
-        currentCount = todayCounts.filter{$0.count == CountEnum.increase}.count - self.counts.filter{$0.count == CountEnum.decrease}.count
     }
 
     func increaseCount() {
-        let count = Count(timestamp: Date(), count: CountEnum.increase)
-        counts.append(count)
-        persistHabit()
+        let count = CountEntity(habitId: habitId, timestamp: Date(), count: CountEnum.increase.rawValue)
+        dataSource.insertCount(item: count)
     }
 
     func decreaseCount() {
         if currentCount >= 1 {
-            let count = Count(timestamp: Date(), count: CountEnum.decrease)
-            counts.append(count)
-            persistHabit()
+            let count = CountEntity(habitId: habitId, timestamp: Date(), count: CountEnum.decrease.rawValue)
+            dataSource.insertCount(item: count)
         }
     }
 
@@ -56,8 +51,7 @@ class HabitViewModel {
             name: name,
             target: target,
             timePeriod: timePeriod,
-            measurement: measurement,
-            counts: [])
+            measurement: measurement)
         dataSource.insert(item: entity)
     }
 

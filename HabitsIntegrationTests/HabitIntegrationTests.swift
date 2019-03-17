@@ -10,7 +10,6 @@ class HabitIntegrationTests: XCTestCase {
     }
 
     func testValuesAreDisplayed() {
-        let entity = HabitEntity(habitId: "test-habit", name: "eat", target: 3, timePeriod: "daily", measurement: "meals", counts: [Count(timestamp: Date(), count: CountEnum.increase)])
         let hvm = HabitViewModel(habitEntity: entity)
         habitViewController.hvm = hvm
         habitViewController.viewDidLoad()
@@ -20,18 +19,16 @@ class HabitIntegrationTests: XCTestCase {
     }
 
     func testCurrentCountCanIncrease() {
-        let entity = HabitEntity(habitId: "test-habit", name: "eat", target: 3, timePeriod: "daily", measurement: "meals", counts: [Count(timestamp: Date(), count: CountEnum.increase)])
         let hvm = HabitViewModel(habitEntity: entity)
         habitViewController.hvm = hvm
         habitViewController.viewDidLoad()
         habitViewController.increaseCount("something")
 
         XCTAssertEqual(habitViewController.name.text, "EAT")
-        XCTAssertEqual(habitViewController.currentCount.text, "2")
+        XCTAssertEqual(habitViewController.currentCount.text, "1")
     }
 
     func testCurrentCountCanDecrease() {
-        let entity = HabitEntity(habitId: "test-habit", name: "eat", target: 3, timePeriod: "daily", measurement: "meals", counts: [Count(timestamp: Date(), count: CountEnum.increase)])
         let hvm = HabitViewModel(habitEntity: entity)
         habitViewController.hvm = hvm
         habitViewController.viewDidLoad()

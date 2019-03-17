@@ -5,80 +5,105 @@ import RealmSwift
 class HabitDataSourceTest: XCTestCase {
     let realm = try! Realm()
     let habitDataSource = HabitDataSource()
-    let habitOneId = UUID().uuidString
-    let habitTwoId = UUID().uuidString
-    let habitOneName = "drink water"
 
     override func setUp() {
         super.setUp()
 
         habitDataSource.clean()
-        let count1 = Count(timestamp: Date(), count: CountEnum.increase)
-        let count2 = Count(timestamp: Date(), count: CountEnum.increase)
-        let count3 = Count(timestamp: Date(), count: CountEnum.decrease)
-
-        let habit1 = HabitEntity(habitId: habitOneId, name: habitOneName,  target: 2, timePeriod: "daily", measurement: "ounces", counts: [count1])
-        let habit2 = HabitEntity(habitId: habitTwoId , name: "exercise",  target: 2, timePeriod: "weekly", measurement: "hours", counts: [count2, count3])
 
         try! realm.write {
-            realm.add(RealmHabit(habit: habit1))
-            realm.add(RealmHabit(habit: habit2))
+            realm.add(RealmHabit(habit: drinkWater))
+            realm.add(RealmHabit(habit: exercise))
+
+            realm.add(RealmCount(countEntity: count1))
+            realm.add(RealmCount(countEntity: count2))
+            realm.add(RealmCount(countEntity: count3))
         }
     }
 
     override func tearDown() {
         habitDataSource.clean()
-
         super.tearDown()
     }
 
     func testGetAllReturnsAllHabitsFromRealm() {
         let habits = habitDataSource.getAll()
-
         XCTAssertEqual(2, habits.count)
     }
 
+    func testGetAllCountsReturnsAllCountsFromRealm() {
+        let counts = habitDataSource.getAllCounts()
+        XCTAssertEqual(3, counts.count)
+    }
+
     func testGetByIdReturnsHabitByItsId() {
+        habitDataSource.clean()
 
-        let habit = habitDataSource.getById(id: self.habitOneId)
+        try! realm.write {
+            realm.add(RealmHabit(habit: drinkWater))
+        }
+        let habit = habitDataSource.getById(id: drinkWaterId)
 
-        XCTAssertEqual(habit.name, self.habitOneName)
-        XCTAssertEqual(habit.habitId, self.habitOneId)
-        XCTAssertEqual(habit.counts.count, 1)
+        XCTAssertEqual(habit.name, habitOneName)
+        XCTAssertEqual(habit.habitId, drinkWaterId)
+    }
 
+    func testGetCountsByIdReturnsAllCountsForGivenHabit() {
+        let counts = habitDataSource.getCountsByHabitId(id: drinkWaterId)
 
+        XCTAssertEqual(counts.count, 2)
+        XCTAssertEqual(counts[0].habitId, drinkWaterId)
+        XCTAssertEqual(counts[1].habitId, drinkWaterId)
     }
 
     func testInsertPutsHabitIntoRealm() {
         let id = UUID().uuidString
-        let habit3 = HabitEntity(habitId: id, name: "sleep",  target: 2, timePeriod: "daily", measurement: "ounces", counts: [Count(timestamp: Date(), count: CountEnum.increase)])
+        let habit3 = HabitEntity(habitId: id, name: "sleep",  target: 2, timePeriod: "daily", measurement: "ounces")
 
         habitDataSource.insert(item: habit3)
         let fetchedHabit = habitDataSource.getById(id: habit3.habitId)
 
         XCTAssertEqual(fetchedHabit.name, habit3.name)
-        XCTAssertEqual(fetchedHabit.counts.count, 1)
+    }
+
+    func testInsertCountPutsCountIntoRealm() {
+        habitDataSource.insertCount(item: count3)
+        let fetchedCount = habitDataSource.getCountsByHabitId(id: drinkWaterId)[1]
+
+        XCTAssertEqual(fetchedCount.habitId, count3.habitId)
+        XCTAssertEqual(fetchedCount.count, "decrease")
+    }
+
+    func testInsertCountCanInsertMultipleCountsWithSameHabitId() {
+        habitDataSource.insertCount(item: count1)
+        habitDataSource.insertCount(item: count3)
+
+        var fetchedCounts = habitDataSource.getCountsByHabitId(id: drinkWaterId)
+
+        XCTAssertEqual(fetchedCounts[0].habitId, count1.habitId)
+        XCTAssertEqual(fetchedCounts[1].habitId, count3.habitId)
     }
 
     func testInserteHabitUpdatesGivenHabit() {
         let habitId = UUID().uuidString
-        var habit = HabitEntity(habitId: habitId, name: "something",  target: 2, timePeriod: "daily", measurement: "ounces", counts: [Count]())
+        var habit = HabitEntity(habitId: habitId, name: "something",  target: 2, timePeriod: "daily", measurement: "ounces")
         habitDataSource.insert(item: habit)
 
-//        habit.currentCount = 3
+        habit.timePeriod = "weekly"
         habitDataSource.insert(item: habit)
         let afterUpdate = habitDataSource.getById(id: habitId)
-//        XCTAssertEqual(afterUpdate.currentCount, 3)
+
         XCTAssertEqual(afterUpdate.name, habit.name)
         XCTAssertEqual(afterUpdate.habitId, habit.habitId)
-
+        XCTAssertEqual(afterUpdate.timePeriod, habit.timePeriod)
     }
 
-    func testCleanRemovesAllHabits() {
+    func testCleanRemovesAllHabitsAndCounts() {
         habitDataSource.clean()
         let habits = habitDataSource.getAll()
-
+        let counts = habitDataSource.getAllCounts()
         XCTAssertEqual(0, habits.count)
+        XCTAssertEqual(0, counts.count)
     }
 
 }

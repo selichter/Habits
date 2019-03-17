@@ -47,8 +47,7 @@ class EditHabitViewController: UIViewController, UITextFieldDelegate {
                                    name: habitForm.xibHabitNameInput.text ?? "",
                                    target: Int(habitForm.xibTargetInput.text!) ?? 0,
                                    timePeriod: timePeriodValue,
-                                   measurement: habitForm.xibMeasurementInput.text ?? "",
-                                   counts: hvm.counts
+                                   measurement: habitForm.xibMeasurementInput.text ?? ""
         )
 
 //        figure out how to not new up an entity here

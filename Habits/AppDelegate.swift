@@ -39,8 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                 name: "workout",
                                  target: 3,
                                  timePeriod: "weekly",
-                                 measurement: "hours",
-                                 counts: [Count(timestamp: Date(), count: CountEnum.increase)])
+                                 measurement: "hours")
         habitDataSource.insert(item: habit1)
     }
 

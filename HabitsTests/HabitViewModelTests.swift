@@ -6,58 +6,58 @@ import XCTest
 class HabitViewModelTests: XCTestCase {
     var dataSource = HabitDataSource()
 
-    func testPropertiesAreSet() {
-        let yesterday =  Calendar.current.date(byAdding: .day, value: -1, to: Date())
-
-        let entity = HabitEntity(habitId: "test-habit",
-                                 name: "eat",
-                                 target: 3,
-                                 timePeriod: "daily",
-                                 measurement: "meals",
-                                 counts: [Count(timestamp: Date(), count: CountEnum.increase),
-                                          Count(timestamp: yesterday!, count: CountEnum.increase)])
-
-        let hvm = HabitViewModel(habitEntity: entity)
-        XCTAssertEqual(hvm.name, entity.name.uppercased())
-        XCTAssertEqual(hvm.currentCount, 1)
-        XCTAssertEqual(hvm.measurement, entity.measurement)
-        XCTAssertEqual(hvm.target, entity.target)
+    override func setUp() {
         dataSource.clean()
+    }
+
+    func testPropertiesAreSet() {
+        let hvm = HabitViewModel(habitEntity: eat)
+        XCTAssertEqual(hvm.name, eat.name.uppercased())
+        XCTAssertEqual(hvm.currentCount, 0)
+        XCTAssertEqual(hvm.measurement, eat.measurement)
+        XCTAssertEqual(hvm.target, eat.target)
     }
 
     func testIncreaseCount() {
+        let hvm = HabitViewModel(habitEntity: eat)
+        XCTAssertEqual(hvm.currentCount, 0)
 
-
-        let entity = HabitEntity(habitId: "test-habit", name: "eat", target: 3, timePeriod: "daily", measurement: "meals", counts: [Count(timestamp: Date(), count: CountEnum.increase)])
-
-        let hvm = HabitViewModel(habitEntity: entity)
         hvm.increaseCount()
 
-        XCTAssertEqual(hvm.name, entity.name.uppercased())
-        XCTAssertEqual(hvm.currentCount, 2)
-        dataSource.clean()
+        XCTAssertEqual(hvm.name, eat.name.uppercased())
+        XCTAssertEqual(hvm.currentCount, 1)
     }
 
     func testDecreaseCount() {
-        let entity = HabitEntity(habitId: "test-habit", name: "eat", target: 3, timePeriod: "daily", measurement: "meals", counts: [Count(timestamp: Date(), count: CountEnum.increase)])
+        dataSource.insertCount(item: eatCount)
 
-        let hvm = HabitViewModel(habitEntity: entity)
+        let hvm = HabitViewModel(habitEntity: eat)
+        XCTAssertEqual(hvm.currentCount, 1)
+
         hvm.decreaseCount()
 
-        XCTAssertEqual(hvm.name, entity.name.uppercased())
+        XCTAssertEqual(hvm.name, eat.name.uppercased())
         XCTAssertEqual(hvm.currentCount, 0)
-        dataSource.clean()
     }
 
     func testdecreaseCountDoesNotDecreaseBelow0() {
-        let entity = HabitEntity(habitId: "test-habit", name: "eat", target: 3, timePeriod: "daily", measurement: "meals", counts: [Count(timestamp: Date(), count: CountEnum.increase)])
-
-        let hvm = HabitViewModel(habitEntity: entity)
+        let hvm = HabitViewModel(habitEntity: eat)
         hvm.decreaseCount()
 
-        XCTAssertEqual(hvm.name, entity.name.uppercased())
+        XCTAssertEqual(hvm.name, eat.name.uppercased())
         XCTAssertEqual(hvm.currentCount, 0)
-        dataSource.clean()
+    }
+
+    func testCurrentCountRepresentsTheNetOfTodaysCounts() {
+        dataSource.insertCount(item: eatCount)
+        dataSource.insertCount(item: eatCountDecrease)
+        dataSource.insertCount(item: eatCountYesterdayDecrease)
+
+        let hvm = HabitViewModel(habitEntity: eat)
+        hvm.decreaseCount()
+
+        XCTAssertEqual(hvm.name, eat.name.uppercased())
+        XCTAssertEqual(hvm.currentCount, 0)
     }
 
 }

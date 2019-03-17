@@ -22,6 +22,8 @@
 		DF81316A21CB30A1003434E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DF81316921CB30A1003434E2 /* Assets.xcassets */; };
 		DF81316D21CB30A1003434E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DF81316B21CB30A1003434E2 /* LaunchScreen.storyboard */; };
 		DF81318321CB30A1003434E2 /* HabitsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF81318221CB30A1003434E2 /* HabitsUITests.swift */; };
+		DF81EF90223E96560034E4E8 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF81EF8F223E96560034E4E8 /* data.swift */; };
+		DF81EF92223E97C20034E4E8 /* data.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF81EF91223E97C20034E4E8 /* data.swift */; };
 		DF826C4821D065BA00A525B2 /* HabitDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF826C4721D065BA00A525B2 /* HabitDataSource.swift */; };
 		DF826C4A21D068A100A525B2 /* HabitDataSourceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF826C4921D068A100A525B2 /* HabitDataSourceTest.swift */; };
 		DF902DDE2231C8310021A522 /* StatsHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF902DDD2231C8310021A522 /* StatsHandler.swift */; };
@@ -94,6 +96,8 @@
 		DF81317E21CB30A1003434E2 /* HabitsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = HabitsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF81318221CB30A1003434E2 /* HabitsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsUITests.swift; sourceTree = "<group>"; };
 		DF81318421CB30A1003434E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DF81EF8F223E96560034E4E8 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
+		DF81EF91223E97C20034E4E8 /* data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = data.swift; sourceTree = "<group>"; };
 		DF826C4721D065BA00A525B2 /* HabitDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDataSource.swift; sourceTree = "<group>"; };
 		DF826C4921D068A100A525B2 /* HabitDataSourceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDataSourceTest.swift; sourceTree = "<group>"; };
 		DF902DDD2231C8310021A522 /* StatsHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsHandler.swift; sourceTree = "<group>"; };
@@ -250,6 +254,7 @@
 				DFDC4F7D21D1318700C95C13 /* HabitTests.swift */,
 				DFC409EA21FFFAE50020AF73 /* HabitViewModelTests.swift */,
 				DFC409F02201DC840020AF73 /* HabitsViewModelTests.swift */,
+				DF81EF91223E97C20034E4E8 /* data.swift */,
 			);
 			path = HabitsTests;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 				DFC40A092201E2780020AF73 /* HabitsIntegrationTests.swift */,
 				DFC40A0B2201E2780020AF73 /* Info.plist */,
 				DFC40A112202A9340020AF73 /* HabitIntegrationTests.swift */,
+				DF81EF8F223E96560034E4E8 /* data.swift */,
 			);
 			path = HabitsIntegrationTests;
 			sourceTree = "<group>";
@@ -626,6 +632,7 @@
 				DFDC4F7E21D1318700C95C13 /* HabitTests.swift in Sources */,
 				DFC409EB21FFFAE60020AF73 /* HabitViewModelTests.swift in Sources */,
 				DF826C4A21D068A100A525B2 /* HabitDataSourceTest.swift in Sources */,
+				DF81EF92223E97C20034E4E8 /* data.swift in Sources */,
 				DFC409F12201DC840020AF73 /* HabitsViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -646,6 +653,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFC40A0A2201E2780020AF73 /* HabitsIntegrationTests.swift in Sources */,
+				DF81EF90223E96560034E4E8 /* data.swift in Sources */,
 				DFC40A122202A9350020AF73 /* HabitIntegrationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -812,7 +820,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 84C29N4H5C;
+				DEVELOPMENT_TEAM = 7HGZ27CJR7;
 				INFOPLIST_FILE = Habits/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -831,7 +839,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 84C29N4H5C;
+				DEVELOPMENT_TEAM = 7HGZ27CJR7;
 				INFOPLIST_FILE = Habits/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

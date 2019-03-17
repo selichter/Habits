@@ -21,29 +21,15 @@ class HabitsCollectionIntegrationTests: XCTestCase {
     var habitsCollectionViewController: HabitsCollectionViewController!
     var dataSource = HabitDataSource()
 
-
     override func setUp() {
         super.setUp()
+        dataSource.clean()
         habitsCollectionViewController = instantiateWithoutLoad(fromStoryboard: "Main", withIdentifier: "HabitsCollectionVC")
-
     }
 
-
     func testHabitCellsDisplayValues() {
-        let entity = HabitEntity(habitId: "test-habit",
-                                 name: "eat",
-                                 target: 3,
-                                 timePeriod: "daily",
-                                 measurement: "meals",
-                                 counts: [Count(timestamp: Date(), count: CountEnum.increase)])
-
-        let entityTwo = HabitEntity(habitId: UUID().uuidString,
-                                    name:"drink water",
-                                    target: 0,
-                                    timePeriod: "daily",
-                                    measurement: "ounces",
-                                    counts: [Count]())
         dataSource.insert(item: entity)
+        dataSource.insertCount(item: testHabitCount)
         dataSource.insert(item: entityTwo)
         habitsCollectionViewController.loadView()
         habitsCollectionViewController.render(HabitsViewModel([entity, entityTwo]))
