@@ -65,4 +65,19 @@ class HabitViewModelTests: XCTestCase {
         XCTAssertEqual(hvm.todayCount, 0)
     }
 
+    func testResetCountResetsCounts() {
+        dataSource.insertCount(item: eatCount)
+        dataSource.insertCount(item: eatCountYesterdayIncrease)
+
+        let hvm = HabitViewModel(habitEntity: eat)
+        XCTAssertEqual(hvm.todayCount, 1)
+        XCTAssertEqual(hvm.yesterdayCount, 1)
+
+        hvm.resetCount()
+
+        XCTAssertEqual(hvm.name, eat.name.uppercased())
+        XCTAssertEqual(hvm.todayCount, 0)
+        XCTAssertEqual(hvm.yesterdayCount, 0)
+    }
+
 }

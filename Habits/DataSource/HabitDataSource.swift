@@ -41,5 +41,11 @@ class HabitDataSource: DataSource {
         }
     }
 
+    func deleteCountsByHabitId(id: String) {
+        try! realm.write {
+            realm.delete(realm.objects(RealmCount.self).filter("habitId == %@", id))
+        }
+    }
+
     func deleteById(id: String) {}
 }
