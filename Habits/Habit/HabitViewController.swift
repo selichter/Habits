@@ -30,6 +30,8 @@ class HabitViewController: UIViewController {
     }
     
     @IBAction func resetCurrentCount(_ sender: Any) {
+        hvm.resetCount()
+        populateDisplay(hvm)
     }
 
     func populateDisplay(_ habit: HabitViewModel) {

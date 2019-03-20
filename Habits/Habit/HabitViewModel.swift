@@ -46,6 +46,10 @@ class HabitViewModel {
         }
     }
 
+    func resetCount() {
+        dataSource.deleteCountsByHabitId(id: habitId)
+    }
+
     func persistHabit() {
         let entity = HabitEntity(
             habitId: habitId,

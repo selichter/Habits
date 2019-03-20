@@ -106,4 +106,15 @@ class HabitDataSourceTest: XCTestCase {
         XCTAssertEqual(0, counts.count)
     }
 
+    func testdeleteCountsByHabitIdCountsForAHabit() {
+        let counts = habitDataSource.getCountsByHabitId(id: drinkWaterId)
+        XCTAssertEqual(counts.count, 2)
+
+        habitDataSource.deleteCountsByHabitId(id: drinkWaterId)
+        let afterDeleteCounts = habitDataSource.getCountsByHabitId(id: drinkWaterId)
+
+        XCTAssertEqual(0, afterDeleteCounts.count)
+    }
+
+
 }
