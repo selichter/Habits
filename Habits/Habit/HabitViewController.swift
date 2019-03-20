@@ -3,7 +3,9 @@ import UIKit
 class HabitViewController: UIViewController {
     @IBOutlet var name: UILabel!
     @IBOutlet weak var currentCount: UILabel!
-    
+    @IBOutlet weak var currentStreak: UILabel!
+    @IBOutlet weak var yesterdayCount: UILabel!
+
     var hvm: HabitViewModel!
     
     override func viewDidLoad() {
@@ -27,11 +29,13 @@ class HabitViewController: UIViewController {
         populateDisplay(hvm)
     }
     
+    @IBAction func resetCurrentCount(_ sender: Any) {
+    }
+
     func populateDisplay(_ habit: HabitViewModel) {
         name.text = habit.name
-        name.textColor = UIColor.white
-        currentCount.text = "\(habit.currentCount)"
-        currentCount.textColor = UIColor.white
+        currentCount.text = "\(habit.todayCount)"
+        yesterdayCount.text = "\(habit.yesterdayCount)"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

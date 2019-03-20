@@ -12,17 +12,18 @@ class HabitViewModel {
     var counts: [CountEntity] {
         return dataSource.getCountsByHabitId(id: habitId)
     }
-    var currentCount: Int {
+    var todayCount: Int {
         let habitCounts = counts.filter{ cal.isDateInToday($0.timestamp) }
         return habitCounts.filter{$0.count == "increase"}.count - habitCounts.filter{$0.count == "decrease"}.count
     }
 
-    var standings: String {
-        return "\(currentCount)/\(target)"
+    var yesterdayCount: Int {
+        let habitCounts = counts.filter{ cal.isDateInYesterday($0.timestamp) }
+        return habitCounts.filter{$0.count == "increase"}.count - habitCounts.filter{$0.count == "decrease"}.count
     }
 
-    var weekCounts: [Int: Int] {
-        return [1: 1]
+    var standings: String {
+        return "\(todayCount)/\(target)"
     }
 
     init(habitEntity: HabitEntity) {
@@ -39,7 +40,7 @@ class HabitViewModel {
     }
 
     func decreaseCount() {
-        if currentCount >= 1 {
+        if todayCount >= 1 {
             let count = CountEntity(habitId: habitId, timestamp: Date(), count: CountEnum.decrease.rawValue)
             dataSource.insertCount(item: count)
         }

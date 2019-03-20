@@ -1,7 +1,6 @@
 import Foundation
 @testable import Habits
 
-
 let drinkWaterId = UUID().uuidString
 let exerciseId = UUID().uuidString
 let habitOneName = "drink water"
@@ -23,9 +22,11 @@ let eatCount = CountEntity(habitId: eatId, timestamp: Date(), count: CountEnum.i
 
 let eatCountDecrease = CountEntity(habitId: eatId, timestamp: Date(), count: CountEnum.decrease.rawValue)
 
-let eatCountYesterdayDecrease = CountEntity(habitId: eatId, timestamp: yesterdayDate!, count: CountEnum.decrease.rawValue)
 
-let cal = Calendar.current
-let yesterday = cal.dateComponents([.day], from: cal.date(byAdding: .day, value: -1, to: Date())!)
-let yesterdayDate = cal.date(from: yesterday)
+let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())
+
+let eatCountYesterdayIncrease = CountEntity(habitId: eatId, timestamp: yesterday!, count: CountEnum.increase.rawValue)
+
+let eatCountYesterdayDecrease = CountEntity(habitId: eatId, timestamp: yesterday!, count: CountEnum.decrease.rawValue)
+
 

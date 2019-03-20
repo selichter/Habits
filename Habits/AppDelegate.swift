@@ -27,20 +27,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     fileprivate func populateHabits() {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "mm-dd-yyyy"
-        guard let date = dateFormatter.date(from: "03-06-2019") else {
-            fatalError()
-        }
+
+        let habitId = UUID().uuidString
+        let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())
+
+        let yesterdayIncrease = CountEntity(habitId: habitId, timestamp: yesterday!, count: CountEnum.increase.rawValue)
 
 
         let habitDataSource = HabitDataSource()
-        let habit1 = HabitEntity(habitId: UUID().uuidString,
+        let habit1 = HabitEntity(habitId: habitId,
                                 name: "workout",
                                  target: 3,
                                  timePeriod: "weekly",
                                  measurement: "hours")
         habitDataSource.insert(item: habit1)
+        habitDataSource.insertCount(item: yesterdayIncrease)
     }
 
     func application(_ application: UIApplication,

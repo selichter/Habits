@@ -10,7 +10,7 @@ class HabitCell: UICollectionViewCell {
     func render(habit: HabitViewModel) {
         self.name.text = habit.name
         self.standings.text = habit.standings
-        self.currentCount.text = "\(habit.currentCount)"
+        self.currentCount.text = "\(habit.todayCount)"
         self.timePeriod.text = habit.timePeriod.lowercased()
         
         self.backgroundColor = spearmint
