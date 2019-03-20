@@ -7,7 +7,7 @@ class EditHabitViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var timePeriodStackView: UIStackView!
     var timePeriodValue: String!
-    
+
     @IBOutlet weak var colorChoicesStackView: UIStackView!
     var colorChoice: String!
 
@@ -15,7 +15,7 @@ class EditHabitViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
 
         timePeriodValue = hvm.timePeriod
-        
+
         for choice in timePeriodChoices {
             let button = makeButtonsWithText(choice)
             button.addTarget(self, action: #selector(selectButtonValue), for: .touchUpInside)
@@ -35,7 +35,7 @@ class EditHabitViewController: UIViewController, UITextFieldDelegate {
         habitForm.xibTargetInput.text = "\(habit.target)"
         habitForm.xibMeasurementInput.text = habit.measurement
     }
-    
+
     @IBAction func selectButtonValue(sender: UIButton) {
         unhighlightAllButtons(timePeriodStackView)
         highlightSelectedButton(sender)
@@ -45,12 +45,11 @@ class EditHabitViewController: UIViewController, UITextFieldDelegate {
     @IBAction func updateHabit(_ sender: Any) {
         let entity = HabitEntity(habitId: hvm.habitId,
                                    name: habitForm.xibHabitNameInput.text ?? "",
-                                   currentCount: hvm.currentCount,
                                    target: Int(habitForm.xibTargetInput.text!) ?? 0,
                                    timePeriod: timePeriodValue,
                                    measurement: habitForm.xibMeasurementInput.text ?? ""
         )
-        
+
 //        figure out how to not new up an entity here
         hvm = HabitViewModel(habitEntity: entity)
         hvm.persistHabit()
@@ -61,5 +60,5 @@ class EditHabitViewController: UIViewController, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
-    
+
 }
