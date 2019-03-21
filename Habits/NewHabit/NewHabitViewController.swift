@@ -3,11 +3,8 @@ import UIKit
 class NewHabitViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var habitFormView: HabitForm!
-
     @IBOutlet weak var timePeriodStackView: UIStackView!
-
     var timePeriodValue = String()
-
 
     @IBAction func createHabit(_ sender: Any) {
         let newHabit = HabitEntity(habitId: UUID().uuidString,
@@ -34,7 +31,7 @@ class NewHabitViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
-    @IBAction func selectButtonValue(sender:UIButton){
+    @IBAction func selectButtonValue(sender: UIButton) {
         unhighlightAllButtons(timePeriodStackView)
         highlightSelectedButton(sender)
         timePeriodValue = sender.titleLabel!.text ?? "daily"

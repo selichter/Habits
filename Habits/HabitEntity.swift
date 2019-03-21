@@ -2,8 +2,7 @@ import Foundation
 import RealmSwift
 
 enum CountEnum: String {
-    case increase = "increase"
-    case decrease = "decrease"
+    case increase, decrease
 }
 
 struct CountEntity {
@@ -35,8 +34,6 @@ class RealmCount: Object {
     var entity: CountEntity {
         return CountEntity(habitId: habitId, timestamp: timestamp, count: count)
     }
-
-
 }
 
 class RealmHabit: Object {

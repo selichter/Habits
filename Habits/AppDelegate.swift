@@ -9,30 +9,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     fileprivate func migrateRealm() {
         let config = Realm.Configuration(
             schemaVersion: 6,
-            migrationBlock: { migration, oldSchemaVersion in
-                if (oldSchemaVersion < 1) {
-                    // The enumerateObjects(ofType:_:) method iterates
-                    // over every Person object stored in the Realm file
-                    migration.enumerateObjects(ofType: RealmHabit.className()) { _, newObject in
-                        newObject!["currentCount"] = 0
-                        newObject!["target"] = 0
-                    }
-                }
-        },
             deleteRealmIfMigrationNeeded: true
-
         )
         Realm.Configuration.defaultConfiguration = config
-
     }
 
     fileprivate func populateHabits() {
-
         let habitId = UUID().uuidString
         let yesterday = Calendar.current.date(byAdding: .day, value: -1, to: Date())
-
         let yesterdayIncrease = CountEntity(habitId: habitId, timestamp: yesterday!, count: CountEnum.increase.rawValue)
-
 
         let habitDataSource = HabitDataSource()
         let habit1 = HabitEntity(habitId: habitId,
@@ -45,7 +30,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(_ application: UIApplication,
-                     didFinishLaunchingWithOptions launchOptions:[UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         migrateRealm()
         let habitDataSource = HabitDataSource()
         habitDataSource.clean()

@@ -1,16 +1,13 @@
 import UIKit
 
-
-fileprivate let roundedButtonRadious = CGFloat(10)
-fileprivate func buttonRect(_ width: CGFloat) -> CGRect {
+private let roundedButtonRadious = CGFloat(10)
+private func buttonRect(_ width: CGFloat) -> CGRect {
     return CGRect(x: 20, y: 20, width: width, height: 48)
 }
 
 func unhighlightAllButtons(_ stackView: UIStackView) {
     for button in stackView.subviews {
-        if button is UIButton {
-            button.layer.borderWidth = 0
-        }
+        button.layer.borderWidth = 0
     }
 }
 
@@ -35,7 +32,7 @@ func getButtonTemplate() -> UIButton {
     return button
 }
 
-func makeButtonsWithText(_ text: String)-> UIButton {
+func makeButtonsWithText(_ text: String) -> UIButton {
     let button = getButtonTemplate()
     button.layer.cornerRadius = roundedButtonRadious
     button.setTitle(text, for: .normal)
@@ -43,4 +40,3 @@ func makeButtonsWithText(_ text: String)-> UIButton {
     button.accessibilityIdentifier = text
     return button
 }
-

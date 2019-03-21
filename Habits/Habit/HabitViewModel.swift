@@ -10,16 +10,16 @@ class HabitViewModel {
     var target: Int
     var habitId = String()
     var counts: [CountEntity] {
-        return dataSource.getCountsByHabitId(id: habitId)
+        return dataSource.getCountsByHabitId(habitId: habitId)
     }
     var todayCount: Int {
-        let habitCounts = counts.filter{ cal.isDateInToday($0.timestamp) }
-        return habitCounts.filter{$0.count == "increase"}.count - habitCounts.filter{$0.count == "decrease"}.count
+        let habitCounts = counts.filter { cal.isDateInToday($0.timestamp) }
+        return habitCounts.filter { $0.count == "increase" }.count - habitCounts.filter { $0.count == "decrease" }.count
     }
 
     var yesterdayCount: Int {
-        let habitCounts = counts.filter{ cal.isDateInYesterday($0.timestamp) }
-        return habitCounts.filter{$0.count == "increase"}.count - habitCounts.filter{$0.count == "decrease"}.count
+        let habitCounts = counts.filter { cal.isDateInYesterday($0.timestamp) }
+        return habitCounts.filter { $0.count == "increase" }.count - habitCounts.filter { $0.count == "decrease" }.count
     }
 
     var standings: String {
@@ -47,7 +47,7 @@ class HabitViewModel {
     }
 
     func resetCount() {
-        dataSource.deleteCountsByHabitId(id: habitId)
+        dataSource.deleteCountsByHabitId(habitId: habitId)
     }
 
     func persistHabit() {
@@ -59,15 +59,4 @@ class HabitViewModel {
             measurement: measurement)
         dataSource.insert(item: entity)
     }
-
-//    func buildWeekCounts() -> [Int: Int] {
-//        var weekCounts = [Int: Int]()
-//
-//        for num in 0..<7 {
-//            let thisDate = cal.dateComponents([.day], from: cal.date(byAdding: .day, value: num, to: Date())!)
-//            weekCounts[num] = self.counts.filter {cal.dateComponents([.day], from: $0.timestamp).day == cal.dateComponents([.day], from: thisDate).day}.count
-//        }
-//        return weekCounts
-//    }
-
 }

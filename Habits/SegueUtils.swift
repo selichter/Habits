@@ -1,7 +1,7 @@
 import UIKit
 
 extension UIViewController {
-    func performSegueToReturnBack()  {
+    func performSegueToReturnBack() {
         if let nav = self.navigationController {
             nav.popViewController(animated: true)
         } else {

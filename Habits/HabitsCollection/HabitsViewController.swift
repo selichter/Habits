@@ -12,7 +12,7 @@ class HabitsCollectionViewController: UICollectionViewController {
         let entities = dataSource.getAll()
         render(HabitsViewModel(entities))
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(false)
         dataSource = HabitDataSource()
@@ -31,27 +31,30 @@ class HabitsCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView,
                                  cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let identifier = "HabitCell"
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! HabitCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier,
+                                                      for: indexPath) as? HabitCell ?? HabitCell()
         cell.render(habit: (habitsVM?.habits[indexPath.row])!)
         return cell
     }
-    
+
     func render(_ habits: HabitsViewModel) {
         habitsVM = habits
-        
         collectionView.reloadData()
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showHabit" {
-            let viewController = segue.destination as! HabitViewController
-            let cell = sender as! HabitCell
-            let indexPaths = collectionView.indexPath(for: cell)
-            let habitVM = habitsVM?.habits[indexPaths!.row]
-            viewController.hvm = habitVM
+            if let viewController = segue.destination as? HabitViewController {
+                let cell = sender as? HabitCell ?? HabitCell()
+                let indexPaths = collectionView.indexPath(for: cell)
+                if let row = indexPaths?.row {
+                    let habitVM = habitsVM?.habits[row]
+                    viewController.hvm = habitVM
+                }
+            }
         }
     }
-    
+
     func collectionLayout() -> UICollectionViewFlowLayout {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
 
