@@ -1,4 +1,3 @@
-
 import Foundation
 import RealmSwift
 
@@ -14,38 +13,46 @@ class HabitDataSource: DataSource {
         return realm.objects(RealmCount.self).map { $0.entity }
     }
 
-    func getById(id: String) -> HabitEntity {
-        return realm.objects(RealmHabit.self).filter("habitId == %@", id).first!.entity
+    func getById(habitId: String) -> HabitEntity {
+        return realm.objects(RealmHabit.self).filter("habitId == %@", habitId).first!.entity
     }
 
-    func getCountsByHabitId(id: String) -> [CountEntity] {
-        return realm.objects(RealmCount.self).filter("habitId == %@", id).map { $0.entity }
+    func getCountsByHabitId(habitId: String) -> [CountEntity] {
+        return realm.objects(RealmCount.self).filter("habitId == %@", habitId).map { $0.entity }
     }
 
     func insert(item: HabitEntity) {
-        try! realm.write {
-            realm.add(RealmHabit(habit: item), update: true)
+        do {
+            try? realm.write {
+                realm.add(RealmHabit(habit: item), update: true)
+            }
         }
     }
 
     func insertCount(item: CountEntity) {
-        try! realm.write {
-            realm.add(RealmCount(countEntity: item))
+        do {
+            try? realm.write {
+                realm.add(RealmCount(countEntity: item))
+            }
         }
     }
 
     func clean() {
-        try! realm.write {
-            realm.delete(realm.objects(RealmHabit.self))
-            realm.delete(realm.objects(RealmCount.self))
+        do {
+            try? realm.write {
+                realm.delete(realm.objects(RealmHabit.self))
+                realm.delete(realm.objects(RealmCount.self))
+            }
         }
     }
 
-    func deleteCountsByHabitId(id: String) {
-        try! realm.write {
-            realm.delete(realm.objects(RealmCount.self).filter("habitId == %@", id))
+    func deleteCountsByHabitId(habitId: String) {
+        do {
+            try? realm.write {
+                realm.delete(realm.objects(RealmCount.self).filter("habitId == %@", habitId))
+            }
         }
     }
 
-    func deleteById(id: String) {}
+    func deleteById(habitId: String) {}
 }

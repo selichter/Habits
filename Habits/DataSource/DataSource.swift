@@ -4,8 +4,8 @@ protocol DataSource {
     associatedtype Item
 
     func getAll() -> [Item]
-    func getById(id: String) -> Item
+    func getById(habitId: String) -> Item
     func insert(item: Item)
     func clean()
-    func deleteById(id: String)
+    func deleteById(habitId: String)
 }

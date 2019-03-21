@@ -7,28 +7,27 @@ class HabitViewController: UIViewController {
     @IBOutlet weak var yesterdayCount: UILabel!
 
     var hvm: HabitViewModel!
-    
     override func viewDidLoad() {
         view.backgroundColor = spearmint
         populateDisplay(hvm)
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
-        let thisHvm = HabitDataSource().getById(id: hvm.habitId)
+        let thisHvm = HabitDataSource().getById(habitId: hvm.habitId)
         hvm = HabitViewModel(habitEntity: thisHvm)
         populateDisplay(hvm)
     }
-    
+
     @IBAction func increaseCount(_ sender: Any) {
         hvm.increaseCount()
         populateDisplay(hvm)
     }
-    
+
     @IBAction func decreaseCount(_ sender: Any) {
         hvm.decreaseCount()
         populateDisplay(hvm)
     }
-    
+
     @IBAction func resetCurrentCount(_ sender: Any) {
         hvm.resetCount()
         populateDisplay(hvm)
@@ -39,12 +38,12 @@ class HabitViewController: UIViewController {
         currentCount.text = "\(habit.todayCount)"
         yesterdayCount.text = "\(habit.yesterdayCount)"
     }
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "editHabit" {
-            let viewController = segue.destination as! EditHabitViewController
-            viewController.hvm = hvm
+            if let viewController = segue.destination as? EditHabitViewController {
+                viewController.hvm = hvm
+            }
         }
     }
-    
 }

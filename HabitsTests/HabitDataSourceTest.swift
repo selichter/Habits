@@ -42,14 +42,14 @@ class HabitDataSourceTest: XCTestCase {
         try! realm.write {
             realm.add(RealmHabit(habit: drinkWater))
         }
-        let habit = habitDataSource.getById(id: drinkWaterId)
+        let habit = habitDataSource.getById(habitId: drinkWaterId)
 
         XCTAssertEqual(habit.name, habitOneName)
         XCTAssertEqual(habit.habitId, drinkWaterId)
     }
 
     func testGetCountsByIdReturnsAllCountsForGivenHabit() {
-        let counts = habitDataSource.getCountsByHabitId(id: drinkWaterId)
+        let counts = habitDataSource.getCountsByHabitId(habitId: drinkWaterId)
 
         XCTAssertEqual(counts.count, 2)
         XCTAssertEqual(counts[0].habitId, drinkWaterId)
@@ -61,14 +61,14 @@ class HabitDataSourceTest: XCTestCase {
         let habit3 = HabitEntity(habitId: id, name: "sleep",  target: 2, timePeriod: "daily", measurement: "ounces")
 
         habitDataSource.insert(item: habit3)
-        let fetchedHabit = habitDataSource.getById(id: habit3.habitId)
+        let fetchedHabit = habitDataSource.getById(habitId: habit3.habitId)
 
         XCTAssertEqual(fetchedHabit.name, habit3.name)
     }
 
     func testInsertCountPutsCountIntoRealm() {
         habitDataSource.insertCount(item: count3)
-        let fetchedCount = habitDataSource.getCountsByHabitId(id: drinkWaterId)[1]
+        let fetchedCount = habitDataSource.getCountsByHabitId(habitId: drinkWaterId)[1]
 
         XCTAssertEqual(fetchedCount.habitId, count3.habitId)
         XCTAssertEqual(fetchedCount.count, "decrease")
@@ -78,7 +78,7 @@ class HabitDataSourceTest: XCTestCase {
         habitDataSource.insertCount(item: count1)
         habitDataSource.insertCount(item: count3)
 
-        var fetchedCounts = habitDataSource.getCountsByHabitId(id: drinkWaterId)
+        var fetchedCounts = habitDataSource.getCountsByHabitId(habitId: drinkWaterId)
 
         XCTAssertEqual(fetchedCounts[0].habitId, count1.habitId)
         XCTAssertEqual(fetchedCounts[1].habitId, count3.habitId)
@@ -91,7 +91,7 @@ class HabitDataSourceTest: XCTestCase {
 
         habit.timePeriod = "weekly"
         habitDataSource.insert(item: habit)
-        let afterUpdate = habitDataSource.getById(id: habitId)
+        let afterUpdate = habitDataSource.getById(habitId: habitId)
 
         XCTAssertEqual(afterUpdate.name, habit.name)
         XCTAssertEqual(afterUpdate.habitId, habit.habitId)
@@ -107,11 +107,11 @@ class HabitDataSourceTest: XCTestCase {
     }
 
     func testdeleteCountsByHabitIdCountsForAHabit() {
-        let counts = habitDataSource.getCountsByHabitId(id: drinkWaterId)
+        let counts = habitDataSource.getCountsByHabitId(habitId: drinkWaterId)
         XCTAssertEqual(counts.count, 2)
 
-        habitDataSource.deleteCountsByHabitId(id: drinkWaterId)
-        let afterDeleteCounts = habitDataSource.getCountsByHabitId(id: drinkWaterId)
+        habitDataSource.deleteCountsByHabitId(habitId: drinkWaterId)
+        let afterDeleteCounts = habitDataSource.getCountsByHabitId(habitId: drinkWaterId)
 
         XCTAssertEqual(0, afterDeleteCounts.count)
     }

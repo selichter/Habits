@@ -26,7 +26,7 @@ class EditHabitViewController: UIViewController, UITextFieldDelegate {
         highlightButtonMatchingChoice(timePeriodStackView, timePeriodValue)
     }
 
-    func populateForm(_ habit: HabitViewModel){
+    func populateForm(_ habit: HabitViewModel) {
         habitForm.xibHabitNameInput.delegate = self
         habitForm.xibTargetInput.delegate = self
         habitForm.xibMeasurementInput.delegate = self
