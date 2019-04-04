@@ -18,4 +18,15 @@ class HabitsViewModelTests: XCTestCase {
         
         dataSource.clean()
     }
+
+    func testHabitsAreSortedByName() {
+        let habitsVM = HabitsViewModel([exercise, eat, drinkWater])
+
+        XCTAssertEqual(habitsVM.habits.count, 3)
+        XCTAssertEqual(habitsVM.habits[0].name, "DRINK WATER")
+        XCTAssertEqual(habitsVM.habits[1].name, "EAT")
+        XCTAssertEqual(habitsVM.habits[1].name, "EXERCISE")
+
+        dataSource.clean()
+    }
 }

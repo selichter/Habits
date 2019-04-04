@@ -17,7 +17,8 @@ class HabitsCollectionViewController: UICollectionViewController {
         super.viewDidAppear(false)
         dataSource = HabitDataSource()
         let entities = dataSource.getAll()
-        render(HabitsViewModel(entities))
+        let sortedEntities = entities.sorted(by: {$0.name > $1.name})
+        render(HabitsViewModel(sortedEntities))
     }
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
